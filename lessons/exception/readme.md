@@ -45,7 +45,7 @@ finally:
 raise ExceptionType("Error message")
 ```
 
-### Common Exceptions in Python
+### Common Built-in Exceptions in Python
 
 | Exception Class       | Description                                                                 |
 |-----------------------|-----------------------------------------------------------------------------|
@@ -71,7 +71,7 @@ raise ExceptionType("Error message")
 | `ValueError`          | Raised when a function receives an argument of the correct type but inappropriate value. |
 | `ZeroDivisionError`   | Raised when the second argument of a division or modulo operation is zero.  |
 
-### Exception Class Hierarchy with Definitions
+### Built-in Exception Class Hierarchy
 
 - `BaseException`
   - The base class for all built-in exceptions. It is not meant to be directly inherited by user-defined classes.
@@ -304,7 +304,7 @@ You can create custom exceptions in Python by defining a new class that inherits
         print(repr(e))  # Output: ValueError('Invalid value')
     ```
 
-
+### Custom Exceptions
 
 #### Syntax
 
