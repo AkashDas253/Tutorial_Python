@@ -40,3 +40,5 @@
 
 ### Projects
 
+- [Tic Tac Toe](mini_projects/tic_tac_toe/readme.md)
+
