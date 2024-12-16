@@ -7,14 +7,19 @@
 - [Concepts](lessons/concepts/readme.md)
 - [Basics](lessons/basics/readme.md)
 - [Datatypes](lessons/datatypes/readme.md)
-    - [Integer](lessons/integer/readme.md)
-    - [Float](lessons/float/readme.md)
-    - [Complex](lessons/complex/readme.md)
-    - [String](lessons/string/readme.md)
-    - [List](lessons/list/readme.md)
-    - [Tuples](lessons/tuples/readme.md)
-    - [Set](lessons/set/readme.md)
-    - [Dictionary](lessons/dictionary/readme.md)
+    - Primitive Datatypes
+        - [Integer](lessons/integer/readme.md)
+        - [Float](lessons/float/readme.md)
+        - [Complex](lessons/complex/readme.md)
+        - [String](lessons/string/readme.md)
+        - [Boolean](lessons/boolean/readme.md)
+    - Collections
+        - [List](lessons/list/readme.md)
+        - [Tuples](lessons/tuples/readme.md)
+        - [Set](lessons/set/readme.md)
+        - [Dictionary](lessons/dictionary/readme.md)
+    - Collection Module
+        
 
 - [Scope and Access](lessons/scope/readme.md) 
 - [OOPS](lessons/oops/readme.md)
