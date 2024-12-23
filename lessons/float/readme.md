@@ -1,209 +1,126 @@
+### **Float in Python**
 
-## Float
+---
 
-### In-Depth Note on Python Float
+### **Introduction**
+In Python, floating-point numbers (`float`) represent real numbers, i.e., numbers with a fractional part. They follow the IEEE 754 double-precision standard.
 
-#### Properties of Float
+---
 
-- **Immutable**: Float values cannot be changed after creation.
-- **Precision**: Floats are represented in double-precision (64-bit) format.
-- **Range**: Floats can represent a wide range of values, including very large and very small numbers.
+### **Properties of Floats**
 
-#### Creating a Float
+| **Property**          | **Description**                                                     |
+|------------------------|---------------------------------------------------------------------|
+| **Immutable**          | Floats cannot be changed after creation.                           |
+| **Precision**          | Limited by the IEEE 754 standard.                                  |
+| **Type**               | The type of a float is `float`.                                    |
+| **Range**              | Floats have a range of approximately `-1.8e308` to `1.8e308`.      |
 
-1. **From a Literal**
-   ```python
-   my_float = 3.14
-   ```
+---
 
-2. **From an Integer**
-   ```python
-   my_float = float(10)
-   ```
+### **Creating Floats**
 
-3. **From a String**
-   ```python
-   my_float = float("3.14")
-   ```
+| **Method**            | **Code**                      | **Description**                                     |
+|------------------------|-------------------------------|----------------------------------------------------|
+| **Direct Assignment**  | `my_float = 3.14`            | Assigns a floating-point value directly to a variable. |
+| **Using `float()`**    | `my_float = float("3.14")`   | Converts a string or integer to a float.          |
 
-#### Float Operations
+---
 
-1. **Arithmetic Operations**
-   ```python
-   a = 5.0
-   b = 2.0
+### **Basic Operations**
 
-   addition = a + b       # 7.0
-   subtraction = a - b    # 3.0
-   multiplication = a * b # 10.0
-   division = a / b       # 2.5
-   exponentiation = a ** b # 25.0
-   ```
+| **Operation**         | **Symbol** | **Example**        | **Result**        |
+|------------------------|------------|--------------------|-------------------|
+| **Addition**           | `+`        | `3.5 + 2.5`        | `6.0`            |
+| **Subtraction**        | `-`        | `3.5 - 2.5`        | `1.0`            |
+| **Multiplication**     | `*`        | `3.5 * 2`          | `7.0`            |
+| **Division**           | `/`        | `7.0 / 2`          | `3.5`            |
+| **Floor Division**     | `//`       | `7.0 // 2`         | `3.0`            |
+| **Modulus**            | `%`        | `7.0 % 2`          | `1.0`            |
+| **Exponentiation**     | `**`       | `2.0 ** 3`         | `8.0`            |
+| **Negation**           | `-`        | `-3.5`             | `-3.5`           |
 
-2. **Floor Division**
-   ```python
-   floor_div = a // b  # 2.0
-   ```
+---
 
-3. **Modulus**
-   ```python
-   modulus = a % b  # 1.0
-   ```
+### **Type Conversion**
 
-#### Float Methods
+| **Conversion**        | **Code**                   | **Description**                                |
+|------------------------|----------------------------|-----------------------------------------------|
+| **To Integer**         | `int(my_float)`           | Converts a float to an integer (truncates the fractional part). |
+| **To String**          | `str(my_float)`           | Converts a float to a string.                 |
+| **To Boolean**         | `bool(my_float)`          | Converts to `False` if `0.0`, otherwise `True`. |
 
-1. **`is_integer` Method**: Checks if the float is an integer
-   ```python
-   result = my_float.is_integer()  # Returns True if my_float is an integer
-   ```
+---
 
-2. **`as_integer_ratio` Method**: Returns a pair of integers whose ratio is exactly equal to the float
-   ```python
-   ratio = my_float.as_integer_ratio()  # (314, 100) for 3.14
-   ```
+### **Built-in Functions**
 
-3. **`hex` Method**: Returns a hexadecimal string representation of the float
-   ```python
-   hex_value = my_float.hex()  # '0x1.91eb851eb851fp+1' for 3.14
-   ```
+| **Function**          | **Description**                                                    | **Example**                   | **Result**        |
+|------------------------|--------------------------------------------------------------------|--------------------------------|-------------------|
+| `abs(x)`              | Returns the absolute value of the float.                          | `abs(-3.14)`                  | `3.14`           |
+| `pow(x, y, z=None)`   | Returns `x` raised to the power of `y`.                           | `pow(2.0, 3)`                 | `8.0`            |
+| `round(x, ndigits)`   | Rounds a float to the specified number of decimal places.         | `round(3.14159, 2)`           | `3.14`           |
+| `max(iterable)`       | Returns the largest float in an iterable.                         | `max([1.5, 2.3, 3.1])`        | `3.1`            |
+| `min(iterable)`       | Returns the smallest float in an iterable.                        | `min([1.5, 2.3, 3.1])`        | `1.5`            |
+| `sum(iterable)`       | Returns the sum of all items in an iterable.                      | `sum([1.1, 2.2, 3.3])`        | `6.6`            |
 
-4. **`fromhex` Method**: Creates a float from a hexadecimal string
-   ```python
-   my_float = float.fromhex('0x1.91eb851eb851fp+1')  # 3.14
-   ```
+---
 
-#### Float Formatting
+### **Float Methods**
 
-1. **Using `format` Function**
-   ```python
-   formatted = format(my_float, ".2f")  # '3.14'
-   ```
+| **Method**                 | **Description**                                                    | **Example**                                      | **Result**               |
+|----------------------------|--------------------------------------------------------------------|------------------------------------------------|--------------------------|
+| `is_integer()`             | Checks if the float is an integer.                                | `(3.0).is_integer()`                           | `True`                   |
+| `as_integer_ratio()`        | Returns a pair of integers whose ratio is equal to the float.    | `(3.14).as_integer_ratio()`                    | `(157, 50)`              |
+| `hex()`                    | Returns a hexadecimal string representation of the float.        | `(3.14).hex()`                                 | `'0x1.91eb851eb851fp+1'` |
+| `float.fromhex(hex_str)`    | Creates a float from a hexadecimal string.                       | `float.fromhex('0x1.91eb851eb851fp+1')`        | `3.14`                   |
 
-2. **Using f-Strings (Python 3.6+)**
-   ```python
-   formatted = f"{my_float:.2f}"  # '3.14'
-   ```
+---
 
-3. **Using `str.format` Method**
-   ```python
-   formatted = "{:.2f}".format(my_float)  # '3.14'
-   ```
+### **Conversions with Bytes**
 
-#### Special Float Values
+| **Method**                   | **Description**                                                 | **Example**                                                   | **Result**        |
+|-------------------------------|-----------------------------------------------------------------|---------------------------------------------------------------|-------------------|
+| `num.to_bytes(length, byteorder)` | Converts an integer to bytes.                                 | `num = 1024; num.to_bytes(2, 'big')`                          | `b'\x04\x00'`     |
+| `int.from_bytes(bytes, byteorder, signed)` | Converts bytes to an integer.                              | `int.from_bytes(b'\x04\x00', 'big')`                          | `1024`            |
 
-1. **Positive Infinity**
-   ```python
-   pos_inf = float('inf')
-   ```
+---
 
-2. **Negative Infinity**
-   ```python
-   neg_inf = float('-inf')
-   ```
+### **Float Formatting**
 
-3. **NaN (Not a Number)**
-   ```python
-   nan_value = float('nan')
-   ```
+| **Method**             | **Code**                              | **Result**         |
+|-------------------------|---------------------------------------|--------------------|
+| **`format` Function**   | `format(3.14159, ".2f")`             | `'3.14'`          |
+| **f-Strings**           | `f"{3.14159:.2f}"`                   | `'3.14'`          |
+| **`str.format` Method** | `"The value is {:.2f}".format(3.14)` | `'The value is 3.14'` |
 
-#### Checking for Special Float Values
+---
 
-1. **Checking for Infinity**
-   ```python
-   import math
-   is_inf = math.isinf(pos_inf)  # True
-   ```
+### **Special Float Values**
 
-2. **Checking for NaN**
-   ```python
-   is_nan = math.isnan(nan_value)  # True
-   ```
+| **Special Value**      | **Code**                  | **Description**           |
+|-------------------------|---------------------------|---------------------------|
+| **Positive Infinity**   | `pos_inf = float('inf')`  | Represents positive infinity. |
+| **Negative Infinity**   | `neg_inf = float('-inf')` | Represents negative infinity. |
+| **NaN (Not a Number)**  | `nan_value = float('nan')`| Represents an undefined or unrepresentable value. |
 
-### Python `int` Methods and Functions
+---
 
-#### Methods Called Using `int` Object
+### **Checking for Special Float Values**
 
-1. **`int.bit_length()`**
-   - **Description**: Returns the number of bits necessary to represent the integer in binary, excluding the sign and leading zeros.
-   - **Usage**:
-     ```python
-     num = 10
-     bit_length = num.bit_length()  # 4
-     ```
+| **Check**              | **Code**                                 | **Result**       |
+|-------------------------|------------------------------------------|------------------|
+| **Infinity**            | `math.isinf(float('inf'))`              | `True`           |
+| **NaN**                 | `math.isnan(float('nan'))`              | `True`           |
 
-2. **`int.to_bytes(length, byteorder, (optional) *, (optional) signed=False)`**
-   - **Description**: Returns an array of bytes representing the integer.
-     - `length`: The number of bytes to use.
-     - `byteorder`: The byte order used to represent the integer. Can be either 'big' or 'little'.
-     - `(optional) signed`: Whether two's complement is used to represent the integer. Default is `False`.
-   - **Usage**:
-     ```python
-     num = 1024
-     byte_array = num.to_bytes(2, byteorder='big')  # b'\x04\x00'
-     ```
+---
 
-3. **`int.from_bytes(bytes, byteorder, (optional) *, (optional) signed=False)`**
-   - **Description**: Returns the integer represented by the given array of bytes.
-     - `bytes`: The array of bytes.
-     - `byteorder`: The byte order used to represent the integer. Can be either 'big' or 'little'.
-     - `(optional) signed`: Whether two's complement is used to represent the integer. Default is `False`.
-   - **Usage**:
-     ```python
-     byte_array = b'\x04\x00'
-     num = int.from_bytes(byte_array, byteorder='big')  # 1024
-     ```
+### **Summary**
 
-#### Functions
-
-1. **`abs(x)`**
-   - **Description**: Returns the absolute value of the integer.
-     - `x`: The integer whose absolute value is to be returned.
-   - **Usage**:
-     ```python
-     result = abs(-10)  # 10
-     ```
-
-2. **`bin(x)`**
-   - **Description**: Converts an integer number to a binary string prefixed with "0b".
-     - `x`: The integer to be converted to a binary string.
-   - **Usage**:
-     ```python
-     binary_string = bin(10)  # '0b1010'
-     ```
-
-3. **`hex(x)`**
-   - **Description**: Converts an integer number to a lowercase hexadecimal string prefixed with "0x".
-     - `x`: The integer to be converted to a hexadecimal string.
-   - **Usage**:
-     ```python
-     hex_string = hex(255)  # '0xff'
-     ```
-
-4. **`oct(x)`**
-   - **Description**: Converts an integer number to an octal string prefixed with "0o".
-     - `x`: The integer to be converted to an octal string.
-   - **Usage**:
-     ```python
-     octal_string = oct(8)  # '0o10'
-     ```
-
-5. **`pow(x, y, (optional) z=None)`**
-   - **Description**: Returns `x` raised to the power `y`. If `z` is provided, returns `x` raised to the power `y`, modulo `z`.
-     - `x`: The base integer.
-     - `y`: The exponent integer.
-     - `(optional) z`: The modulus integer. Default is `None`.
-   - **Usage**:
-     ```python
-     result = pow(2, 3)  # 8
-     result_mod = pow(2, 3, 3)  # 2
-     ```
-
-6. **`round(number, (optional) ndigits=None)`**
-   - **Description**: Rounds a number to a given precision in decimal digits. If `ndigits` is omitted or `None`, it returns the nearest integer.
-     - `number`: The number to be rounded.
-     - `(optional) ndigits`: The number of decimal digits to round to. Default is `None`.
-   - **Usage**:
-     ```python
-     rounded_value = round(5.678, 2)  # 5.68
-     rounded_int = round(5.678)  # 6
-     ```
+- **Properties**: Precision, immutability.
+- **Basic Operations**: Arithmetic and comparisons.
+- **Type Conversions**: Float ↔ Integer/String/Bytes.
+- **Built-in Functions**: `abs()`, `pow()`, etc.
+- **Float Methods**: Including `is_integer()` and `as_integer_ratio()`.
+- **Formatting**: f-Strings, `format()`, etc.
+- **Special Float Values**: Infinity, NaN.
+- **Checks for Special Values**: Using `math.isinf()` and `math.isnan()`.
