@@ -1,350 +1,132 @@
+Here's an updated and more detailed note on Python integers, incorporating additional methods, related functions, and their usage:
 
-## Interger(int)
-
-### In-Depth Note on Python Integers
+---
 
-#### Properties of Integers
-
-- **Immutable**: Integers cannot be changed after creation.
-- **Unlimited Precision**: Integers in Python can be arbitrarily large.
-- **Type**: The type of an integer is `int`.
-
-#### Creating Integers
-
-1. **Direct Assignment**
-   ```python
-   my_int = 42
-   ```
-
-2. **Using `int` Function**
-   ```python
-   my_int = int("42")  # Converts a string to an integer
-   ```
-
-#### Basic Operations
-
-1. **Addition**
-   ```python
-   result = a + b
-   ```
-
-2. **Subtraction**
-   ```python
-   result = a - b
-   ```
-
-3. **Multiplication**
-   ```python
-   result = a * b
-   ```
-
-4. **Division** (returns a float)
-   ```python
-   result = a / b
-   ```
-
-5. **Floor Division** (returns an integer)
-   ```python
-   result = a // b
-   ```
-
-6. **Modulus** (remainder of division)
-   ```python
-   result = a % b
-   ```
-
-7. **Exponentiation**
-   ```python
-   result = a ** b
-   ```
-
-#### Comparison Operations
-
-1. **Equal To**
-   ```python
-   result = a == b
-   ```
-
-2. **Not Equal To**
-   ```python
-   result = a != b
-   ```
-
-3. **Greater Than**
-   ```python
-   result = a > b
-   ```
-
-4. **Less Than**
-   ```python
-   result = a < b
-   ```
-
-5. **Greater Than or Equal To**
-   ```python
-   result = a >= b
-   ```
-
-6. **Less Than or Equal To**
-   ```python
-   result = a <= b
-   ```
-
-#### Bitwise Operations
-
-1. **AND**
-   ```python
-   result = a & b
-   ```
-
-2. **OR**
-   ```python
-   result = a | b
-   ```
-
-3. **XOR**
-   ```python
-   result = a ^ b
-   ```
-
-4. **NOT**
-   ```python
-   result = ~a
-   ```
-
-5. **Left Shift**
-   ```python
-   result = a << b
-   ```
-
-6. **Right Shift**
-   ```python
-   result = a >> b
-   ```
-
-#### Type Conversion
-
-1. **To Float**
-   ```python
-   my_float = float(my_int)
-   ```
-
-2. **To String**
-   ```python
-   my_str = str(my_int)
-   ```
-
-3. **To Boolean**
-   ```python
-   my_bool = bool(my_int)  # False if my_int is 0, True otherwise
-   ```
-
-#### Built-in Functions
-
-1. **`abs`**: Returns the absolute value
-   ```python
-   result = abs(my_int)
-   ```
-
-2. **`divmod`**: Returns a tuple of quotient and remainder
-   ```python
-   quotient, remainder = divmod(a, b)
-   ```
-
-3. **`pow`**: Returns the value of a raised to the power of b
-   ```python
-   result = pow(a, b)
-   ```
-
-4. **`round`**: Rounds a number to a given precision
-   ```python
-   result = round(my_int, ndigits)
-   ```
-
-5. **`max`**: Returns the largest of the input values
-   ```python
-   result = max(a, b, c)
-   ```
-
-6. **`min`**: Returns the smallest of the input values
-   ```python
-   result = min(a, b, c)
-   ```
-
-### Methods and Functions for Python Integers
-
-#### Methods Called Using Integer Objects
-
-1. **`int.bit_length()`**
-   - **Description**: Returns the number of bits necessary to represent the integer in binary, excluding the sign and leading zeros.
-   - **Usage**:
-     ```python
-     num_bits = my_int.bit_length()
-     ```
-
-2. **`int.to_bytes(length, byteorder, *, signed=False)`**
-   - **Description**: Returns an array of bytes representing the integer.
-     - `length`: The number of bytes to use.
-     - `byteorder`: The byte order used to represent the integer. Can be `'big'` or `'little'`.
-     - `signed` (optional): Whether two's complement is used to represent the integer. Default is `False`.
-   - **Usage**:
-     ```python
-     byte_array = my_int.to_bytes(length=4, byteorder='big', signed=False)
-     ```
-
-3. **`int.from_bytes(bytes, byteorder, *, signed=False)`**
-   - **Description**: Returns the integer represented by the given array of bytes.
-     - `bytes`: The byte array to convert.
-     - `byteorder`: The byte order used to represent the integer. Can be `'big'` or `'little'`.
-     - `signed` (optional): Whether two's complement is used to represent the integer. Default is `False`.
-   - **Usage**:
-     ```python
-     my_int = int.from_bytes(byte_array, byteorder='big', signed=False)
-     ```
-
-#### Functions for Integers
-
-1. **`abs(x)`**
-   - **Description**: Returns the absolute value of the integer.
-     - `x`: The integer whose absolute value is to be returned.
-   - **Usage**:
-     ```python
-     result = abs(my_int)
-     ```
-
-2. **`divmod(a, b)`**
-   - **Description**: Returns a tuple containing the quotient and remainder when dividing `a` by `b`.
-     - `a`: The dividend.
-     - `b`: The divisor.
-   - **Usage**:
-     ```python
-     quotient, remainder = divmod(a, b)
-     ```
-
-3. **`pow(base, exp, mod=None)`**
-   - **Description**: Returns the value of `base` raised to the power of `exp`. If `mod` is provided, returns `base**exp % mod`.
-     - `base`: The base number.
-     - `exp`: The exponent.
-     - `mod` (optional): The modulus.
-   - **Usage**:
-     ```python
-     result = pow(base, exp, mod)
-     ```
-
-4. **`round(number, ndigits=None)`**
-   - **Description**: Rounds a number to a given precision in decimal digits.
-     - `number`: The number to be rounded.
-     - `ndigits` (optional): The number of decimal digits to round to. If omitted, rounds to the nearest integer.
-   - **Usage**:
-     ```python
-     result = round(my_int, ndigits)
-     ```
-
-5. **`max(iterable, *[, default, key])`**
-   - **Description**: Returns the largest item in an iterable or the largest of two or more arguments.
-     - `iterable`: An iterable of items.
-     - `default` (optional): The default value to return if the iterable is empty.
-     - `key` (optional): A function to customize the sort order.
-   - **Usage**:
-     ```python
-     result = max([a, b, c], default=0, key=None)
-     ```
-
-6. **`min(iterable, *[, default, key])`**
-   - **Description**: Returns the smallest item in an iterable or the smallest of two or more arguments.
-     - `iterable`: An iterable of items.
-     - `default` (optional): The default value to return if the iterable is empty.
-     - `key` (optional): A function to customize the sort order.
-   - **Usage**:
-     ```python
-     result = min([a, b, c], default=0, key=None)
-     ```
-
-
-
-
-
-## Detailed Note on Integer in Python
-
-### Introduction
-In Python, integers are a fundamental data type used to represent whole numbers. They can be positive, negative, or zero, and they do not have a fractional part.
-
-### Creating Integers
-You can create an integer by simply assigning a whole number to a variable.
-
-```python
-a = 10
-b = -5
-c = 0
-```
-
-### Type Checking
-You can check the type of a variable using the `type()` function.
-
-```python
-a = 10
-print(type(a))  # Output: <class 'int'>
-```
-
-### Integer Operations
-Python supports various arithmetic operations with integers.
-
-| Operation     | Symbol | Example          | Result |
-|---------------|--------|------------------|--------|
-| Addition      | `+`    | `10 + 5`         | `15`   |
-| Subtraction   | `-`    | `10 - 5`         | `5`    |
-| Multiplication| `*`    | `10 * 5`         | `50`   |
-| Division      | `/`    | `10 / 5`         | `2.0`  |
-| Floor Division| `//`   | `10 // 3`        | `3`    |
-| Modulus       | `%`    | `10 % 3`         | `1`    |
-| Exponentiation| `**`   | `2 ** 3`         | `8`    |
-
-### Built-in Functions
-Python provides several built-in functions for working with integers.
-
-| Function      | Description                                      | Example                | Result |
-|---------------|--------------------------------------------------|------------------------|--------|
-| `abs(x)`      | Returns the absolute value of `x`                | `abs(-10)`             | `10`   |
-| `pow(x, y)`   | Returns `x` raised to the power `y`              | `pow(2, 3)`            | `8`    |
-| `divmod(x, y)`| Returns a tuple of quotient and remainder        | `divmod(10, 3)`        | `(3, 1)`|
-| `int(x)`      | Converts `x` to an integer                       | `int(3.14)`            | `3`    |
-
-### Type Conversion
-You can convert other data types to integers using the `int()` function.
-
-```python
-a = int(3.14)  # Converts float to int, result is 3
-b = int("10")  # Converts string to int, result is 10
-```
-
-### Integer Limits
-Python integers have arbitrary precision, meaning they can grow as large as the memory allows.
-
-```python
-import sys
-print(sys.maxsize)  # Maximum value for an integer
-```
-
-### Bitwise Operations
-Python supports bitwise operations on integers.
-
-| Operation     | Symbol | Example          | Result |
-|---------------|--------|------------------|--------|
-| AND           | `&`    | `10 & 7`         | `2`    |
-| OR            | `|`    | `10 | 7`         | `15`   |
-| XOR           | `^`    | `10 ^ 7`         | `13`   |
-| NOT           | `~`    | `~10`            | `-11`  |
-| Left Shift    | `<<`   | `10 << 2`        | `40`   |
-| Right Shift   | `>>`   | `10 >> 2`        | `2`    |
-
-### Summary
-- **Creation**: Assign a whole number to a variable.
-- **Type Checking**: Use `type()` to check if a variable is an integer.
-- **Operations**: Supports addition, subtraction, multiplication, division, floor division, modulus, and exponentiation.
-- **Built-in Functions**: Includes `abs()`, `pow()`, `divmod()`, and `int()`.
-- **Type Conversion**: Convert other types to integers using `int()`.
-- **Limits**: Integers have arbitrary precision.
-- **Bitwise Operations**: Supports AND, OR, XOR, NOT, left shift, and right shift.
-
-This note covers the essential aspects of integers in Python, including creation, operations, built-in functions, type conversion, limits, and bitwise operations.
+## **Detailed Note on Integer in Python**
 
+### **Introduction**
+In Python, integers (`int`) represent whole numbers, positive, negative, or zero, without fractional parts. Python provides extensive functionality for integer operations, methods, and type conversions.
+
+---
+
+### **Properties of Integers**
+
+| **Property**            | **Description**                                                                                  |
+|--------------------------|--------------------------------------------------------------------------------------------------|
+| **Immutable**            | Integers cannot be changed after creation.                                                      |
+| **Unlimited Precision**  | Can grow arbitrarily large, limited only by system memory.                                       |
+| **Type**                 | The type of an integer is `int`.                                                                |
+
+---
+
+### **Creating Integers**
+
+| **Method**                | **Code**                                | **Description**                                    |
+|----------------------------|------------------------------------------|---------------------------------------------------|
+| **Direct Assignment**      | `my_int = 42`                          | Assigns an integer value directly to a variable. |
+| **Using `int()`**          | `my_int = int("42")`                   | Converts a string or float to an integer.        |
+| **Hexadecimal to Integer** | `int("0x2A", 16)`                      | Converts a hexadecimal string to an integer.     |
+| **Binary to Integer**      | `int("1010", 2)`                       | Converts a binary string to an integer.          |
+| **Octal to Integer**       | `int("52", 8)`                         | Converts an octal string to an integer.          |
+
+---
+
+### **Basic Operations**
+
+| **Operation**         | **Symbol** | **Example**       | **Result**        |
+|------------------------|------------|-------------------|-------------------|
+| **Addition**           | `+`        | `10 + 5`          | `15`             |
+| **Subtraction**        | `-`        | `10 - 5`          | `5`              |
+| **Multiplication**     | `*`        | `10 * 5`          | `50`             |
+| **Division**           | `/`        | `10 / 3`          | `3.333...`       |
+| **Floor Division**     | `//`       | `10 // 3`         | `3`              |
+| **Modulus**            | `%`        | `10 % 3`          | `1`              |
+| **Exponentiation**     | `**`       | `2 ** 3`          | `8`              |
+| **Negation**           | `-`        | `-5`              | `-5`             |
+
+---
+
+### **Comparison Operations**
+
+| **Operation**            | **Symbol** | **Example**         | **Result**         |
+|---------------------------|------------|---------------------|--------------------|
+| **Equal To**              | `==`       | `10 == 5`           | `False`           |
+| **Not Equal To**          | `!=`       | `10 != 5`           | `True`            |
+| **Greater Than**          | `>`        | `10 > 5`            | `True`            |
+| **Less Than**             | `<`        | `10 < 5`            | `False`           |
+| **Greater Than or Equal** | `>=`       | `10 >= 5`           | `True`            |
+| **Less Than or Equal**    | `<=`       | `10 <= 5`           | `False`           |
+
+---
+
+### **Bitwise Operations**
+
+| **Operation**     | **Symbol** | **Example** | **Result** |
+|--------------------|------------|-------------|------------|
+| **AND**           | `&`        | `10 & 7`    | `2`        |
+| **OR**            | `|`        | `10 | 7`    | `15`       |
+| **XOR**           | `^`        | `10 ^ 7`    | `13`       |
+| **NOT**           | `~`        | `~10`       | `-11`      |
+| **Left Shift**    | `<<`       | `10 << 2`   | `40`       |
+| **Right Shift**   | `>>`       | `10 >> 2`   | `2`        |
+
+---
+
+### **Type Conversion**
+
+| **Conversion**     | **Code**                        | **Description**                                    |
+|---------------------|----------------------------------|---------------------------------------------------|
+| **To Float**        | `float(my_int)`                | Converts an integer to a float.                  |
+| **To String**       | `str(my_int)`                  | Converts an integer to a string.                 |
+| **To Boolean**      | `bool(my_int)`                 | Converts to `False` if `0`, otherwise `True`.    |
+| **To Binary String**| `bin(my_int)`                  | Returns the binary representation of an integer. |
+| **To Octal String** | `oct(my_int)`                  | Returns the octal representation of an integer.  |
+| **To Hexadecimal**  | `hex(my_int)`                  | Returns the hexadecimal representation.          |
+
+---
+
+### **Built-in Functions**
+
+| **Function** | **Description**                             | **Example**                   | **Result**       |
+|--------------|---------------------------------------------|--------------------------------|------------------|
+| `abs(x)`     | Returns the absolute value.                | `abs(-10)`                    | `10`            |
+| `pow(x, y)`  | Returns `x**y`.                            | `pow(2, 3)`                   | `8`             |
+| `divmod(x, y)`| Returns `(quotient, remainder)`.          | `divmod(10, 3)`               | `(3, 1)`        |
+| `round(x)`   | Rounds to the nearest integer or precision.| `round(10.5)`                 | `10`            |
+| `max(iterable)`| Returns the largest item.                | `max([1, 5, 3])`              | `5`             |
+| `min(iterable)`| Returns the smallest item.               | `min([1, 5, 3])`              | `1`             |
+| `sum(iterable)`| Returns the sum of all items.            | `sum([1, 2, 3])`              | `6`             |
+
+---
+
+### **Additional Methods for Integers**
+
+| **Method**                  | **Description**                                                                 | **Example**                         | **Result**      |
+|-----------------------------|---------------------------------------------------------------------------------|-------------------------------------|-----------------|
+| `int.bit_length()`          | Returns the number of bits needed to represent the integer in binary.           | `(10).bit_length()`                 | `4`             |
+| `int.to_bytes(length, byteorder, signed)`| Converts to a byte array.                                           | `(10).to_bytes(2, 'big', False)`    | `b'\x00\n'`     |
+| `int.from_bytes(bytes, byteorder, signed)`| Converts from byte array to integer.                                | `int.from_bytes(b'\x00\n', 'big')`  | `10`            |
+| `int.is_integer()`          | Checks if a number is an integer.                                               | `float(3.0).is_integer()`           | `True`          |
+
+---
+
+### **Advanced Functions for Integers**
+
+| **Function**       | **Description**                                  | **Example**                           | **Result**      |
+|---------------------|-------------------------------------------------|---------------------------------------|-----------------|
+| `math.gcd(a, b)`    | Returns the greatest common divisor of `a` and `b`. | `math.gcd(15, 5)`                     | `5`             |
+| `math.factorial(x)` | Returns the factorial of an integer.            | `math.factorial(5)`                   | `120`           |
+| `math.isqrt(x)`     | Returns the integer square root.                | `math.isqrt(16)`                      | `4`             |
+| `math.prod(iterable)`| Returns the product of all elements in an iterable.| `math.prod([1, 2, 3, 4])`            | `24`            |
+
+---
+
+### **Summary**
+
+- **Properties**: Immutable, unlimited precision, and type (`int`).
+- **Creation**: Direct assignment, `int()`, and conversions from other bases.
+- **Operations**: Arithmetic, comparison, and bitwise operations.
+- **Type Conversion**: Conversion to and from other data types.
+- **Built-in Functions**: Including `abs()`, `pow()`, `round()`, `max()`, and more.
+- **Methods**: Integer-specific methods such as `.bit_length()` and `.to_bytes()`.
+- **Advanced Functions**: Includes mathematical operations like `math.gcd()` and `math.factorial()`.
