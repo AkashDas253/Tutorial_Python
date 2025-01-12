@@ -41,6 +41,8 @@
 - [Tkinter](lessons/tkinter/readme.md)
 - [Scikit Learn](lessons/sklearn/readme.md)
 - [Tensorflow](lessons/tensorflow/readme.md)
+- [Streamlit](lessons/streamlit/readme.md)
+<!-- - [Flask](lessons/flask/readme.md) -->
 - [Django](https://github.com/AkashDas253/Tutorial_Django) 
 
 ### Projects
