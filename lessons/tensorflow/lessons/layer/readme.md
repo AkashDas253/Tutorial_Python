@@ -1,88 +1,120 @@
-## **Keras Layers in TensorFlow**  
-Below is a comprehensive list of major Keras layers in TensorFlow, their parameters, descriptions, and syntax. This serves as a quick reference for understanding layer types, parameters, and usage.  
+## Layers in TensorFlow
+
+Layers are the building blocks of models in TensorFlow. They process input data to extract features, transform it, or predict outputs.
 
 ---
 
-### **Core Layers**
+#### **1. Overview of Layers**
 
-| **Layer**   | **Description**                                                                 | **Key Parameters**                                                                                                                                          | **Syntax**                              |
-|-------------|---------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------|
-| **Dense**   | Fully connected layer, commonly used in feedforward neural networks.            | - `units (int)`: Number of neurons in the layer<br>- `activation (str)`: Activation function (`None`)<br>- `use_bias (bool)`: Include bias (`True`)          | `Dense(units=64, activation='relu')`    |
-| **Dropout** | Randomly sets input units to 0 during training to prevent overfitting.          | - `rate (float)`: Fraction of inputs to drop (`0.5`)                                                                                                       | `Dropout(rate=0.5)`                     |
-| **Flatten** | Flattens the input without affecting the batch size.                            | None                                                                                                                                                        | `Flatten()`                             |
-| **Activation** | Applies an activation function to the input.                                | - `activation (str)`: Name of activation function                                                                                                          | `Activation('relu')`                    |
-| **Reshape** | Reshapes the input to a specified shape.                                        | - `target_shape (tuple)`: Target shape                                                                                                                     | `Reshape(target_shape=(2, 3))`          |
-
----
-
-### **Convolutional Layers**
-
-| **Layer**       | **Description**                                                                | **Key Parameters**                                                                                                                                                                                                                                              | **Syntax**                                        |
-|------------------|--------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------|
-| **Conv1D**       | 1D convolution layer for sequence data.                                        | - `filters (int)`: Number of output filters<br>- `kernel_size (int or tuple)`: Convolution window size<br>- `strides (int)`: Step size (`1`)<br>- `padding (str)`: Padding type (`'valid'`)<br>- `activation (str)`: Activation function (`None`)             | `Conv1D(filters=32, kernel_size=3, activation='relu')` |
-| **Conv2D**       | 2D convolution layer for image data.                                           | - `filters (int)`: Number of output filters<br>- `kernel_size (int or tuple)`: Convolution window size<br>- `strides (tuple)`: Step size (`(1, 1)`)<br>- `padding (str)`: Padding type (`'valid'`)<br>- `activation (str)`: Activation function (`None`)    | `Conv2D(filters=32, kernel_size=(3, 3), activation='relu')` |
-| **Conv3D**       | 3D convolution layer for volumetric data.                                      | - Similar to `Conv2D` but applies to 3D inputs                                                                                                                                                                           | `Conv3D(filters=32, kernel_size=(3, 3, 3))`       |
-| **SeparableConv2D** | Depthwise separable 2D convolution layer.                                  | - Similar to `Conv2D` but separates spatial and depth operations.                                                                                                                                                       | `SeparableConv2D(filters=32, kernel_size=3)`      |
-| **Conv2DTranspose** | Transposed 2D convolution for upsampling (deconvolution).                  | - Similar to `Conv2D`                                                                                                                                                                                                   | `Conv2DTranspose(filters=32, kernel_size=(3, 3))`|
+| **Layer Type**              | **Description**                                                                                  | **Example**                                                                                  |
+|-----------------------------|--------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
+| **Dense Layer**             | Fully connected layer where each neuron connects to every input.                                | `Dense(units=64, activation='relu')`                                                       |
+| **Convolutional Layer**     | Extracts spatial features by applying convolution filters (used in CNNs).                       | `Conv2D(filters=32, kernel_size=(3,3), activation='relu')`                                  |
+| **Recurrent Layer**         | Processes sequential data by maintaining hidden states (used in RNNs).                         | `LSTM(units=128)`                                                                           |
+| **Dropout Layer**           | Regularizes by randomly setting a fraction of inputs to zero during training.                   | `Dropout(rate=0.5)`                                                                         |
+| **Normalization Layer**     | Normalizes inputs to have zero mean and unit variance, improving convergence.                   | `BatchNormalization()`                                                                      |
 
 ---
 
-### **Pooling Layers**
+#### **2. Commonly Used Layers**
 
-| **Layer**         | **Description**                                                                | **Key Parameters**                                                                                                                                   | **Syntax**                                      |
-|--------------------|--------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|
-| **MaxPooling1D**   | 1D max pooling for sequence data.                                              | - `pool_size (int)`: Downscale factor<br>- `strides (int)`: Step size<br>- `padding (str)`: Padding type (`'valid'`)                                  | `MaxPooling1D(pool_size=2)`                   |
-| **MaxPooling2D**   | 2D max pooling for image data.                                                 | - `pool_size (tuple)`: Downscale factor<br>- Similar to `MaxPooling1D`                                                                               | `MaxPooling2D(pool_size=(2, 2))`              |
-| **AveragePooling2D** | 2D average pooling for image data.                                          | - Similar to `MaxPooling2D`                                                                                                                          | `AveragePooling2D(pool_size=(2, 2))`          |
-| **GlobalMaxPooling2D** | Reduces input along spatial dimensions to maximum values for each feature. | None                                                                                                                                                 | `GlobalMaxPooling2D()`                        |
-
----
-
-### **Recurrent Layers**
-
-| **Layer**    | **Description**                                                                                          | **Key Parameters**                                                                                                                                                         | **Syntax**                          |
-|--------------|----------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------|
-| **LSTM**     | Long Short-Term Memory layer for sequence data.                                                          | - `units (int)`: Number of LSTM units<br>- `activation (str)`: Activation function (`'tanh'`)<br>- `return_sequences (bool)`: Return full sequence (`False`)               | `LSTM(units=64, return_sequences=True)` |
-| **GRU**      | Gated Recurrent Unit layer for sequence data.                                                            | - Similar to `LSTM` but simpler architecture.                                                                                                                             | `GRU(units=64)`                      |
-| **SimpleRNN** | Basic fully connected RNN layer.                                                                        | - Similar to `LSTM` but without gating mechanisms.                                                                                                                        | `SimpleRNN(units=64)`                |
+| **Layer**                 | **Description**                                                                                              | **Key Arguments**                                                                                                                                           | **Example**                                                                                     |
+|---------------------------|--------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|
+| **Dense**                 | Fully connected neural network layer.                                                                       | `units`, `activation`, `kernel_initializer`                                                                                                                | `Dense(128, activation='relu')`                                                                |
+| **Conv2D**                | 2D convolution layer for image data.                                                                        | `filters`, `kernel_size`, `strides`, `padding`, `activation`                                                                                               | `Conv2D(32, kernel_size=(3, 3), activation='relu')`                                           |
+| **MaxPooling2D**          | Reduces spatial dimensions by taking the maximum value in a pooling window.                                | `pool_size`, `strides`, `padding`                                                                                                                          | `MaxPooling2D(pool_size=(2, 2))`                                                              |
+| **Flatten**               | Flattens multi-dimensional tensors to 1D for fully connected layers.                                        | N/A                                                                                                                                                         | `Flatten()`                                                                                   |
+| **LSTM**                  | Long Short-Term Memory layer for sequence data.                                                             | `units`, `return_sequences`, `return_state`                                                                                                                | `LSTM(64, return_sequences=True)`                                                             |
+| **BatchNormalization**    | Normalizes inputs to improve training stability and speed.                                                  | `axis`, `momentum`, `epsilon`                                                                                                                              | `BatchNormalization()`                                                                        |
+| **Dropout**               | Randomly drops a fraction of inputs during training to reduce overfitting.                                 | `rate`                                                                                                                                                      | `Dropout(0.5)`                                                                                |
 
 ---
 
-### **Normalization Layers**
+#### **3. Layer Details and Usage**
 
-| **Layer**             | **Description**                                                          | **Key Parameters**                                                                                                                                  | **Syntax**                            |
-|------------------------|--------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------|
-| **BatchNormalization** | Normalizes the inputs of a layer to improve stability and performance.  | - `axis (int)`: Axis to normalize (`-1`)                                                                                                            | `BatchNormalization()`                |
-| **LayerNormalization** | Normalizes inputs across features for improved training.                | - Similar to `BatchNormalization`                                                                                                                  | `LayerNormalization()`                |
+##### **Dense Layer**
+A basic building block for most neural networks.
 
----
-
-### **Advanced Layers**
-
-| **Layer**        | **Description**                                                                                        | **Key Parameters**                                                                                                                                            | **Syntax**                                  |
-|-------------------|--------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------|
-| **Embedding**     | Converts categorical data into dense vectors of fixed size, useful in NLP.                            | - `input_dim (int)`: Vocabulary size<br>- `output_dim (int)`: Dimension of embedding vectors                                                                  | `Embedding(input_dim=1000, output_dim=64)`  |
-| **Attention**     | Applies attention mechanisms to improve sequence modeling.                                            | - `use_scale (bool)`: Scale query mechanism                                                                                                                   | `Attention()`                               |
-| **TimeDistributed** | Applies a layer to every temporal slice of an input.                                               | - Pass a layer inside                                                                                                                                        | `TimeDistributed(Dense(64))`               |
-| **Add**           | Element-wise addition of inputs.                                                                      | None                                                                                                                                                          | `Add()([input1, input2])`                   |
+| **Argument**          | **Description**                                       | **Example**                        |
+|-----------------------|-------------------------------------------------------|------------------------------------|
+| `units`              | Number of neurons in the layer.                       | `Dense(128)`                      |
+| `activation`         | Activation function (e.g., `relu`, `sigmoid`).        | `Dense(128, activation='relu')`   |
+| `kernel_initializer` | Initialization method for weights.                   | `Dense(128, kernel_initializer='he_normal')` |
 
 ---
 
-### **Example Usage**
+##### **Convolutional Layers**
+
+- **Conv2D**: Applies 2D convolutions for image data.  
+- **Conv1D**: Applies 1D convolutions for sequence data.
+
+| **Argument**     | **Description**                                           | **Example**                     |
+|------------------|-----------------------------------------------------------|---------------------------------|
+| `filters`        | Number of filters in the convolution.                    | `Conv2D(32, ...)`              |
+| `kernel_size`    | Size of the convolution window.                          | `Conv2D(32, kernel_size=(3,3))`|
+| `strides`        | Stride of the convolution.                               | `Conv2D(32, strides=(1,1))`    |
+| `padding`        | Adds padding (`valid` or `same`).                        | `Conv2D(32, padding='same')`   |
+
+---
+
+##### **Recurrent Layers**
+
+Used for processing sequential data like time series or text.
+
+| **Layer**         | **Description**                                                                                   | **Example**                                                                                     |
+|-------------------|---------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
+| **LSTM**          | Long Short-Term Memory layer for long-range dependencies.                                         | `LSTM(128, return_sequences=True)`                                                            |
+| **GRU**           | Gated Recurrent Unit layer, similar to LSTM but computationally cheaper.                         | `GRU(128)`                                                                                    |
+| **SimpleRNN**     | Basic RNN layer, less commonly used compared to LSTM and GRU.                                     | `SimpleRNN(64)`                                                                               |
+
+---
+
+##### **Pooling Layers**
+
+Pooling layers reduce the spatial dimensions of feature maps.
+
+| **Layer**         | **Description**                                                                                   | **Example**                                                                                     |
+|-------------------|---------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
+| **MaxPooling2D**  | Takes the maximum value from a pooling window.                                                    | `MaxPooling2D(pool_size=(2,2))`                                                               |
+| **AveragePooling2D** | Takes the average value from a pooling window.                                                 | `AveragePooling2D(pool_size=(2,2))`                                                           |
+
+---
+
+##### **Normalization Layers**
+
+| **Layer**                | **Description**                                                                             | **Example**                                                                                     |
+|--------------------------|---------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
+| **BatchNormalization**   | Normalizes data to zero mean and unit variance for each mini-batch.                         | `BatchNormalization()`                                                                        |
+| **LayerNormalization**   | Normalizes inputs across all features of each data point.                                   | `LayerNormalization()`                                                                        |
+
+---
+
+#### **4. Custom Layers**
+You can create custom layers by subclassing `tf.keras.layers.Layer`.
 
 ```python
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, Dropout, Conv2D, Flatten, MaxPooling2D
+import tensorflow as tf
 
-# Build a simple CNN
-model = Sequential([
-    Conv2D(filters=32, kernel_size=(3, 3), activation='relu', input_shape=(64, 64, 3)),
-    MaxPooling2D(pool_size=(2, 2)),
-    Flatten(),
-    Dense(units=128, activation='relu'),
-    Dropout(rate=0.5),
-    Dense(units=10, activation='softmax')
-])
+class CustomDense(tf.keras.layers.Layer):
+    def __init__(self, units=32):
+        super(CustomDense, self).__init__()
+        self.units = units
 
-model.summary()
-```  
+    def build(self, input_shape):
+        self.w = self.add_weight(shape=(input_shape[-1], self.units),
+                                 initializer="random_normal",
+                                 trainable=True)
+        self.b = self.add_weight(shape=(self.units,),
+                                 initializer="zeros",
+                                 trainable=True)
+
+    def call(self, inputs):
+        return tf.matmul(inputs, self.w) + self.b
+
+# Usage
+custom_layer = CustomDense(64)
+output = custom_layer(tf.random.uniform((1, 10)))
+print(output)
+```
+
+---
