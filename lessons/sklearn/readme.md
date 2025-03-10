@@ -21,7 +21,7 @@
 - Models
   - [Unsupervised Learning](lessons/unsupervised_learning/readme.md)
   - [Supervised Learning](lessons/supervised_learning/readme.md)
-
+  - [KNN](lessons/knn/readme.md)
 
 - [Data Preprocessing](lessons/data_preprocessing/readme.md)
 
