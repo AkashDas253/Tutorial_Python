@@ -1,7 +1,5 @@
 ## Components of Numpy
 
-Here’s a comprehensive list of NumPy modules and submodules with their names and common usage:
-
 ### **Core Module**
 - `numpy` # Main library for numerical computations.
 
@@ -189,5 +187,3 @@ Here is a comprehensive list of the **NumPy** modules and submodules at the top 
   - `numpy.version.short_version` # Displays a shortened version of the NumPy version.
 
 ---
-
-This is a complete listing of **NumPy**'s top-level modules and submodules along with their main functions. Let me know if you need further details or explanations on any specific part!

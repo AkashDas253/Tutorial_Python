@@ -1,4 +1,114 @@
-### **Float in Python**
+## **Float (`float`) in Python**  
+
+### **Definition**  
+- Represents real numbers with decimal points or scientific notation.  
+- Stored as double-precision floating-point numbers (64-bit).  
+
+### **Declaring a Float**  
+```python
+x = 3.14
+y = -0.5
+z = 2.0  # Even though it's a whole number, it's still a float
+```
+
+---
+
+### **Float Operations**  
+| Operator | Description | Example | Result |
+|----------|------------|---------|--------|
+| `+` | Addition | `3.5 + 2.5` | `6.0` |
+| `-` | Subtraction | `5.5 - 2.0` | `3.5` |
+| `*` | Multiplication | `2.0 * 3.0` | `6.0` |
+| `/` | Division | `5.0 / 2.0` | `2.5` |
+| `//` | Floor division | `5.0 // 2.0` | `2.0` |
+| `%` | Modulus | `5.5 % 2.0` | `1.5` |
+| `**` | Exponentiation | `2.0 ** 3` | `8.0` |
+
+---
+
+### **Type Checking & Conversion**
+| Function | Converts To | Example | Result |
+|----------|------------|---------|--------|
+| `float(x)` | Float | `float(5)` | `5.0` |
+| `int(x)` | Integer (truncates decimal) | `int(3.9)` | `3` |
+| `str(x)` | String | `str(2.5)` | `"2.5"` |
+| `bool(x)` | Boolean | `bool(0.0)` | `False` |
+
+```python
+x = 10.75
+print(type(x))  # <class 'float'>
+
+y = int(x)  # Converts to integer (truncation)
+print(y)  # 10
+```
+
+---
+
+### **Scientific Notation**
+- `e` or `E` represents powers of 10.
+```python
+x = 1.5e3  # 1.5 × 10³ = 1500.0
+y = 2.1E-2  # 2.1 × 10⁻² = 0.021
+```
+
+---
+
+### **Precision Issues**
+- Floating-point numbers have rounding errors due to binary representation.
+```python
+print(0.1 + 0.2)  # 0.30000000000000004
+```
+- Use `round()` to control precision:
+```python
+print(round(0.1 + 0.2, 2))  # 0.3
+```
+
+---
+
+### **Math Functions for Floats**
+| Function | Description | Example | Result |
+|----------|------------|---------|--------|
+| `round(x, n)` | Rounds to `n` decimal places | `round(3.14159, 2)` | `3.14` |
+| `abs(x)` | Absolute value | `abs(-2.5)` | `2.5` |
+| `pow(x, y)` | Power | `pow(2.0, 3)` | `8.0` |
+| `math.floor(x)` | Rounds down | `math.floor(3.9)` | `3` |
+| `math.ceil(x)` | Rounds up | `math.ceil(3.1)` | `4` |
+| `math.sqrt(x)` | Square root | `math.sqrt(9.0)` | `3.0` |
+
+```python
+import math
+
+print(math.floor(3.9))  # 3
+print(math.ceil(3.1))  # 4
+print(math.sqrt(16.0))  # 4.0
+```
+
+---
+
+### **Comparing Floats (Avoid Direct Comparison)**
+- Use `math.isclose()` for accurate comparisons:
+```python
+import math
+
+print(math.isclose(0.1 + 0.2, 0.3))  # True
+```
+
+---
+
+### **Infinity & NaN (Not a Number)**
+```python
+x = float('inf')  # Positive infinity
+y = float('-inf')  # Negative infinity
+z = float('nan')  # Not a Number
+
+print(x > 1000)  # True
+print(math.isnan(z))  # True
+```
+
+---
+---
+
+## **Float in Python**
 
 ---
 

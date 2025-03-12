@@ -1,3 +1,128 @@
+## **List (`list`) in Python**  
+
+### **Definition**  
+- A **list** is an **ordered**, **mutable**, and **iterable** collection of elements.  
+- Can store multiple data types, including other lists (nested lists).  
+- Defined using square brackets `[]`.  
+
+```python
+my_list = [1, "apple", 3.5, [2, 3]]
+print(my_list)  # [1, 'apple', 3.5, [2, 3]]
+```
+
+---
+
+### **List Indexing & Slicing**  
+| Operation | Example | Result |
+|-----------|---------|--------|
+| Indexing | `my_list[0]` | `1` |
+| Negative Indexing | `my_list[-1]` | `[2, 3]` |
+| Slicing | `my_list[1:3]` | `['apple', 3.5]` |
+| Step Slicing | `my_list[::2]` | `[1, 3.5]` |
+| Reverse List | `my_list[::-1]` | `[[2, 3], 3.5, 'apple', 1]` |
+
+```python
+my_list = [1, "apple", 3.5, [2, 3]]
+print(my_list[1])  # apple
+print(my_list[-1])  # [2, 3]
+print(my_list[1:3])  # ['apple', 3.5]
+print(my_list[::-1])  # [[2, 3], 3.5, 'apple', 1]
+```
+
+---
+
+### **List Operations**  
+| Operator | Example | Result |
+|----------|---------|--------|
+| Concatenation (`+`) | `[1, 2] + [3, 4]` | `[1, 2, 3, 4]` |
+| Repetition (`*`) | `[1, 2] * 3` | `[1, 2, 1, 2, 1, 2]` |
+| Membership (`in`) | `3 in [1, 2, 3]` | `True` |
+| Length (`len()`) | `len([1, 2, 3])` | `3` |
+
+```python
+print([1, 2] + [3, 4])  # [1, 2, 3, 4]
+print([1, 2] * 3)  # [1, 2, 1, 2, 1, 2]
+print(3 in [1, 2, 3])  # True
+print(len([1, 2, 3]))  # 3
+```
+
+---
+
+### **List Methods**  
+| Method | Description | Example | Result |
+|--------|------------|---------|--------|
+| `append(x)` | Adds `x` to the end | `l.append(4)` | `[1, 2, 3, 4]` |
+| `extend(lst)` | Adds multiple elements | `l.extend([4, 5])` | `[1, 2, 3, 4, 5]` |
+| `insert(i, x)` | Inserts `x` at index `i` | `l.insert(1, "a")` | `[1, "a", 2, 3]` |
+| `remove(x)` | Removes first occurrence of `x` | `l.remove(2)` | `[1, 3]` |
+| `pop(i)` | Removes and returns item at index `i` | `l.pop(1)` | `2` |
+| `index(x)` | Returns index of `x` | `l.index(3)` | `2` |
+| `count(x)` | Counts occurrences of `x` | `l.count(2)` | `1` |
+| `sort()` | Sorts list (ascending) | `l.sort()` | `[1, 2, 3]` |
+| `reverse()` | Reverses the list | `l.reverse()` | `[3, 2, 1]` |
+| `copy()` | Returns a copy | `l.copy()` | `[1, 2, 3]` |
+| `clear()` | Removes all elements | `l.clear()` | `[]` |
+
+```python
+l = [1, 2, 3]
+l.append(4)  # [1, 2, 3, 4]
+l.extend([5, 6])  # [1, 2, 3, 4, 5, 6]
+l.insert(2, "x")  # [1, 2, "x", 3, 4, 5, 6]
+l.remove(2)  # [1, "x", 3, 4, 5, 6]
+print(l.pop(2))  # 3, list is now [1, "x", 4, 5, 6]
+print(l.index("x"))  # 1
+print(l.count(4))  # 1
+l.sort()  # TypeError (due to mixed types)
+l = [3, 1, 2]
+l.sort()  # [1, 2, 3]
+l.reverse()  # [3, 2, 1]
+l_copy = l.copy()  # [3, 2, 1]
+l.clear()  # []
+```
+
+---
+
+### **List Comprehension**  
+- A compact way to create lists.
+
+```python
+nums = [x for x in range(5)]  # [0, 1, 2, 3, 4]
+squares = [x**2 for x in range(5)]  # [0, 1, 4, 9, 16]
+evens = [x for x in range(10) if x % 2 == 0]  # [0, 2, 4, 6, 8]
+```
+
+---
+
+### **List Unpacking**  
+```python
+a, b, c = [1, 2, 3]
+print(a, b, c)  # 1 2 3
+```
+
+---
+
+### **Nested Lists**  
+```python
+matrix = [[1, 2], [3, 4]]
+print(matrix[0][1])  # 2
+```
+
+---
+
+### **Converting Other Data Types to List**
+| Function | Example | Result |
+|----------|---------|--------|
+| `list(tuple)` | `list((1, 2, 3))` | `[1, 2, 3]` |
+| `list(set)` | `list({1, 2, 3})` | `[1, 2, 3]` |
+| `list(string)` | `list("abc")` | `['a', 'b', 'c']` |
+
+```python
+print(list("hello"))  # ['h', 'e', 'l', 'l', 'o']
+print(list((1, 2, 3)))  # [1, 2, 3]
+```
+
+---
+---
 
 ## List:
 

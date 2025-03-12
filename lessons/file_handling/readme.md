@@ -1,4 +1,157 @@
-# System related 
+## **File Handling in Python**  
+
+File handling in Python allows reading, writing, and manipulating files stored on disk.
+
+---
+
+## **1. Opening a File**  
+
+### **Syntax**
+```python
+file = open("filename", "mode")
+```
+| Mode | Description |
+|------|------------|
+| `'r'` | Read (default) |
+| `'w'` | Write (creates/truncates file) |
+| `'a'` | Append (adds to file) |
+| `'x'` | Create (fails if file exists) |
+| `'b'` | Binary mode |
+| `'t'` | Text mode (default) |
+| `'+'` | Read & write |
+
+---
+
+## **2. Reading a File**  
+
+### **Example: Read Entire File**
+```python
+file = open("example.txt", "r")
+content = file.read()
+print(content)
+file.close()
+```
+
+### **Example: Read Line by Line**
+```python
+file = open("example.txt", "r")
+for line in file:
+    print(line.strip())  # Removes newline characters
+file.close()
+```
+
+### **Example: Read Specific Number of Characters**
+```python
+file = open("example.txt", "r")
+print(file.read(5))  # Reads first 5 characters
+file.close()
+```
+
+---
+
+## **3. Writing to a File**  
+
+### **Example: Overwrite File**
+```python
+file = open("example.txt", "w")
+file.write("Hello, world!\n")
+file.write("Python file handling.")
+file.close()
+```
+
+### **Example: Append to File**
+```python
+file = open("example.txt", "a")
+file.write("\nAppending new content!")
+file.close()
+```
+
+---
+
+## **4. Using `with` Statement**  
+The `with` statement automatically closes the file.
+
+### **Example: Reading File**
+```python
+with open("example.txt", "r") as file:
+    print(file.read())
+```
+
+### **Example: Writing File**
+```python
+with open("example.txt", "w") as file:
+    file.write("Using 'with' statement.")
+```
+
+---
+
+## **5. File Methods**  
+
+| Method | Description |
+|--------|------------|
+| `read(size)` | Reads characters from file |
+| `readline()` | Reads one line at a time |
+| `readlines()` | Reads all lines as a list |
+| `write(text)` | Writes text to file |
+| `writelines(list)` | Writes multiple lines |
+| `seek(position)` | Moves cursor to position |
+| `tell()` | Returns current position |
+
+### **Example: Using `seek()` and `tell()`**
+```python
+with open("example.txt", "r") as file:
+    print(file.read(5))  # Read first 5 characters
+    print(file.tell())    # Show current position
+    file.seek(0)          # Move cursor to start
+    print(file.read(5))   # Read first 5 characters again
+```
+
+---
+
+## **6. Working with Binary Files**  
+Binary mode is used for non-text files like images and videos.
+
+### **Example: Reading Binary File**
+```python
+with open("image.jpg", "rb") as file:
+    content = file.read()
+    print(content[:10])  # Print first 10 bytes
+```
+
+### **Example: Writing Binary File**
+```python
+with open("copy.jpg", "wb") as file:
+    file.write(content)
+```
+
+---
+
+## **7. Checking If File Exists**  
+```python
+import os
+
+if os.path.exists("example.txt"):
+    print("File exists")
+else:
+    print("File not found")
+```
+
+---
+
+## **8. Deleting a File**  
+```python
+import os
+
+if os.path.exists("example.txt"):
+    os.remove("example.txt")
+else:
+    print("File does not exist")
+```
+
+---
+
+---
+---
 
 
 ## File Handling

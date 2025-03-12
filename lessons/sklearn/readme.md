@@ -21,7 +21,9 @@
 - Models
   - [Unsupervised Learning](lessons/unsupervised_learning/readme.md)
   - [Supervised Learning](lessons/supervised_learning/readme.md)
+  - [Decision Tree](lessons/decision_tree/readme.md)
   - [KNN](lessons/knn/readme.md)
+  - [SVM](lessons/svm/readme.md)
 
 - [Data Preprocessing](lessons/data_preprocessing/readme.md)
 

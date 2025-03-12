@@ -1,8 +1,126 @@
-Here's an updated and more detailed note on Python integers, incorporating additional methods, related functions, and their usage:
+## Integer (`int`) in Python  
+
+### Definition  
+- Represents whole numbers without a fractional part.  
+- Can be positive, negative, or zero.  
+- No size limit (depends on available memory).  
+
+### Declaring an Integer  
+```python
+x = 10
+y = -50
+z = 0
+```
 
 ---
 
-## **Detailed Note on Integer in Python**
+### **Integer Operations**  
+| Operator | Description | Example | Result |
+|----------|------------|---------|--------|
+| `+` | Addition | `10 + 5` | `15` |
+| `-` | Subtraction | `10 - 5` | `5` |
+| `*` | Multiplication | `10 * 5` | `50` |
+| `**` | Exponentiation | `2 ** 3` | `8` |
+| `/` | Division (float result) | `10 / 3` | `3.333` |
+| `//` | Floor division | `10 // 3` | `3` |
+| `%` | Modulus (remainder) | `10 % 3` | `1` |
+
+---
+
+### **Integer Type Conversion**
+| Function | Converts To | Example | Result |
+|----------|------------|---------|--------|
+| `int(x)` | Integer | `int(3.9)` | `3` |
+| `float(x)` | Float | `float(5)` | `5.0` |
+| `str(x)` | String | `str(100)` | `"100"` |
+| `bool(x)` | Boolean | `bool(0)` | `False` |
+| `bin(x)` | Binary | `bin(10)` | `'0b1010'` |
+| `oct(x)` | Octal | `oct(10)` | `'0o12'` |
+| `hex(x)` | Hexadecimal | `hex(10)` | `'0xa'` |
+
+---
+
+### **Integer Comparisons**  
+| Operator | Description | Example | Result |
+|----------|------------|---------|--------|
+| `==` | Equals | `10 == 10` | `True` |
+| `!=` | Not equal | `10 != 5` | `True` |
+| `>` | Greater than | `10 > 5` | `True` |
+| `<` | Less than | `10 < 5` | `False` |
+| `>=` | Greater than or equal | `10 >= 10` | `True` |
+| `<=` | Less than or equal | `10 <= 5` | `False` |
+
+---
+
+### **Bitwise Operations on Integers**  
+| Operator | Description | Example | Result |
+|----------|------------|---------|--------|
+| `&` | AND | `5 & 3` | `1` |
+| `|` | OR | `5 | 3` | `7` |
+| `^` | XOR | `5 ^ 3` | `6` |
+| `~` | NOT | `~5` | `-6` |
+| `<<` | Left shift | `5 << 1` | `10` |
+| `>>` | Right shift | `5 >> 1` | `2` |
+
+- **Example Calculation**  
+  ```python
+  a = 5  # 0b0101
+  b = 3  # 0b0011
+  print(a & b)  # 0b0001 → 1
+  print(a | b)  # 0b0111 → 7
+  print(a ^ b)  # 0b0110 → 6
+  ```
+
+---
+
+### **Checking Integer Type**  
+```python
+x = 100
+print(type(x))  # <class 'int'>
+```
+
+---
+
+### **Special Integer Cases**  
+- **Boolean as Integer**  
+  ```python
+  True + 1  # 2 (True is 1)
+  False + 1  # 1 (False is 0)
+  ```
+- **Division Always Returns Float**  
+  ```python
+  print(type(10 / 2))  # <class 'float'>
+  ```
+- **Using `isinstance` to Check Integer**  
+  ```python
+  isinstance(10, int)  # True
+  isinstance(10.5, int)  # False
+  ```
+
+---
+
+### **Large Integer Handling**
+- No fixed limit on integer size.
+- Python automatically extends the size.
+  ```python
+  large_num = 10**100  # Very large number
+  print(large_num)
+  ```
+
+---
+
+### **Integer Formatting**
+- Display numbers in different bases:
+  ```python
+  print(f"Binary: {10:b}")  # Binary: 1010
+  print(f"Octal: {10:o}")   # Octal: 12
+  print(f"Hex: {10:x}")     # Hex: a
+  ```
+
+---
+---
+
+## **Integer in Python**
 
 ### **Introduction**
 In Python, integers (`int`) represent whole numbers, positive, negative, or zero, without fractional parts. Python provides extensive functionality for integer operations, methods, and type conversions.

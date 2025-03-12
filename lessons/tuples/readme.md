@@ -1,3 +1,104 @@
+## **Tuple (`tuple`) in Python**  
+
+### **Definition**  
+- A **tuple** is an **ordered**, **immutable**, and **iterable** collection of elements.  
+- Defined using parentheses `()` or `tuple()`.  
+- Can store multiple data types, including nested tuples.  
+
+```python
+my_tuple = (1, "apple", 3.5, (2, 3))
+print(my_tuple)  # (1, 'apple', 3.5, (2, 3))
+```
+
+---
+
+### **Tuple Indexing & Slicing**  
+| Operation | Example | Result |
+|-----------|---------|--------|
+| Indexing | `t[0]` | `1` |
+| Negative Indexing | `t[-1]` | `(2, 3)` |
+| Slicing | `t[1:3]` | `('apple', 3.5)` |
+| Step Slicing | `t[::2]` | `(1, 3.5)` |
+| Reverse Tuple | `t[::-1]` | `((2, 3), 3.5, 'apple', 1)` |
+
+```python
+t = (1, "apple", 3.5, (2, 3))
+print(t[1])  # apple
+print(t[-1])  # (2, 3)
+print(t[1:3])  # ('apple', 3.5)
+print(t[::-1])  # ((2, 3), 3.5, 'apple', 1)
+```
+
+---
+
+### **Tuple Operations**  
+| Operator | Example | Result |
+|----------|---------|--------|
+| Concatenation (`+`) | `(1, 2) + (3, 4)` | `(1, 2, 3, 4)` |
+| Repetition (`*`) | `(1, 2) * 3` | `(1, 2, 1, 2, 1, 2)` |
+| Membership (`in`) | `3 in (1, 2, 3)` | `True` |
+| Length (`len()`) | `len((1, 2, 3))` | `3` |
+
+```python
+print((1, 2) + (3, 4))  # (1, 2, 3, 4)
+print((1, 2) * 3)  # (1, 2, 1, 2, 1, 2)
+print(3 in (1, 2, 3))  # True
+print(len((1, 2, 3)))  # 3
+```
+
+---
+
+### **Tuple Methods**  
+| Method | Description | Example | Result |
+|--------|------------|---------|--------|
+| `count(x)` | Counts occurrences of `x` | `t.count(2)` | `1` |
+| `index(x)` | Returns index of `x` | `t.index(3)` | `2` |
+
+```python
+t = (1, 2, 3, 2, 4)
+print(t.count(2))  # 2
+print(t.index(3))  # 2
+```
+
+---
+
+### **Tuple Packing & Unpacking**  
+```python
+a, b, c = (1, 2, 3)
+print(a, b, c)  # 1 2 3
+```
+
+```python
+# Swapping values using tuple unpacking
+x, y = 10, 20
+x, y = y, x
+print(x, y)  # 20 10
+```
+
+---
+
+### **Nested Tuples**  
+```python
+nested = (1, (2, 3), (4, (5, 6)))
+print(nested[2][1][1])  # 6
+```
+
+---
+
+### **Converting Other Data Types to Tuple**
+| Function | Example | Result |
+|----------|---------|--------|
+| `tuple(list)` | `tuple([1, 2, 3])` | `(1, 2, 3)` |
+| `tuple(set)` | `tuple({1, 2, 3})` | `(1, 2, 3)` |
+| `tuple(string)` | `tuple("abc")` | `('a', 'b', 'c')` |
+
+```python
+print(tuple("hello"))  # ('h', 'e', 'l', 'l', 'o')
+print(tuple([1, 2, 3]))  # (1, 2, 3)
+```
+
+---
+---
 
 ## Tuples
 

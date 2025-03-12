@@ -7,7 +7,11 @@
 - [Fundamentals](lessons/fundamentals/readme.md)
 
 - [Concepts](lessons/concepts/readme.md)
+
 - [Basics](lessons/basics/readme.md)
+    - [Syntax](lessons/syntax/readme.md)
+    - [Variables](lessons/variables/readme.md)
+
 - [Datatypes](lessons/datatypes/readme.md)
     - Primitive Datatypes
         - [Integer](lessons/integer/readme.md)
@@ -21,17 +25,23 @@
         - [Set](lessons/set/readme.md)
         - [Dictionary](lessons/dictionary/readme.md)
     - Collection Module
+        - [Bytes](lessons/bytes/readme.md)
+        - [Bytearray](lessons/bytearray/readme.md)
+        - [Memoryview](lessons/memoryview/readme.md)
         
 
 - [Scope and Access](lessons/scope/readme.md) 
+- [Flow Control](lessons/flow_control/readme.md)
+- [Function](lessons/functions/readme.md)
+- [Exception and Exception Handling](lessons/exception/readme.md)
+- [Iterator](lessons/iterator/readme.md)
+
 - [OOPS](lessons/oops/readme.md)
 
     - [Class and Objects](lessons/class/readme.md)
     - [Inheritance](lessons/inheritance/readme.md)
     - [Polymorphism](lessons/polymorphism/readme.md)
 
-- [Exception and Exception Handling](lessons/exception/readme.md)
-- [Iterator](lessons/iterator/readme.md)
 - [File Handling](lessons/file_handling/readme.md)
 - [Built-in Functions](lessons/built_in_functions/readme.md)
 

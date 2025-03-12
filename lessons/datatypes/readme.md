@@ -1,3 +1,158 @@
+## Data Types in Python  
+
+### Classification of Data Types  
+| Type | Mutable? | Example |
+|------|---------|---------|
+| **Numeric** | ❌ No | `int`, `float`, `complex` |
+| **Boolean** | ❌ No | `bool` (`True`, `False`) |
+| **Sequence** | ✅/❌ Mixed | `str` (❌), `list` (✅), `tuple` (❌), `range` (❌) |
+| **Set** | ✅ Yes | `set`, `frozenset` (❌) |
+| **Mapping** | ✅ Yes | `dict` |
+| **Binary** | ✅ Yes | `bytes` (❌), `bytearray` (✅), `memoryview` (✅) |
+
+---
+
+### **1. Numeric Types**  
+| Type | Description | Example |
+|------|------------|---------|
+| `int` | Integer (no decimal) | `x = 10` |
+| `float` | Floating-point number | `y = 3.14` |
+| `complex` | Complex number | `z = 2 + 3j` |
+
+- Type Conversion:  
+  ```python
+  int(3.5)  # 3
+  float(10)  # 10.0
+  complex(5)  # (5+0j)
+  ```
+
+---
+
+### **2. Boolean Type**  
+- Represents `True` or `False`.  
+- Internally, `True = 1`, `False = 0`.  
+  ```python
+  bool(1)  # True
+  bool(0)  # False
+  bool([])  # False (empty objects are False)
+  ```
+
+---
+
+### **3. Sequence Types**  
+| Type | Mutable? | Example |
+|------|---------|---------|
+| `str` | ❌ No | `"Hello"` |
+| `list` | ✅ Yes | `[1, 2, 3]` |
+| `tuple` | ❌ No | `(1, 2, 3)` |
+| `range` | ❌ No | `range(5) → 0,1,2,3,4` |
+
+#### **String (`str`)**
+- Immutable sequence of characters.
+  ```python
+  text = "Hello"
+  text[0]  # 'H'
+  ```
+
+#### **List (`list`)**
+- Mutable sequence of elements.
+  ```python
+  lst = [1, 2, 3]
+  lst[0] = 10  # Allowed
+  ```
+
+#### **Tuple (`tuple`)**
+- Immutable sequence.
+  ```python
+  tup = (1, 2, 3)
+  tup[0] = 10  # Error
+  ```
+
+#### **Range (`range`)**
+- Immutable sequence of numbers.
+  ```python
+  range(5)  # 0, 1, 2, 3, 4
+  ```
+
+---
+
+### **4. Set Types**  
+| Type | Mutable? | Example |
+|------|---------|---------|
+| `set` | ✅ Yes | `{1, 2, 3}` |
+| `frozenset` | ❌ No | `frozenset({1, 2, 3})` |
+
+- No duplicate elements.
+- Unordered collection.
+  ```python
+  s = {1, 2, 3}
+  s.add(4)  # Allowed
+  fs = frozenset(s)  # Immutable
+  ```
+
+---
+
+### **5. Mapping Type**  
+| Type | Mutable? | Example |
+|------|---------|---------|
+| `dict` | ✅ Yes | `{"a": 1, "b": 2}` |
+
+- Key-value pairs.
+  ```python
+  d = {"name": "Alice", "age": 25}
+  d["age"] = 26  # Allowed
+  ```
+
+---
+
+### **6. Binary Types**  
+| Type | Mutable? | Example |
+|------|---------|---------|
+| `bytes` | ❌ No | `b"hello"` |
+| `bytearray` | ✅ Yes | `bytearray(5)` |
+| `memoryview` | ✅ Yes | `memoryview(bytes(5))` |
+
+- Used for handling binary data like images or files.
+  ```python
+  b = bytes([65, 66, 67])  # b'ABC'
+  ba = bytearray(b)
+  ba[0] = 68  # Mutates to b'DBC'
+  ```
+
+---
+
+### **Type Checking and Conversion**
+| Function | Description | Example |
+|----------|------------|---------|
+| `type(x)` | Returns type of `x` | `type(10) → int` |
+| `isinstance(x, type)` | Checks if `x` is of given type | `isinstance(10, int) → True` |
+| `str(x)` | Converts to string | `str(100) → "100"` |
+| `int(x)` | Converts to integer | `int("10") → 10` |
+| `float(x)` | Converts to float | `float("3.14") → 3.14` |
+| `list(x)` | Converts to list | `list((1, 2, 3)) → [1, 2, 3]` |
+| `tuple(x)` | Converts to tuple | `tuple([1, 2, 3]) → (1, 2, 3)` |
+| `set(x)` | Converts to set | `set([1, 2, 2]) → {1, 2}` |
+
+---
+
+### **Mutable vs Immutable Types**
+| Type | Mutable? |
+|------|---------|
+| `list` | ✅ Yes |
+| `dict` | ✅ Yes |
+| `set` | ✅ Yes |
+| `bytearray` | ✅ Yes |
+| `int` | ❌ No |
+| `float` | ❌ No |
+| `str` | ❌ No |
+| `tuple` | ❌ No |
+| `frozenset` | ❌ No |
+| `bytes` | ❌ No |
+
+---
+---
+
+
 # Datatypes:
 
 ## Built-in Data Types:

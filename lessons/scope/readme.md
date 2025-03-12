@@ -1,3 +1,130 @@
+## **Scope and Access in Python**  
+
+### **Definition**  
+- **Scope** defines where a variable can be accessed within a program.  
+- **Access** refers to retrieving or modifying a variable within its scope.  
+- Python follows the **LEGB rule** (Local → Enclosing → Global → Built-in) to resolve variable names.  
+
+---
+
+### **LEGB Rule (Variable Resolution Order)**  
+| Scope Level | Description | Example |
+|-------------|------------|---------|
+| **Local (L)** | Inside a function or block | Variables declared inside a function |
+| **Enclosing (E)** | Inside a nested function | Variables from the outer (non-global) function |
+| **Global (G)** | Defined at the top level of the script | Variables declared outside any function |
+| **Built-in (B)** | Predefined by Python | Built-in functions like `print()`, `len()` |
+
+```python
+x = "global"
+
+def outer():
+    x = "enclosing"
+    
+    def inner():
+        x = "local"
+        print(x)  # "local"
+    
+    inner()
+    print(x)  # "enclosing"
+
+outer()
+print(x)  # "global"
+```
+
+---
+
+### **Local Scope**  
+- Variables declared inside a function are **local** to that function.  
+- Cannot be accessed outside the function.  
+
+```python
+def func():
+    a = 10  # Local variable
+    print(a)
+
+func()
+# print(a)  # Error: NameError (a is not defined outside the function)
+```
+
+---
+
+### **Global Scope**  
+- Variables declared outside any function are **global**.  
+- Accessible throughout the program.  
+
+```python
+x = 100  # Global variable
+
+def func():
+    print(x)  # Accessing global variable
+
+func()
+print(x)  # 100
+```
+
+---
+
+### **Modifying Global Variables** (`global` keyword)  
+- To modify a global variable inside a function, use `global`.  
+
+```python
+y = 5
+
+def update():
+    global y  # Allows modification of global variable
+    y = 10
+
+update()
+print(y)  # 10
+```
+
+---
+
+### **Enclosing Scope (Nonlocal Variables)**  
+- **Used in nested functions** to modify outer function variables.  
+- Use `nonlocal` keyword to modify an enclosing variable.  
+
+```python
+def outer():
+    x = "enclosing"
+
+    def inner():
+        nonlocal x
+        x = "modified"
+    
+    inner()
+    print(x)  # "modified"
+
+outer()
+```
+
+---
+
+### **Built-in Scope**  
+- Contains predefined functions like `print()`, `len()`, `range()`.  
+
+```python
+print(len([1, 2, 3]))  # 3 (Built-in len function)
+```
+
+---
+
+### **Variable Lifetime**  
+- **Local variables** exist only inside the function.  
+- **Global variables** exist until the program terminates.  
+
+```python
+def test():
+    x = 50  # Local, destroyed after function ends
+
+test()
+# print(x)  # Error: NameError
+```
+
+---
+---
+
 
 ## Scope and Access in Python
 

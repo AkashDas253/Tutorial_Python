@@ -1,3 +1,100 @@
+## **Dictionary (`dict`) in Python**  
+
+### **Definition**  
+- A **dictionary** is an **unordered**, **mutable**, and **iterable** collection of **key-value pairs**.  
+- Keys must be **unique** and **immutable** (strings, numbers, or tuples), while values can be any data type.  
+- Defined using curly braces `{}` or the `dict()` constructor.  
+
+```python
+my_dict = {"name": "Alice", "age": 25, "city": "New York"}
+print(my_dict)  # {'name': 'Alice', 'age': 25, 'city': 'New York'}
+```
+
+---
+
+### **Dictionary Access**  
+| Operation | Example | Result |
+|-----------|---------|--------|
+| Access Value | `d["key"]` | Value |
+| `get(key, default)` | `d.get("age", 30)` | `25` |
+| Check Key | `"name" in d` | `True` |
+
+```python
+d = {"name": "Alice", "age": 25, "city": "New York"}
+print(d["name"])  # Alice
+print(d.get("age", 30))  # 25
+print("city" in d)  # True
+```
+
+---
+
+### **Dictionary Modification**  
+| Operation | Example | Result |
+|-----------|---------|--------|
+| Add Item | `d["gender"] = "Female"` | `{'name': 'Alice', 'age': 25, 'city': 'New York', 'gender': 'Female'}` |
+| Update Value | `d["age"] = 26` | `{'name': 'Alice', 'age': 26, 'city': 'New York'}` |
+| Remove Key | `del d["age"]` | Removes `'age'` |
+| `pop(key, default)` | `d.pop("city")` | `'New York'` |
+| `popitem()` | `d.popitem()` | Removes last inserted key-value pair |
+| `clear()` | `d.clear()` | `{}` |
+
+```python
+d["gender"] = "Female"
+d["age"] = 26
+print(d.pop("city"))  # New York
+print(d)  # {'name': 'Alice', 'age': 26, 'gender': 'Female'}
+```
+
+---
+
+### **Dictionary Methods**  
+| Method | Description | Example | Result |
+|--------|------------|---------|--------|
+| `keys()` | Returns all keys | `d.keys()` | `dict_keys(['name', 'age'])` |
+| `values()` | Returns all values | `d.values()` | `dict_values(['Alice', 25])` |
+| `items()` | Returns key-value pairs | `d.items()` | `dict_items([('name', 'Alice'), ('age', 25)])` |
+| `update(dict)` | Merges dictionaries | `d.update({"city": "LA"})` | `{'name': 'Alice', 'age': 25, 'city': 'LA'}` |
+
+```python
+print(d.keys())  # dict_keys(['name', 'age'])
+print(d.values())  # dict_values(['Alice', 25])
+print(d.items())  # dict_items([('name', 'Alice'), ('age', 25)])
+```
+
+---
+
+### **Dictionary Comprehension**  
+```python
+squares = {x: x**2 for x in range(1, 6)}
+print(squares)  # {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+```
+
+---
+
+### **Nested Dictionary**  
+```python
+students = {
+    "Alice": {"age": 25, "city": "New York"},
+    "Bob": {"age": 22, "city": "Los Angeles"}
+}
+print(students["Alice"]["age"])  # 25
+```
+
+---
+
+### **Converting Other Data Types to Dictionary**  
+| Function | Example | Result |
+|----------|---------|--------|
+| `dict(list of tuples)` | `dict([(1, "one"), (2, "two")])` | `{1: "one", 2: "two"}` |
+| `dict(zip(keys, values))` | `dict(zip(["a", "b"], [1, 2]))` | `{'a': 1, 'b': 2}` |
+
+```python
+print(dict(zip(["a", "b"], [1, 2])))  # {'a': 1, 'b': 2}
+```
+
+---
+---
+
 
 ## Dictionaries
 

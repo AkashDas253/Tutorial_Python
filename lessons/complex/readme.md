@@ -1,4 +1,100 @@
-### **Complex Numbers in Python**
+## **Complex (`complex`) in Python**  
+
+### **Definition**  
+- Represents numbers in the form **a + bj**, where:  
+  - `a` is the real part (float or int).  
+  - `b` is the imaginary part (float or int).  
+  - `j` represents the imaginary unit (√-1).  
+
+### **Declaring a Complex Number**  
+```python
+z1 = 3 + 4j  # 3 is the real part, 4 is the imaginary part
+z2 = -2.5 + 1.5j  # Negative real, positive imaginary
+z3 = 5j  # Only imaginary part
+```
+
+---
+
+### **Complex Number Properties**
+| Property | Description | Example | Result |
+|----------|------------|---------|--------|
+| `z.real` | Returns real part | `(3 + 4j).real` | `3.0` |
+| `z.imag` | Returns imaginary part | `(3 + 4j).imag` | `4.0` |
+| `abs(z)` | Magnitude (modulus) | `abs(3 + 4j)` | `5.0` |
+| `z.conjugate()` | Returns conjugate | `(3 + 4j).conjugate()` | `3 - 4j` |
+
+```python
+z = 3 + 4j
+print(z.real)  # 3.0
+print(z.imag)  # 4.0
+print(abs(z))  # 5.0 (since sqrt(3² + 4²) = 5)
+print(z.conjugate())  # 3 - 4j
+```
+
+---
+
+### **Complex Number Operations**  
+| Operation | Example | Result |
+|-----------|---------|--------|
+| Addition | `(2 + 3j) + (1 - 4j)` | `3 - 1j` |
+| Subtraction | `(5 + 2j) - (3 + j)` | `2 + 1j` |
+| Multiplication | `(2 + 3j) * (1 + 4j)` | `-10 + 11j` |
+| Division | `(4 + 2j) / (1 - j)` | `1 + 3j` |
+| Exponentiation | `(1 + 2j) ** 2` | `-3 + 4j` |
+
+```python
+z1 = 2 + 3j
+z2 = 1 - 4j
+
+print(z1 + z2)  # 3 - 1j
+print(z1 - z2)  # 1 + 7j
+print(z1 * z2)  # -10 + 11j
+print(z1 / z2)  # -0.588 + 0.824j
+```
+
+---
+
+### **Complex Number Functions (cmath Module)**
+| Function | Description | Example | Result |
+|----------|------------|---------|--------|
+| `cmath.sqrt(z)` | Square root | `cmath.sqrt(-1)` | `1j` |
+| `cmath.exp(z)` | Exponential | `cmath.exp(1j * cmath.pi)` | `-1+0j` |
+| `cmath.log(z)` | Natural log | `cmath.log(1 + 1j)` | `(0.346 + 0.785j)` |
+| `cmath.sin(z)` | Sine | `cmath.sin(1 + 1j)` | `(1.298 + 0.635j)` |
+| `cmath.cos(z)` | Cosine | `cmath.cos(1 + 1j)` | `(0.833 - 0.987j)` |
+
+```python
+import cmath
+
+z = 1 + 1j
+print(cmath.sqrt(-1))  # 1j
+print(cmath.exp(1j * cmath.pi))  # -1+0j
+print(cmath.log(z))  # (0.346 + 0.785j)
+print(cmath.sin(z))  # (1.298 + 0.635j)
+```
+
+---
+
+### **Converting Complex Numbers**
+| Function | Converts To | Example | Result |
+|----------|------------|---------|--------|
+| `complex(a, b)` | Complex | `complex(2, -3)` | `2 - 3j` |
+| `str(z)` | String | `str(1 + 2j)` | `"1 + 2j"` |
+| `z.real` | Float (real part) | `(3 + 4j).real` | `3.0` |
+| `z.imag` | Float (imaginary part) | `(3 + 4j).imag` | `4.0` |
+
+```python
+z = complex(2, -3)
+print(z)  # 2 - 3j
+print(str(z))  # "2 - 3j"
+print(z.real)  # 2.0
+print(z.imag)  # -3.0
+```
+
+---
+---
+
+## **Complex Numbers in Python**
 
 ---
 

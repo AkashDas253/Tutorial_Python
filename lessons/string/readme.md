@@ -1,3 +1,146 @@
+## **String (`str`) in Python**  
+
+### **Definition**  
+- A sequence of characters enclosed in single (`'`), double (`"`) or triple (`'''` or `"""`) quotes.  
+- Strings are **immutable** (cannot be changed after creation).  
+
+```python
+s1 = 'Hello'
+s2 = "World"
+s3 = '''Multiline
+string'''
+```
+
+---
+
+### **String Indexing & Slicing**  
+| Operation | Example | Result |
+|-----------|---------|--------|
+| Indexing | `"Python"[0]` | `'P'` |
+| Negative Indexing | `"Python"[-1]` | `'n'` |
+| Slicing | `"Python"[1:4]` | `'yth'` |
+| Step Slicing | `"Python"[::2]` | `'Pto'` |
+| Reverse String | `"Python"[::-1]` | `'nohtyP'` |
+
+```python
+s = "Python"
+print(s[0])  # P
+print(s[-1])  # n
+print(s[1:4])  # yth
+print(s[::-1])  # nohtyP
+```
+
+---
+
+### **String Operations**  
+| Operator | Example | Result |
+|----------|---------|--------|
+| Concatenation (`+`) | `"Hello " + "World"` | `"Hello World"` |
+| Repetition (`*`) | `"Hi" * 3` | `"HiHiHi"` |
+| Membership (`in`) | `'a' in "apple"` | `True` |
+| Length (`len()`) | `len("Python")` | `6` |
+
+```python
+print("Hello " + "World")  # Hello World
+print("Hi" * 3)  # HiHiHi
+print('a' in "apple")  # True
+print(len("Python"))  # 6
+```
+
+---
+
+### **String Methods**
+| Method | Description | Example | Result |
+|--------|------------|---------|--------|
+| `s.lower()` | Converts to lowercase | `"Hello".lower()` | `"hello"` |
+| `s.upper()` | Converts to uppercase | `"Hello".upper()` | `"HELLO"` |
+| `s.title()` | Capitalizes each word | `"hello world".title()` | `"Hello World"` |
+| `s.strip()` | Removes spaces | `" hello ".strip()` | `"hello"` |
+| `s.replace(a, b)` | Replaces substring | `"apple".replace("p", "b")` | `"abble"` |
+| `s.split()` | Splits into list | `"a,b,c".split(",")` | `['a', 'b', 'c']` |
+| `",".join(lst)` | Joins list into string | `",".join(['a', 'b', 'c'])` | `"a,b,c"` |
+
+```python
+s = "  Hello World  "
+print(s.strip())  # "Hello World"
+print(s.lower())  # "  hello world  "
+print(s.replace("World", "Python"))  # "  Hello Python  "
+print("a,b,c".split(","))  # ['a', 'b', 'c']
+print("-".join(["Python", "Java"]))  # "Python-Java"
+```
+
+---
+
+### **String Formatting**
+| Method | Example | Result |
+|--------|---------|--------|
+| `f""` | `f"Name: {name}"` | `"Name: John"` |
+| `format()` | `"{} is {}".format("Python", "fun")` | `"Python is fun"` |
+| `%` Formatting | `"%s is %d" % ("Age", 25)` | `"Age is 25"` |
+
+```python
+name = "John"
+age = 25
+print(f"My name is {name} and I am {age} years old.")  # My name is John and I am 25 years old
+print("{} is {}".format("Python", "fun"))  # Python is fun
+print("%s is %d" % ("Age", 25))  # Age is 25
+```
+
+---
+
+### **Escape Characters**
+| Character | Meaning | Example | Output |
+|-----------|---------|---------|--------|
+| `\n` | New line | `"Hello\nWorld"` | `"Hello"` `"World"` |
+| `\t` | Tab | `"Hello\tWorld"` | `"Hello   World"` |
+| `\'` | Single quote | `'It\'s a pen'` | `"It's a pen"` |
+| `\"` | Double quote | `"He said \"Hello\""` | `"He said "Hello""` |
+| `\\` | Backslash | `"C:\\User\\"` | `"C:\User\"` |
+
+```python
+print("Hello\nWorld")  # New line
+print("Hello\tWorld")  # Tab space
+print("He said \"Python is great\"")  # Escape double quote
+```
+
+---
+
+### **Checking String Content**
+| Method | Example | Result |
+|--------|---------|--------|
+| `s.startswith(x)` | `"Python".startswith("Py")` | `True` |
+| `s.endswith(x)` | `"Python".endswith("on")` | `True` |
+| `s.isalpha()` | `"Python".isalpha()` | `True` |
+| `s.isdigit()` | `"123".isdigit()` | `True` |
+| `s.isalnum()` | `"Python3".isalnum()` | `True` |
+| `s.isspace()` | `"   ".isspace()` | `True` |
+
+```python
+s = "Python3"
+print(s.isalpha())  # False (contains a digit)
+print(s.isalnum())  # True (letters and numbers)
+print("123".isdigit())  # True
+```
+
+---
+
+### **Multi-line Strings**  
+```python
+text = """This is
+a multi-line
+string."""
+```
+
+---
+
+### **Raw Strings (`r""`)**
+- Ignores escape sequences.
+```python
+print(r"C:\new\name")  # C:\new\name (without special interpretation)
+```
+
+---
+---
 
 ## String
 

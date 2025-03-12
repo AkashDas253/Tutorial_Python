@@ -1,4 +1,109 @@
-# Boolean in Python
+## **Boolean (`bool`) in Python**  
+
+### **Definition**  
+- A Boolean represents one of two values: **`True`** or **`False`**.  
+- Internally, `True` is equivalent to `1`, and `False` is equivalent to `0`.  
+
+```python
+x = True
+y = False
+print(x + 1)  # 2 (True is treated as 1)
+print(y + 1)  # 1 (False is treated as 0)
+```
+
+---
+
+### **Boolean Values from Other Data Types**  
+| Data Type | True Values | False Values |
+|-----------|------------|--------------|
+| Numbers | Any nonzero number (`1, -3, 3.5`) | `0` |
+| Strings | Any non-empty string (`"Hello"`) | `""` (empty string) |
+| Lists, Tuples, Sets, Dicts | Any non-empty collection (`[1]`, `(0,)`, `{1: "a"}`) | Empty collections (`[]`, `{}`, `()`, `set()`) |
+| `None` | - | `None` |
+
+```python
+print(bool(0))       # False
+print(bool(1))       # True
+print(bool(""))      # False
+print(bool("Hi"))    # True
+print(bool([]))      # False
+print(bool([1, 2]))  # True
+print(bool(None))    # False
+```
+
+---
+
+### **Boolean Operators**  
+| Operator | Description | Example | Result |
+|----------|------------|---------|--------|
+| `and` | Returns `True` if both are `True` | `True and False` | `False` |
+| `or` | Returns `True` if at least one is `True` | `True or False` | `True` |
+| `not` | Negates a Boolean value | `not True` | `False` |
+
+```python
+a = True
+b = False
+
+print(a and b)  # False
+print(a or b)   # True
+print(not a)    # False
+```
+
+---
+
+### **Comparison Operators (Return Boolean Values)**
+| Operator | Description | Example | Result |
+|----------|------------|---------|--------|
+| `==` | Equal to | `5 == 5` | `True` |
+| `!=` | Not equal to | `5 != 3` | `True` |
+| `>` | Greater than | `10 > 5` | `True` |
+| `<` | Less than | `10 < 5` | `False` |
+| `>=` | Greater than or equal | `5 >= 5` | `True` |
+| `<=` | Less than or equal | `3 <= 5` | `True` |
+
+```python
+print(5 == 5)  # True
+print(10 > 5)  # True
+print(3 <= 2)  # False
+```
+
+---
+
+### **Boolean in Conditional Statements**
+```python
+x = 10
+
+if x > 5:
+    print("Greater than 5")  # Output: Greater than 5
+else:
+    print("Less than or equal to 5")
+```
+
+---
+
+### **Using `bool()` Function**
+```python
+print(bool(10))  # True
+print(bool(0))   # False
+print(bool("Python"))  # True
+print(bool(""))  # False
+```
+
+---
+
+### **Boolean Short-Circuiting**
+- **`and`** stops at the first `False` value.
+- **`or`** stops at the first `True` value.
+
+```python
+print(0 and 10)  # 0 (stops at False)
+print(5 or 10)   # 5 (stops at True)
+```
+
+---
+---
+
+## Boolean in Python
 
 ### Introduction
 In Python, the `bool` type is used to represent truth values: `True` and `False`. These values are used in conditions and control flow structures like `if` statements, loops, etc. Internally, `True` is equivalent to `1` and `False` is equivalent to `0`.

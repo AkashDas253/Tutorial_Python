@@ -1,7 +1,5 @@
 ## Components of Matplotlib
 
-Here is a list of the key **modules** and **submodules** in Matplotlib, along with a brief usage description for each:
-
 ### 1. **matplotlib**
    - **Usage**: The root module that provides the core Matplotlib functionality, including creating and displaying plots.
    - **Submodules**:
@@ -126,5 +124,3 @@ Here is a list of the key **modules** and **submodules** in Matplotlib, along wi
    - **Submodules**:
      - **matplotlib.testing.decorators**: Decorators for testing functions.
      - **matplotlib.testing.jpl_units**: Helper functions for units testing.
-
-This list includes the primary modules and submodules that make up Matplotlib, which covers a wide range of functionalities for creating and customizing visualizations.
