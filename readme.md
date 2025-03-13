@@ -54,15 +54,22 @@
 
 ### Packages and Frameworks
 
-- [Pandas](lessons/pandas/readme.md)
-- [Numpy](lessons/numpy/readme.md)
-- [MatplotLib](lessons/matplotlib/readme.md)
-- [Tkinter](lessons/tkinter/readme.md)
-- [Scikit Learn](lessons/sklearn/readme.md)
-- [Tensorflow](https://github.com/AkashDas253/Tutorial_Tensorflow)
-- [Streamlit](lessons/streamlit/readme.md)
-<!-- - [Flask](lessons/flask/readme.md) -->
-- [Django](https://github.com/AkashDas253/Tutorial_Django) 
+- **Web Development**:
+    - [Django](https://github.com/AkashDas253/Tutorial_Django) 
+    - [Flask](lessons/flask/readme.md)
+    - [Streamlit](lessons/streamlit/readme.md)
+- **Data Analysis**:
+    - [Pandas](lessons/pandas/readme.md)
+    - [Numpy](lessons/numpy/readme.md)
+- **Visualization**:
+    - [MatplotLib](lessons/matplotlib/readme.md)
+    - [Seaborn](lessons/seaborn/readme.md)
+- **GUI Creation**:
+    - [Tkinter](lessons/tkinter/readme.md)
+- **Machine Learning**:
+    - [Scikit Learn](lessons/sklearn/readme.md)
+    - [Tensorflow](https://github.com/AkashDas253/Tutorial_Tensorflow)
+- [BeautifulSoup](lessons/beautifulsoup/readme.md)
 
 ### Projects
 
