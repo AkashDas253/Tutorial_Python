@@ -56,7 +56,7 @@
 
 - **Web Development**:
     - [Django](https://github.com/AkashDas253/Tutorial_Django) 
-    - [Flask](lessons/flask/readme.md)
+    - [**Flask**](lessons/flask/readme.md)
     - [Streamlit](lessons/streamlit/readme.md)
 - **Data Analysis**:
     - [Pandas](lessons/pandas/readme.md)

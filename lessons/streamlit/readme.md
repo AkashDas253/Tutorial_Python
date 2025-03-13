@@ -10,6 +10,8 @@
 - [Interactivity and State Management](lessons/state_management/readme.md)
 - [Theme](lessons/theme/readme.md)
 - [Advanced Feature](lessons/advanced_feature/readme.md)
+- [Deployment and Sharing](lessons/deploying_sharing/readme.md)
+- [Debugging and Monitoring](lessons/debugging_monitoring/readme.md)
 
 ## Mini Project
 <!-- - [Diagram Tool](mini_projects/diagram_tool/readme.md) -->

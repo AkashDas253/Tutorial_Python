@@ -1,3 +1,43 @@
+## Core Concepts
+- **App Structure**
+  - Script-based execution
+  - Caching for performance
+  - Session state management
+- **Widgets**
+  - Buttons, checkboxes, sliders
+  - Text inputs, number inputs, file uploader
+  - Date pickers, multi-selects, dropdowns
+- **Layouts & Containers**
+  - Sidebar, columns, expandable sections
+  - Tabs, empty spaces, dividers
+- **Displaying Data**
+  - Text elements (title, header, markdown)
+  - Tables, dataframes
+  - Metric display, JSON output
+- **Media Handling**
+  - Images, videos, audio
+- **Charts & Visualization**
+  - Matplotlib, Seaborn, Plotly
+  - Altair, Bokeh, Vega-Lite
+- **Data Interaction**
+  - Forms and input collection
+  - File handling (CSV, Excel, JSON)
+- **Session State**
+  - User interaction memory
+  - Callback functions
+- **Advanced Features**
+  - Custom components
+  - Theming and configuration
+  - URL parameters handling
+- **Deployment**
+  - Local execution
+  - Streamlit Cloud, Docker, AWS, GCP
+
+
+---
+---
+
+
 ## **concepts and sub-concepts** in Streamlit:
 
 ---
