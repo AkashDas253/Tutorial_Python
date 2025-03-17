@@ -62,8 +62,8 @@
     - [Pandas](lessons/pandas/readme.md)
     - [Numpy](lessons/numpy/readme.md)
 - **Visualization**:
-    - [MatplotLib](lessons/matplotlib/readme.md)
-    - [Seaborn](lessons/seaborn/readme.md)
+    - [**MatplotLib**](lessons/matplotlib/readme.md)
+    - [**Seaborn**](lessons/seaborn/readme.md)
 - **GUI Creation**:
     - [Tkinter](lessons/tkinter/readme.md)
 - **Machine Learning**:
