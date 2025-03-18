@@ -68,7 +68,7 @@
     - [Tkinter](lessons/tkinter/readme.md)
 - **Machine Learning**:
     - [Scikit Learn](lessons/sklearn/readme.md)
-    - [Tensorflow](https://github.com/AkashDas253/Tutorial_Tensorflow)
+    - [**Tensorflow**](https://github.com/AkashDas253/Tutorial_Tensorflow)
 - [BeautifulSoup](lessons/beautifulsoup/readme.md)
 
 ### Projects

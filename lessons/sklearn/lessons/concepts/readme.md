@@ -1,3 +1,166 @@
+### **Scikit-Learn: Concepts and Subconcepts**  
+
+## **1. Core Concepts**  
+- **Machine Learning Basics**  
+  - Supervised Learning  
+  - Unsupervised Learning  
+  - Reinforcement Learning (limited support)  
+
+- **Estimators**  
+  - Classifiers  
+  - Regressors  
+  - Clustering Models  
+
+- **Pipelines**  
+  - Sequential Transformation  
+  - Parameter Tuning  
+
+- **Metrics and Scoring**  
+  - Performance Evaluation  
+  - Model Selection  
+
+## **2. Data Preprocessing**  
+- **Feature Scaling**  
+  - Standardization  
+  - Normalization  
+
+- **Feature Selection**  
+  - Filter Methods  
+  - Wrapper Methods  
+  - Embedded Methods  
+
+- **Dimensionality Reduction**  
+  - Principal Component Analysis (PCA)  
+  - Linear Discriminant Analysis (LDA)  
+  - Feature Agglomeration  
+
+- **Data Transformation**  
+  - Encoding Categorical Features  
+  - Polynomial Features  
+  - Power Transforms  
+
+- **Handling Missing Values**  
+  - Imputation  
+  - Dropping Missing Data  
+
+## **3. Model Selection & Validation**  
+- **Cross-Validation**  
+  - K-Fold  
+  - Leave-One-Out  
+  - Stratified K-Fold  
+
+- **Hyperparameter Tuning**  
+  - Grid Search  
+  - Random Search  
+  - Bayesian Optimization (via external libraries)  
+
+- **Performance Metrics**  
+  - Accuracy, Precision, Recall, F1-score  
+  - ROC-AUC, PR-AUC  
+  - Mean Squared Error (MSE), R² Score  
+
+## **4. Supervised Learning**  
+- **Regression Models**  
+  - Linear Regression  
+  - Ridge Regression  
+  - Lasso Regression  
+  - ElasticNet  
+  - Support Vector Regression (SVR)  
+  - Decision Tree Regression  
+  - Random Forest Regression  
+  - Gradient Boosting Regression  
+  - Neural Network Regression  
+
+- **Classification Models**  
+  - Logistic Regression  
+  - Naïve Bayes  
+  - k-Nearest Neighbors (KNN)  
+  - Support Vector Machine (SVM)  
+  - Decision Tree Classifier  
+  - Random Forest Classifier  
+  - Gradient Boosting Classifier  
+  - Neural Network Classifier  
+
+## **5. Unsupervised Learning**  
+- **Clustering Algorithms**  
+  - K-Means  
+  - Hierarchical Clustering  
+  - DBSCAN  
+  - Mean Shift  
+  - Gaussian Mixture Models (GMM)  
+
+- **Anomaly Detection**  
+  - Isolation Forest  
+  - One-Class SVM  
+  - Local Outlier Factor (LOF)  
+
+## **6. Ensemble Methods**  
+- **Bagging**  
+  - Bagging Classifier  
+  - Bagging Regressor  
+  - Random Forest  
+
+- **Boosting**  
+  - AdaBoost  
+  - Gradient Boosting (GBM)  
+  - XGBoost (via external libraries)  
+
+- **Stacking**  
+  - Stacking Classifier  
+  - Stacking Regressor  
+
+- **Voting**  
+  - Hard Voting  
+  - Soft Voting  
+
+## **7. Model Interpretation & Explainability**  
+- **Feature Importance**  
+  - Permutation Importance  
+  - SHAP (via external libraries)  
+  - LIME (via external libraries)  
+
+- **Partial Dependence Plots**  
+- **Calibration Curves**  
+
+## **8. Feature Engineering**  
+- **Categorical Encoding**  
+  - One-Hot Encoding  
+  - Label Encoding  
+  - Target Encoding  
+
+- **Interaction Features**  
+- **Binning**  
+- **Polynomial Features**  
+
+## **9. Imbalanced Data Handling**  
+- **Resampling Methods**  
+  - Oversampling (SMOTE)  
+  - Undersampling  
+  - Class Weighting  
+
+## **10. Neural Networks (via MLP in Scikit-Learn)**  
+- **Multi-Layer Perceptron (MLP)**  
+  - MLPClassifier  
+  - MLPRegressor  
+
+## **11. Dataset Utilities**  
+- **Built-in Datasets**  
+  - Iris  
+  - Wine  
+  - Breast Cancer  
+  - Digits  
+
+- **Data Loading**  
+  - `load_*` functions  
+  - `fetch_*` functions  
+
+## **12. Parallelization & Performance Optimization**  
+- **Joblib for Parallel Computing**  
+- **Sparse Matrices for Large Datasets**  
+
+---
+---
+
 ## Scikit-learn Concepts
 
 ---
