@@ -1,50 +1,120 @@
-## Hyperparameter Tuning
-Hyperparameter tuning is the process of optimizing the hyperparameters of a machine learning model to improve its performance.
+## **Hyperparameter Tuning in Scikit-Learn**  
 
-#### Syntax
+### **Overview**  
+Hyperparameter tuning is the process of selecting the best hyperparameters for a machine learning model to optimize performance. Scikit-Learn provides several methods for tuning, including **Grid Search, Random Search, and Bayesian Optimization**.
 
+---
+
+### **Methods for Hyperparameter Tuning**  
+
+| Method                | Description |
+|-----------------------|-------------|
+| **GridSearchCV**      | Exhaustively searches all possible hyperparameter combinations. |
+| **RandomizedSearchCV** | Selects random hyperparameter combinations to find the best model efficiently. |
+| **Bayesian Optimization (Optuna, Hyperopt)** | Uses probabilistic modeling to find the best hyperparameters with fewer evaluations. |
+| **Manual Tuning**      | Adjusts hyperparameters manually based on model performance. |
+
+---
+
+### **Syntax with Parameters**  
+
+#### **1. Grid Search Cross-Validation (GridSearchCV)**
 ```python
-from sklearn.model_selection import GridSearchCV, RandomizedSearchCV
+from sklearn.model_selection import GridSearchCV
+from sklearn.ensemble import RandomForestClassifier
 
-# Grid Search
-grid_search = GridSearchCV(estimator, param_grid, scoring=None, n_jobs=None, iid='deprecated', refit=True, cv=None, verbose=0, pre_dispatch='2*n_jobs', error_score=np.nan, return_train_score=False)
-grid_search.fit(X_train, y_train)
+# Define model
+model = RandomForestClassifier()
 
-# Randomized Search
-random_search = RandomizedSearchCV(estimator, param_distributions, n_iter=10, scoring=None, n_jobs=None, iid='deprecated', refit=True, cv=None, verbose=0, pre_dispatch='2*n_jobs', random_state=None, error_score=np.nan, return_train_score=False)
-random_search.fit(X_train, y_train)
+# Define hyperparameters
+param_grid = {
+    'n_estimators': [50, 100, 200],
+    'max_depth': [None, 10, 20],
+    'min_samples_split': [2, 5, 10]
+}
+
+# Perform Grid Search
+grid_search = GridSearchCV(
+    estimator=model,      # Model to tune
+    param_grid=param_grid, # Hyperparameter grid
+    scoring='accuracy',    # Performance metric
+    cv=5,                  # Number of folds
+    verbose=1,             # Print progress
+    n_jobs=-1              # Use all CPU cores
+)
+
+# Fit model
+grid_search.fit(X, y)
+
+# Best parameters
+print("Best Parameters:", grid_search.best_params_)
 ```
 
-#### Parameters
-- **`estimator`**: The object type that implements the "fit" and "predict" methods.
-- **`param_grid`**: Dictionary with parameters names (string) as keys and lists of parameter settings to try as values.
-- **`param_distributions`**: Dictionary with parameters names (string) as keys and distributions or lists of parameters to try.
-- **`scoring=None`**: Strategy to evaluate the performance of the cross-validated model on the test set. {None, 'accuracy', 'f1', 'roc_auc', ...}
-- **`n_iter=10`**: Number of parameter settings that are sampled (only for RandomizedSearchCV).
-- **`n_jobs=None`**: Number of jobs to run in parallel. {None, -1, 1, 2, ...}
-- **`iid='deprecated'`**: Deprecated, use `False`. {True, False}
-- **`refit=True`**: Refit an estimator using the best found parameters on the whole dataset. {True, False}
-- **`cv=None`**: Determines the cross-validation splitting strategy. {None, integer, cross-validation generator}
-- **`verbose=0`**: Controls the verbosity. {0, 1, 2, ...}
-- **`pre_dispatch='2*n_jobs'`**: Controls the number of jobs that get dispatched during parallel execution. {string, integer}
-- **`random_state=None`**: Controls the randomness of the estimator (only for RandomizedSearchCV). {None, integer}
-- **`error_score=np.nan`**: Value to assign to the score if an error occurs in estimator fitting. {numeric, 'raise'}
-- **`return_train_score=False`**: If `False`, the `cv_results_` attribute will not include training scores. {True, False}
+---
 
-#### Attributes
-- **`cv_results_`**: A dictionary with keys as column headers and values as columns, that can be imported into a pandas DataFrame.
-- **`best_estimator_`**: Estimator that was chosen by the search, i.e. estimator which gave highest score (or smallest loss if specified) on the left out data.
-- **`best_score_`**: Mean cross-validated score of the best_estimator.
-- **`best_params_`**: Parameter setting that gave the best results on the hold out data.
-- **`best_index_`**: The index (of the `cv_results_` arrays) which corresponds to the best candidate parameter setting.
-- **`scorer_`**: Scorer function used on the held out data to choose the best parameters for the model.
-- **`n_splits_`**: The number of cross-validation splits (folds/iterations).
+#### **2. Random Search Cross-Validation (RandomizedSearchCV)**
+```python
+from sklearn.model_selection import RandomizedSearchCV
+from scipy.stats import randint
 
-#### Functions
-- **`fit(X, y=None, **fit_params)`**: Run fit with all sets of parameters.
-- **`score(X, y=None)`**: Return the score on the given data, if the estimator has been refit.
-- **`predict(X)`**: Call predict on the estimator with the best found parameters.
-- **`predict_proba(X)`**: Call predict_proba on the estimator with the best found parameters.
-- **`decision_function(X)`**: Call decision_function on the estimator with the best found parameters.
-- **`transform(X)`**: Call transform on the estimator with the best found parameters.
-- **`inverse_transform(X)`**: Call inverse_transform on the estimator with the best found parameters.
+# Define hyperparameters (using distributions for random sampling)
+param_dist = {
+    'n_estimators': randint(50, 200),
+    'max_depth': [None, 10, 20, 30],
+    'min_samples_split': randint(2, 11)
+}
+
+# Perform Random Search
+random_search = RandomizedSearchCV(
+    estimator=model,
+    param_distributions=param_dist,
+    n_iter=20,         # Number of random combinations
+    scoring='accuracy',
+    cv=5,
+    verbose=1,
+    random_state=42,
+    n_jobs=-1
+)
+
+random_search.fit(X, y)
+
+print("Best Parameters:", random_search.best_params_)
+```
+
+---
+
+#### **3. Bayesian Optimization (Optuna Example)**
+```python
+import optuna
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import cross_val_score
+
+# Objective function for Optuna
+def objective(trial):
+    n_estimators = trial.suggest_int('n_estimators', 50, 200)
+    max_depth = trial.suggest_int('max_depth', 5, 30)
+    min_samples_split = trial.suggest_int('min_samples_split', 2, 10)
+
+    model = RandomForestClassifier(n_estimators=n_estimators, max_depth=max_depth, min_samples_split=min_samples_split)
+    score = cross_val_score(model, X, y, cv=5, scoring='accuracy').mean()
+    return score
+
+# Optimize
+study = optuna.create_study(direction='maximize')
+study.optimize(objective, n_trials=20)
+
+print("Best Parameters:", study.best_params)
+```
+
+---
+
+### **Choosing the Right Method**  
+
+| Scenario | Recommended Method |
+|----------|--------------------|
+| Small search space | **GridSearchCV** |
+| Large search space | **RandomizedSearchCV** |
+| High-dimensional tuning | **Bayesian Optimization (Optuna, Hyperopt)** |
+| Custom tuning | **Manual tuning using domain knowledge** |
+
+---

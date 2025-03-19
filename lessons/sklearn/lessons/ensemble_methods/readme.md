@@ -1,96 +1,183 @@
-## Ensemble Methods
-Ensemble methods are techniques that create multiple models and then combine them to produce improved results.
+## **Ensemble Methods in Scikit-Learn**  
 
-#### Syntax
+### **Overview**  
+Ensemble methods combine multiple weak learners to improve predictive performance. Scikit-Learn provides various ensemble techniques, including **bagging, boosting, and stacking**.
 
+---
+
+### **Types of Ensemble Methods**  
+
+| Method          | Description |
+|---------------|-------------|
+| **Bagging**   | Uses multiple base learners trained independently on random subsets of data (e.g., Random Forest). |
+| **Boosting**  | Sequentially trains weak models, each correcting previous errors (e.g., AdaBoost, Gradient Boosting, XGBoost). |
+| **Stacking**  | Combines multiple models and trains a meta-model on their predictions. |
+| **Voting**    | Aggregates predictions from different models using majority vote (classification) or averaging (regression). |
+
+---
+
+### **Bagging: Random Forest**  
+
+**Usage**:  
+- Used when reducing overfitting in high-variance models.  
+- Effective for structured/tabular data classification and regression tasks.  
+
+**Syntax**:  
 ```python
-from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier, AdaBoostClassifier
+from sklearn.ensemble import RandomForestClassifier
 
-# Random Forest
-rf = RandomForestClassifier(n_estimators=100, criterion='gini', max_depth=None, min_samples_split=2, min_samples_leaf=1, min_weight_fraction_leaf=0.0, max_features='auto', max_leaf_nodes=None, min_impurity_decrease=0.0, bootstrap=True, oob_score=False, n_jobs=None, random_state=None, verbose=0, warm_start=False, class_weight=None)
-rf.fit(X_train, y_train)
+# Initialize Random Forest
+model = RandomForestClassifier(
+    n_estimators=100,   # Number of trees
+    max_depth=None,     # Maximum depth of each tree
+    min_samples_split=2, # Minimum samples to split a node
+    n_jobs=-1,         # Use all CPU cores
+    random_state=42
+)
 
-# Gradient Boosting
-gb = GradientBoostingClassifier(loss='deviance', learning_rate=0.1, n_estimators=100, subsample=1.0, criterion='friedman_mse', min_samples_split=2, min_samples_leaf=1, min_weight_fraction_leaf=0.0, max_depth=3, min_impurity_decrease=0.0, init=None, random_state=None, max_features=None, verbose=0, max_leaf_nodes=None, warm_start=False, validation_fraction=0.1, n_iter_no_change=None, tol=1e-4, ccp_alpha=0.0)
-gb.fit(X_train, y_train)
+# Train model
+model.fit(X_train, y_train)
 
-# AdaBoost
-ab = AdaBoostClassifier(base_estimator=None, n_estimators=50, learning_rate=1.0, algorithm='SAMME.R', random_state=None)
-ab.fit(X_train, y_train)
+# Predictions
+y_pred = model.predict(X_test)
 ```
 
-#### Parameters
-- **`n_estimators`**: int, The number of trees in the forest.
-- **`criterion`**: str, The function to measure the quality of a split. {'gini', 'entropy'}
-- **`max_depth`**: int, The maximum depth of the tree.
-- **`min_samples_split`**: int or float, The minimum number of samples required to split an internal node.
-- **`min_samples_leaf`**: int or float, The minimum number of samples required to be at a leaf node.
-- **`min_weight_fraction_leaf`**: float, The minimum weighted fraction of the sum total of weights required to be at a leaf node.
-- **`max_features`**: int, float, str or None, The number of features to consider when looking for the best split.
-- **`max_leaf_nodes`**: int, Grow trees with `max_leaf_nodes` in best-first fashion.
-- **`min_impurity_decrease`**: float, A node will be split if this split induces a decrease of the impurity greater than or equal to this value.
-- **`bootstrap`**: bool, Whether bootstrap samples are used when building trees.
-- **`oob_score`**: bool, Whether to use out-of-bag samples to estimate the generalization accuracy.
-- **`n_jobs`**: int, The number of jobs to run in parallel.
-- **`random_state`**: int, Controls the randomness of the estimator.
-- **`verbose`**: int, Controls the verbosity when fitting and predicting.
-- **`warm_start`**: bool, When set to `True`, reuse the solution of the previous call to fit and add more estimators to the ensemble.
-- **`class_weight`**: dict, list of dicts, "balanced", "balanced_subsample" or None, Weights associated with classes.
-- **`loss`**: str, Loss function to be optimized. {'deviance', 'exponential'}
-- **`learning_rate`**: float, Learning rate shrinks the contribution of each tree by `learning_rate`.
-- **`subsample`**: float, The fraction of samples to be used for fitting the individual base learners.
-- **`init`**: estimator or None, An estimator object that is used to compute the initial predictions.
-- **`validation_fraction`**: float, The proportion of training data to set aside as validation set for early stopping.
-- **`n_iter_no_change`**: int, Number of iterations with no improvement to wait before stopping fitting.
-- **`tol`**: float, Tolerance for the early stopping.
-- **`ccp_alpha`**: float, Complexity parameter used for Minimal Cost-Complexity Pruning.
-- **`base_estimator`**: estimator or None, The base estimator from which the boosted ensemble is built.
-- **`algorithm`**: str, If 'SAMME.R' then use the SAMME.R real boosting algorithm. {'SAMME', 'SAMME.R'}
+---
 
-#### Attributes
-- **`estimators_`**: list of classifiers, The collection of fitted sub-estimators.
-- **`classes_`**: array of shape (n_classes,), The classes labels.
-- **`n_classes_`**: int, The number of classes.
-- **`n_features_`**: int, The number of features when `fit` is performed.
-- **`feature_importances_`**: array of shape (n_features,), The feature importances.
-- **`oob_score_`**: float, Score of the training dataset obtained using an out-of-bag estimate.
-- **`oob_decision_function_`**: array of shape (n_samples, n_classes), Decision function computed with out-of-bag estimate.
+### **Boosting: AdaBoost**  
 
-#### Functions
-- **`fit(X, y=None, sample_weight=None)`**: Fit the model according to the given training data.
-  - **Parameters**:
-    - `X`: array-like of shape (n_samples, n_features), The training input samples.
-    - `y`: array-like of shape (n_samples,) or (n_samples, n_outputs), The target values (class labels).
-    - `sample_weight`: array-like of shape (n_samples,), Optional, Sample weights.
+**Usage**:  
+- Suitable for imbalanced data and cases requiring better generalization.  
+- Works well with decision trees and weak learners.  
 
-- **`predict(X)`**: Predict class for X.
-  - **Parameters**:
-    - `X`: array-like of shape (n_samples, n_features), The input samples.
-  - **Returns**:
-    - `y`: array of shape (n_samples,), The predicted classes.
+**Syntax**:  
+```python
+from sklearn.ensemble import AdaBoostClassifier
+from sklearn.tree import DecisionTreeClassifier
 
-- **`predict_proba(X)`**: Predict class probabilities for X.
-  - **Parameters**:
-    - `X`: array-like of shape (n_samples, n_features), The input samples.
-  - **Returns**:
-    - `p`: array of shape (n_samples, n_classes), The class probabilities of the input samples.
+# Initialize AdaBoost with Decision Tree
+model = AdaBoostClassifier(
+    base_estimator=DecisionTreeClassifier(max_depth=1), # Weak learner
+    n_estimators=50,     # Number of weak classifiers
+    learning_rate=1.0,   # Step size
+    random_state=42
+)
 
-- **`score(X, y, sample_weight=None)`**: Return the mean accuracy on the given test data and labels.
-  - **Parameters**:
-    - `X`: array-like of shape (n_samples, n_features), Test samples.
-    - `y`: array-like of shape (n_samples,) or (n_samples, n_outputs), True labels for X.
-    - `sample_weight`: array-like of shape (n_samples,), Optional, Sample weights.
-  - **Returns**:
-    - `score`: float, Mean accuracy of self.predict(X) wrt. y.
+# Train model
+model.fit(X_train, y_train)
 
-- **`set_params(**params)`**: Set the parameters of this estimator.
-  - **Parameters**:
-    - `params`: dict, Estimator parameters.
-  - **Returns**:
-    - `self`: object, Estimator instance.
+# Predictions
+y_pred = model.predict(X_test)
+```
 
-- **`get_params(deep=True)`**: Get parameters for this estimator.
-  - **Parameters**:
-    - `deep`: bool, If True, will return the parameters for this estimator and contained subobjects that are estimators.
-  - **Returns**:
-    - `params`: dict, Parameter names mapped to their values.
+---
+
+### **Boosting: Gradient Boosting**  
+
+**Usage**:  
+- Used for structured data where feature importance is critical.  
+- Handles missing values well and reduces bias.  
+
+**Syntax**:  
+```python
+from sklearn.ensemble import GradientBoostingClassifier
+
+# Initialize Gradient Boosting
+model = GradientBoostingClassifier(
+    n_estimators=100,
+    learning_rate=0.1,
+    max_depth=3,
+    random_state=42
+)
+
+# Train model
+model.fit(X_train, y_train)
+
+# Predictions
+y_pred = model.predict(X_test)
+```
+
+---
+
+### **Voting Classifier**  
+
+**Usage**:  
+- Used when combining different models to improve performance.  
+- Works well in multi-class classification problems.  
+
+**Syntax**:  
+```python
+from sklearn.ensemble import VotingClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.svm import SVC
+from sklearn.ensemble import RandomForestClassifier
+
+# Define base models
+log_clf = LogisticRegression()
+svm_clf = SVC(probability=True)
+rf_clf = RandomForestClassifier(n_estimators=100)
+
+# Initialize Voting Classifier
+voting_clf = VotingClassifier(
+    estimators=[('lr', log_clf), ('svm', svm_clf), ('rf', rf_clf)],
+    voting='hard'  # Use 'soft' for probability-based averaging
+)
+
+# Train model
+voting_clf.fit(X_train, y_train)
+
+# Predictions
+y_pred = voting_clf.predict(X_test)
+```
+
+---
+
+### **Stacking**  
+
+**Usage**:  
+- Used when combining multiple diverse models and training a meta-model.  
+- Effective for tabular datasets with complex relationships.  
+
+**Syntax**:  
+```python
+from sklearn.ensemble import StackingClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.svm import SVC
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.naive_bayes import GaussianNB
+
+# Define base models
+base_models = [
+    ('rf', RandomForestClassifier(n_estimators=100)),
+    ('svm', SVC(probability=True)),
+    ('nb', GaussianNB())
+]
+
+# Meta-model
+meta_model = LogisticRegression()
+
+# Initialize Stacking Classifier
+stacking_clf = StackingClassifier(
+    estimators=base_models,
+    final_estimator=meta_model
+)
+
+# Train model
+stacking_clf.fit(X_train, y_train)
+
+# Predictions
+y_pred = stacking_clf.predict(X_test)
+```
+
+---
+
+### **Choosing the Right Ensemble Method**  
+
+| Scenario | Recommended Method |
+|----------|--------------------|
+| Reduce overfitting | **Bagging (Random Forest, Extra Trees)** |
+| Improve weak learners | **Boosting (AdaBoost, Gradient Boosting, XGBoost)** |
+| Combine diverse models | **Stacking** |
+| Use multiple models for voting | **Voting Classifier** |
+
+---
