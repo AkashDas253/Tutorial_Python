@@ -59,8 +59,8 @@
     - [**Flask**](lessons/flask/readme.md)
     - [Streamlit](lessons/streamlit/readme.md)
 - **Data Analysis**:
-    - [Pandas](lessons/pandas/readme.md)
-    - [Numpy](lessons/numpy/readme.md)
+    - [**Pandas**](lessons/pandas/readme.md)
+    - [**Numpy**](lessons/numpy/readme.md)
 - **Visualization**:
     - [**MatplotLib**](lessons/matplotlib/readme.md)
     - [**Seaborn**](lessons/seaborn/readme.md)
