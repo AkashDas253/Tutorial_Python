@@ -7,6 +7,7 @@
 - [Data structures](lessons/data_structures/readme.md)
   - [Series](lessons/series/readme.md)
   - [Dataframe](lessons/dataframe/readme.md)
+  - [Index](lessons/index/readme.dm)
   - [Datatypes](lessons/datatypes/readme.md)
 
 - [Data manipulation](lessons/data_manipulation/readme.md)
