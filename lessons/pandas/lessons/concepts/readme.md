@@ -100,4 +100,4 @@
    - **Chaining Operations**: Method chaining using `pipe()`
    - **Custom Aggregation**: Creating custom aggregation functions with `.agg()`
 
-This outline covers the main aspects and operations within **Pandas**. Let me know if you'd like to dive deeper into any specific concept!
+---

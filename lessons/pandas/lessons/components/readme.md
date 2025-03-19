@@ -111,13 +111,6 @@
 | `accessor`                 | Custom `.str`, `.dt`, and `.cat` accessors for strings, datetime, and categorical data.       |  
 
 ---
-
-This table captures **all major modules, submodules, and functionalities** within Pandas. Let me know if you want detailed examples for any specific component!
-
----
-
-Here’s a comprehensive list of all the **Pandas** modules and submodules at the top level, with all related methods grouped under them, as you requested:
-
 ---
 
 ### **`pandas` Modules and Submodules**
