@@ -1,412 +1,197 @@
-## DataFrame in Pandas
 
-A `DataFrame` is a 2-dimensional, size-mutable, and heterogeneous tabular data structure in Pandas. It is one of the most commonly used data structures for data manipulation and analysis. The `DataFrame` consists of rows and columns, where each column can be of different data types (e.g., integers, floats, strings, etc.).
-
-#### Key Features of DataFrame
-
-| **Feature**             | **Description** |
-|-------------------------|-----------------|
-| **2D Structure**        | A `DataFrame` is a 2-dimensional table with rows and columns. |
-| **Mutable**             | Both the size and contents of a `DataFrame` can be changed. |
-| **Heterogeneous**       | Each column can have different data types, such as numeric, string, or datetime. |
-| **Labeled Axes**        | Rows and columns are labeled with indices. |
-| **Flexible**            | Supports multiple ways to manipulate data, such as filtering, grouping, and aggregation. |
-
-#### Creating a DataFrame
-
-1. **From a Dictionary of Lists or Arrays**:
-
-   ```python
-   import pandas as pd
-   
-   data = {'Name': ['Alice', 'Bob', 'Charlie'],
-           'Age': [25, 30, 35],
-           'City': ['New York', 'Los Angeles', 'Chicago']}
-   df = pd.DataFrame(data)
-   print(df)
-   ```
-
-   Output:
-
-   ```
-       Name  Age         City
-   0    Alice   25     New York
-   1      Bob   30  Los Angeles
-   2  Charlie   35      Chicago
-   ```
-
-2. **From a List of Dictionaries**:
-
-   ```python
-   data = [{'Name': 'Alice', 'Age': 25, 'City': 'New York'},
-           {'Name': 'Bob', 'Age': 30, 'City': 'Los Angeles'},
-           {'Name': 'Charlie', 'Age': 35, 'City': 'Chicago'}]
-   df = pd.DataFrame(data)
-   print(df)
-   ```
-
-   Output:
-
-   ```
-       Name  Age         City
-   0    Alice   25     New York
-   1      Bob   30  Los Angeles
-   2  Charlie   35      Chicago
-   ```
-
-3. **From a NumPy Array**:
-
-   ```python
-   import numpy as np
-   
-   data = np.array([[1, 'Alice'], [2, 'Bob'], [3, 'Charlie']])
-   df = pd.DataFrame(data, columns=['ID', 'Name'])
-   print(df)
-   ```
-
-   Output:
-
-   ```
-      ID     Name
-   0   1    Alice
-   1   2      Bob
-   2   3  Charlie
-   ```
-
-4. **From a CSV File**:
-
-   ```python
-   df = pd.read_csv('data.csv')  # Assuming 'data.csv' exists
-   print(df)
-   ```
-
-#### Basic Operations on DataFrame
-
-| **Operation**             | **Description**                                |
-|---------------------------|------------------------------------------------|
-| **Viewing Data**           | Use `.head()`, `.tail()` to view the first or last few rows. |
-| **Selecting Columns**      | Access columns by `df['column_name']` or `df.column_name`. |
-| **Selecting Rows**         | Use `.loc[]` (label-based) or `.iloc[]` (integer-based). |
-| **Filtering**              | Filter rows using conditions, e.g., `df[df['Age'] > 30]`. |
-| **Sorting**                | Use `.sort_values()` to sort by one or more columns. |
-| **Handling Missing Data**  | Use `.isnull()`, `.dropna()`, and `.fillna()` to handle missing data. |
-| **Merging/Joining**        | Use `.merge()` to join DataFrames on columns or indices. |
-| **GroupBy Operations**     | Group data using `.groupby()` for aggregation. |
-
-#### Example Operations
-
-1. **Accessing Columns and Rows**:
-
-   ```python
-   # Access a column
-   print(df['Name'])
-   
-   # Access multiple columns
-   print(df[['Name', 'Age']])
-   
-   # Access a row by index using iloc
-   print(df.iloc[0])  # First row
-
-   # Access a row by label using loc
-   print(df.loc[0])  # First row (if index is 0)
-   ```
-
-2. **Filtering Data**:
-
-   ```python
-   # Filter rows where Age > 30
-   df_filtered = df[df['Age'] > 30]
-   print(df_filtered)
-   ```
-
-   Output:
-
-   ```
-       Name  Age         City
-   2  Charlie   35      Chicago
-   ```
-
-3. **Sorting Data**:
-
-   ```python
-   # Sort by Age
-   df_sorted = df.sort_values(by='Age', ascending=False)
-   print(df_sorted)
-   ```
-
-   Output:
-
-   ```
-       Name  Age         City
-   2  Charlie   35      Chicago
-   1      Bob   30  Los Angeles
-   0    Alice   25     New York
-   ```
-
-4. **Handling Missing Data**:
-
-   ```python
-   # Detect missing values
-   print(df.isnull())
-   
-   # Drop rows with missing values
-   df_cleaned = df.dropna()
-   
-   # Fill missing values
-   df_filled = df.fillna(0)
-   ```
-
-5. **Adding and Removing Columns**:
-
-   ```python
-   # Adding a new column
-   df['Country'] = 'USA'
-   print(df)
-   
-   # Removing a column
-   df.drop('Country', axis=1, inplace=True)
-   ```
-
-6. **Grouping Data**:
-
-   ```python
-   # Group by City and calculate mean Age
-   df_grouped = df.groupby('City')['Age'].mean()
-   print(df_grouped)
-   ```
-
-   Output:
-
-   ```
-   City
-   Chicago        35.0
-   Los Angeles    30.0
-   New York       25.0
-   Name: Age, dtype: float64
-   ```
-
-7. **Merging DataFrames**:
-
-   ```python
-   df1 = pd.DataFrame({'ID': [1, 2, 3], 'Name': ['Alice', 'Bob', 'Charlie']})
-   df2 = pd.DataFrame({'ID': [1, 2, 3], 'City': ['New York', 'Los Angeles', 'Chicago']})
-   
-   # Merge data on 'ID'
-   df_merged = pd.merge(df1, df2, on='ID')
-   print(df_merged)
-   ```
-
-   Output:
-
-   ```
-      ID     Name         City
-   0   1    Alice     New York
-   1   2      Bob  Los Angeles
-   2   3  Charlie      Chicago
-   ```
-
-#### Summary
-
-The `DataFrame` is a powerful and versatile data structure in Pandas for handling and manipulating tabular data. It supports a variety of operations such as indexing, filtering, sorting, merging, and group-based aggregations. The `DataFrame` allows for intuitive and efficient data analysis workflows and is at the core of many data manipulation tasks in Pandas.
-
-
-
----
----
-
-## Pandas DataFrame  
-
-A **DataFrame** is a two-dimensional labeled data structure similar to a table. It consists of rows and columns, where each column is a **Series**. It supports various operations like indexing, filtering, aggregation, merging, and transformation.
+# **Pandas DataFrame**
 
 ---
 
-### Creating a DataFrame  
-
-| Method | Description |  
-|--------|-------------|  
-| `pd.DataFrame(data)` | Creates a DataFrame from a dictionary, list, NumPy array, or Series |  
-| `pd.DataFrame(data, index=index_list)` | Assigns custom row labels |  
-| `pd.DataFrame(data, columns=col_list)` | Assigns custom column labels |  
-| `pd.read_csv('file.csv')` | Reads a CSV file into a DataFrame |  
-| `pd.read_excel('file.xlsx')` | Reads an Excel file into a DataFrame |  
-| `pd.read_json('file.json')` | Reads a JSON file into a DataFrame |  
+## **Definition**
+A `DataFrame` is a **2-dimensional labeled data structure** with columns of potentially different types. It is conceptually similar to a spreadsheet or SQL table and is the most commonly used data structure in pandas.
 
 ---
 
-### Attributes of DataFrame  
+## **Properties**
 
-| Attribute | Description |  
-|-----------|-------------|  
-| `df.index` | Returns row labels |  
-| `df.columns` | Returns column labels |  
-| `df.dtypes` | Returns data types of columns |  
-| `df.shape` | Returns `(rows, columns)` count |  
-| `df.size` | Returns total number of elements |  
-| `df.ndim` | Returns number of dimensions (2D) |  
-| `df.values` | Returns data as a NumPy array |  
-| `df.memory_usage()` | Returns memory usage per column |  
+| Property         | Description                                                            |
+|------------------|------------------------------------------------------------------------|
+| 2D structure      | Holds data in rows and columns (like a table)                          |
+| Labeled axes      | Both rows (index) and columns are labeled                              |
+| Mixed types       | Columns can have different data types                                  |
+| NaN support       | Allows missing data                                                    |
+| Size-flexible     | Can grow/shrink dynamically                                            |
+| NumPy-powered     | Operations are fast and vectorized using NumPy                         |
 
 ---
 
-### Viewing Data  
+## **Declaration Syntax**
 
-| Method | Description |  
-|--------|-------------|  
-| `df.head(n)` | Returns the first `n` rows (default 5) |  
-| `df.tail(n)` | Returns the last `n` rows (default 5) |  
-| `df.sample(n)` | Returns `n` random rows |  
-| `df.info()` | Displays DataFrame summary |  
-| `df.describe()` | Returns summary statistics for numeric columns |  
-
----
-
-### Selecting Data  
-
-| Method | Description |  
-|--------|-------------|  
-| `df['col']` | Selects a single column as a Series |  
-| `df[['col1', 'col2']]` | Selects multiple columns |  
-| `df.loc[row_label, col_label]` | Accesses value by label |  
-| `df.iloc[row_index, col_index]` | Accesses value by position |  
-| `df.loc[row_label]` | Selects row by label |  
-| `df.iloc[row_index]` | Selects row by index |  
-| `df.loc[:, 'col']` | Selects a column with all rows |  
-| `df.iloc[:, col_index]` | Selects a column by position |  
+```python
+pd.DataFrame(
+    data=None,              # Dict, 2D array, Series, scalar, or list of dicts
+    index=None,             # Optional row labels
+    columns=None,           # Optional column labels
+    dtype=None,             # Optional data type for all columns
+    copy=False              # Copy data if True
+)
+```
 
 ---
 
-### Filtering Rows  
-
-| Condition | Description |  
-|-----------|-------------|  
-| `df[df['col'] > n]` | Selects rows where column value is greater than `n` |  
-| `df[df['col'] == 'value']` | Selects rows where column equals 'value' |  
-| `df[(df['col1'] > n) & (df['col2'] < m)]` | Selects rows where multiple conditions are met |  
-| `df.query('col > n')` | Queries rows using expressions |  
+## **All Features by Category with Syntax**
 
 ---
 
-### Modifying Data  
+### **1. Attributes (Read-only Metadata)**
 
-| Method | Description |  
-|--------|-------------|  
-| `df['col'] = value` | Assigns a constant to a column |  
-| `df['col'] = df['col'] * 2` | Updates column values |  
-| `df['new_col'] = df['col1'] + df['col2']` | Creates a new column |  
-| `df.insert(1, 'new_col', values)` | Inserts a column at index `1` |  
-| `df.rename(columns={'old': 'new'})` | Renames columns |  
-| `df.rename(index={0: 'first'})` | Renames rows |  
-
----
-
-### Handling Missing Data  
-
-| Method | Description |  
-|--------|-------------|  
-| `df.isnull()` | Returns `True` for NaN values |  
-| `df.notnull()` | Returns `True` for non-null values |  
-| `df.dropna()` | Drops rows with NaN values |  
-| `df.dropna(axis=1)` | Drops columns with NaN values |  
-| `df.fillna(value)` | Replaces NaN with a specific value |  
-| `df.fillna(method='ffill')` | Forward fills missing values |  
-| `df.fillna(method='bfill')` | Backward fills missing values |  
+| Syntax             | Description                               |
+|--------------------|-------------------------------------------|
+| `df.index`         | Row index labels                          |
+| `df.columns`       | Column labels                             |
+| `df.dtypes`        | Data type of each column                  |
+| `df.shape`         | Tuple: (rows, columns)                    |
+| `df.size`          | Total number of elements                  |
+| `df.ndim`          | Number of dimensions (always 2)           |
+| `df.values`        | Numpy array of values                     |
+| `df.empty`         | `True` if DataFrame is empty              |
 
 ---
 
-### Sorting Data  
+### **2. Data Selection and Access**
 
-| Method | Description |  
-|--------|-------------|  
-| `df.sort_values('col')` | Sorts by a column in ascending order |  
-| `df.sort_values('col', ascending=False)` | Sorts in descending order |  
-| `df.sort_values(['col1', 'col2'])` | Sorts by multiple columns |  
-| `df.sort_index()` | Sorts rows by index |  
-
----
-
-### Aggregation & Statistics  
-
-| Method | Description |  
-|--------|-------------|  
-| `df.sum()` | Column-wise sum |  
-| `df.mean()` | Column-wise mean |  
-| `df.median()` | Column-wise median |  
-| `df.std()` | Column-wise standard deviation |  
-| `df.min(), df.max()` | Column-wise min and max values |  
-| `df.count()` | Number of non-null values per column |  
-| `df.corr()` | Correlation between numeric columns |  
-| `df.cov()` | Covariance between numeric columns |  
+| Syntax                      | Description                          |
+|-----------------------------|--------------------------------------|
+| `df[col]`                   | Select single column as Series       |
+| `df[[col1, col2]]`          | Select multiple columns              |
+| `df.loc[row_label, col]`    | Label-based access                   |
+| `df.iloc[row_idx, col]`     | Position-based access                |
+| `df.at[row, col]`           | Fast scalar access by label          |
+| `df.iat[row, col]`          | Fast scalar access by position       |
+| `df.get(col)`               | Safe column access                   |
 
 ---
 
-### Grouping & Aggregation  
+### **3. Arithmetic & Operations**
 
-| Method | Description |  
-|--------|-------------|  
-| `df.groupby('col').sum()` | Groups by a column and sums values |  
-| `df.groupby('col').mean()` | Groups by a column and computes mean |  
-| `df.groupby(['col1', 'col2']).count()` | Groups by multiple columns |  
-| `df.agg({'col1': 'sum', 'col2': 'mean'})` | Applies multiple aggregations |  
-
----
-
-### Pivoting & Reshaping  
-
-| Method | Description |  
-|--------|-------------|  
-| `df.pivot(index, columns, values)` | Pivots DataFrame |  
-| `df.melt(id_vars, var_name, value_name)` | Converts wide format to long format |  
-| `df.stack()` | Converts columns into rows |  
-| `df.unstack()` | Converts rows into columns |  
+| Syntax                                   | Description                          |
+|------------------------------------------|--------------------------------------|
+| `df.add(other, fill_value=0)`            | Add DataFrame or scalar              |
+| `df.sub(other, fill_value=0)`            | Subtract                             |
+| `df.mul(other, fill_value=1)`            | Multiply                             |
+| `df.div(other, fill_value=1)`            | Divide                               |
+| `df.dot(other)`                          | Matrix multiplication                |
+| `df.abs()`                               | Absolute values                      |
+| `df.clip(lower, upper)`                  | Clip values to bounds                |
 
 ---
 
-### Merging & Joining  
+### **4. Aggregation & Statistics**
 
-| Method | Description |  
-|--------|-------------|  
-| `pd.concat([df1, df2])` | Concatenates along rows |  
-| `pd.concat([df1, df2], axis=1)` | Concatenates along columns |  
-| `df1.merge(df2, on='col')` | Joins DataFrames on a common column |  
-| `df1.join(df2, on='col')` | Joins DataFrames by index |  
-
----
-
-### Exporting Data  
-
-| Method | Description |  
-|--------|-------------|  
-| `df.to_csv('file.csv')` | Saves as a CSV file |  
-| `df.to_excel('file.xlsx')` | Saves as an Excel file |  
-| `df.to_json('file.json')` | Saves as a JSON file |  
+| Syntax                        | Description                            |
+|-------------------------------|----------------------------------------|
+| `df.sum(axis=0)`              | Sum along axis                         |
+| `df.mean(axis=0)`             | Mean                                   |
+| `df.median(axis=0)`           | Median                                 |
+| `df.min(axis=0)`              | Minimum                                |
+| `df.max(axis=0)`              | Maximum                                |
+| `df.std(axis=0)`              | Standard deviation                     |
+| `df.var(axis=0)`              | Variance                               |
+| `df.mode()`                   | Most frequent value                    |
+| `df.describe()`               | Summary statistics                     |
+| `df.count()`                  | Count non-NA cells                     |
+| `df.cumsum()`                 | Cumulative sum                         |
+| `df.cumprod()`                | Cumulative product                     |
 
 ---
 
-### Additional Methods  
+### **5. Missing Data Handling**
 
-| Method | Description |  
-|--------|-------------|  
-| `df.duplicated()` | Checks for duplicate rows |  
-| `df.drop_duplicates()` | Removes duplicate rows |  
-| `df.clip(lower, upper)` | Limits values between `lower` and `upper` |  
-| `df.nunique()` | Returns number of unique values per column |  
-| `df.cumsum()` | Cumulative sum per column |  
-| `df.cumprod()` | Cumulative product per column |  
-| `df.diff()` | Computes difference between consecutive values |  
+| Syntax                                   | Description                            |
+|------------------------------------------|----------------------------------------|
+| `df.isna()`                              | Detect missing values                  |
+| `df.notna()`                             | Detect non-missing values              |
+| `df.fillna(value, method)`               | Fill missing values                    |
+| `df.dropna(axis=0, how='any')`           | Drop rows/columns with NaN             |
+| `df.replace(to_replace, value)`          | Replace values                         |
 
 ---
 
-### Working with Strings (if DataFrame contains text data)  
+### **6. Column & Row Manipulation**
 
-| Method | Description |  
-|--------|-------------|  
-| `df['col'].str.lower()` | Converts all text to lowercase |  
-| `df['col'].str.upper()` | Converts all text to uppercase |  
-| `df['col'].str.strip()` | Removes leading and trailing spaces |  
-| `df['col'].str.contains('text')` | Checks if elements contain a substring |  
-| `df['col'].str.replace('old', 'new')` | Replaces a substring |  
-| `df['col'].str.split('delimiter')` | Splits elements based on a delimiter |  
+| Syntax                                       | Description                            |
+|----------------------------------------------|----------------------------------------|
+| `df.rename(columns={'a':'A'})`               | Rename columns                         |
+| `df.drop(columns=['col'])`                   | Drop column(s)                         |
+| `df.drop(index=[0,1])`                       | Drop row(s)                            |
+| `df.insert(loc, column, value)`              | Insert column at specific position     |
+| `df.assign(newcol=values)`                   | Add new column                         |
+| `df.pop(col)`                                | Remove column and return it            |
 
 ---
 
-A Pandas **DataFrame** is a flexible and efficient structure for handling structured data, supporting powerful operations for data manipulation, transformation, and analysis.
+### **7. Sorting & Reindexing**
+
+| Syntax                                      | Description                            |
+|---------------------------------------------|----------------------------------------|
+| `df.sort_values(by='col', ascending=True)`  | Sort by column                         |
+| `df.sort_index(axis=0)`                     | Sort by index                          |
+| `df.reset_index(drop=True)`                 | Reset index                            |
+| `df.set_index('col')`                       | Set column as index                    |
+| `df.reindex(new_index)`                     | Reindex rows                           |
+
+---
+
+### **8. Filtering & Querying**
+
+| Syntax                                | Description                            |
+|---------------------------------------|----------------------------------------|
+| `df[df['col'] > 5]`                   | Filter rows with condition             |
+| `df.query('col > 5')`                 | SQL-like querying                      |
+| `df.where(condition)`                 | Keep if condition is True              |
+| `df.mask(condition)`                  | Replace where condition is True        |
+
+---
+
+### **9. String Operations (`.str`)**
+
+| Syntax                         | Description                          |
+|--------------------------------|--------------------------------------|
+| `df['col'].str.lower()`        | Convert to lowercase                 |
+| `df['col'].str.contains('x')`  | Check pattern match                  |
+| `df['col'].str.replace('a','b')`| Replace substrings                  |
+| `df['col'].str.len()`          | Length of each string                |
+
+---
+
+### **10. Date/Time Operations (`.dt`)**
+
+| Syntax                | Description                              |
+|------------------------|------------------------------------------|
+| `df['date'].dt.year`   | Extract year                            |
+| `df['date'].dt.month`  | Extract month                           |
+| `df['date'].dt.day`    | Extract day                             |
+| `df['date'].dt.weekday`| Day of week                             |
+
+> **Note**: Works only for datetime-type columns.
+
+---
+
+### **11. Type Conversion**
+
+| Syntax                          | Description                           |
+|----------------------------------|---------------------------------------|
+| `df.astype({'col': type})`       | Convert column type                   |
+| `df.convert_dtypes()`            | Convert to best possible types        |
+| `df.to_numpy()`                  | Convert to NumPy array                |
+| `df.to_dict()`                   | Convert to Python dictionary          |
+| `df.to_list()`                   | Convert to list of rows               |
+| `df.to_csv('file.csv')`          | Export to CSV                         |
+| `df.to_excel('file.xlsx')`       | Export to Excel                       |
+
+---
+
+### **12. Copying & Transposing**
+
+| Syntax                   | Description                     |
+|--------------------------|---------------------------------|
+| `df.copy(deep=True)`     | Deep copy of DataFrame          |
+| `df.T`                   | Transpose rows and columns      |
+
+---

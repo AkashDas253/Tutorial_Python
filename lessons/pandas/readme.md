@@ -7,11 +7,44 @@
 
 ## Concept in Pandas
 
-- [Data structures](lessons/data_structures/readme.md)
+
+- [Data](lessons/data/readme.md)
   - [Series](lessons/series/readme.md)
   - [Dataframe](lessons/dataframe/readme.md)
   - [Index](lessons/index/readme.dm)
   - [Datatypes](lessons/datatypes/readme.md)
+
+- [I/O](lessons/io/readme.md)
+
+- [Selection & Filtering](lessons/selection_filtering/readme.md)
+- [Data Cleaning](lessons/data_cleaning/readme.md)
+- [Data Transformation](lessons/data_transformation/readme.md)
+  - [Reshaping & Pivoting](lessons/reshaping_pivoting/readme.md)
+  - [Merging & Joining](lessons/merging_joining/readme.md)
+  - [GroupBy Operations](lessons/groupby/readme.md)
+
+- [Sorting & Ranking](lessons/sorting_ranking/readme.md)
+
+- [Aggregation & Grouping](lessons/aggregation_grouping/readme.md)
+
+- [Merging / Joining / Concatenation](lessons/merging_joining_concatenation/readme.md)
+- [Window Functions](lessons/window_functions/readme.md)
+
+- [Date and Time](lessons/date_time/readme.md)
+
+- [Statistics & Math Operations](lessons/statistics_math/readme.md)
+
+- [Data Inspection](lessons/data_inspection/readme.md)
+
+- [Text/String Operations](lessons/text_string_operations/readme.md)
+
+- [Looping / Iteration](lessons/looping_iteration/readme.md)
+
+
+- [Useful Utilities](lessons/useful_utilities/readme.md)
+
+
+---
 
 - [Data manipulation](lessons/data_manipulation/readme.md)
   <!-- - [selection and indexing](lessons/selection_and_indexing/readme.md)

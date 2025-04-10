@@ -1,170 +1,149 @@
-### Window Functions in Pandas
 
-Window functions in Pandas allow for the calculation of statistics over a specific window of data within a column or across columns, often used in time series or grouped data analysis. These functions enable operations such as moving averages, cumulative sums, and rankings, applied to subsets of the data.
+## **Window Functions in Pandas (Generalized & Complete)**
 
-#### Types of Window Functions
+Window functions in Pandas allow operations across **sliding**, **expanding**, or **weighted** windows. These are used for **trend analysis**, **smoothing**, **time-series**, and **group-based rolling statistics**.
 
-| **Function**                 | **Description**                                                                 |
-|------------------------------|---------------------------------------------------------------------------------|
-| `rolling()`                  | Provides a rolling window view over a series to perform various aggregation functions (e.g., sum, mean). |
-| `expanding()`                | Expanding window that includes all data points up to the current point. Useful for cumulative operations. |
-| `ewm()`                      | Exponential weighted functions, allowing for weighting past values with exponentially decaying weights. |
-| `shift()`                    | Shifts the data by a specified number of periods, often used for time series analysis. |
-| `rank()`                     | Ranks values within a specific window.                                           |
+---
 
-
-#### Syntax for Window Functions in Pandas
-
-#### 1. **Rolling Window**
-
-The `rolling()` function provides a rolling window view for applying aggregating functions.
+###  **Rolling Window Functions**
 
 ```python
-# Rolling window function
-df['output'] = df['column'].rolling(
-    window=<int>,         # Size of the window (number of periods)
-    min_periods=<int>,    # Minimum number of observations in the window (default is window size)
-    axis=<axis>,          # Axis along which to compute (0 for rows, 1 for columns)
-    win_type=<str>,       # Type of window ('boxcar', 'triang', 'blackman', etc.)
-    on=<column>,          # For time-based rolling, specify a column name to be used for the window
-    closed=<str>          # Defines which side of the window is closed ('right', 'left', 'both', 'neither')
-).function(<function>)   # Function to apply (e.g., mean(), sum(), median(), etc.)
+df.rolling(window, min_periods=None, center=False, win_type=None, on=None, axis=0, closed=None)
 ```
 
-##### Example:
+| Parameter       | Default | Description                                                    |
+|----------------|---------|----------------------------------------------------------------|
+| `window`        | Required | Size of the moving window                                      |
+| `min_periods`   | `None`   | Minimum observations in window required to return a result     |
+| `center`        | `False`  | Set labels at center of window                                 |
+| `win_type`      | `None`   | Window type: boxcar, triang, blackman, hamming, etc.           |
+| `on`            | `None`   | Column to use instead of index                                 |
+| `axis`          | `0`      | Axis to perform the rolling on                                 |
+| `closed`        | `None`   | Which sides to close: 'right', 'left', 'both', 'neither'       |
+
+**Common Rolling Methods**
+
+| Method             | Description                            | Example                             |
+|-------------------|----------------------------------------|-------------------------------------|
+| `.mean()`         | Rolling mean                           | `df.rolling(3).mean()`              |
+| `.sum()`          | Rolling sum                            | `df.rolling(3).sum()`               |
+| `.max()` / `.min()` | Rolling max/min                     | `df.rolling(3).max()`               |
+| `.std()` / `.var()` | Rolling std/variance                | `df.rolling(3).std()`               |
+| `.median()`       | Rolling median                         | `df.rolling(3).median()`            |
+| `.apply(func)`    | Custom rolling logic                   | `df.rolling(3).apply(np.ptp)`       |
+
+---
+
+###  **Expanding Window Functions**
 
 ```python
-df['rolling_mean'] = df['column'].rolling(window=3).mean()
+df.expanding(min_periods=1, axis=0, method='single')
 ```
 
-#### 2. **Expanding Window**
+| Parameter       | Default | Description                                                |
+|----------------|---------|------------------------------------------------------------|
+| `min_periods`   | `1`      | Minimum observations needed to return a result             |
+| `axis`          | `0`      | Axis for operation                                         |
+| `method`        | `'single'` | Optimization flag for internal use                        |
 
-The `expanding()` function calculates cumulative statistics over all data points up to the current point.
+**Common Expanding Methods**
+
+| Method             | Description                          | Example                                |
+|-------------------|--------------------------------------|----------------------------------------|
+| `.sum()`          | Expanding cumulative sum             | `df.expanding().sum()`                 |
+| `.mean()`         | Expanding mean                       | `df.expanding().mean()`                |
+| `.std()` / `.var()` | Expanding std/variance            | `df.expanding().std()`                 |
+| `.count()`        | Count of non-NA values               | `df.expanding().count()`               |
+| `.apply(func)`    | Custom expanding logic               | `df.expanding().apply(lambda x: x[-1])`|
+
+---
+
+###  **Exponentially Weighted Window (EWM)**
 
 ```python
-# Expanding window function
-df['output'] = df['column'].expanding(
-    min_periods=<int>,    # Minimum number of observations required in the window
-    axis=<axis>           # Axis along which to compute
-).function(<function>)   # Function to apply (e.g., sum(), mean(), max(), etc.)
+df.ewm(com=None, span=None, halflife=None, alpha=None, min_periods=0, adjust=True, ignore_na=False, axis=0)
 ```
 
-##### Example:
+| Parameter       | Description                                                                 |
+|----------------|-----------------------------------------------------------------------------|
+| `com`          | Center of mass (smoothing parameter)                                        |
+| `span`         | Smoothness of decay (similar to window size)                                |
+| `halflife`     | Half-life of weights                                                        |
+| `alpha`        | Smoothing factor (0 < α ≤ 1)                                                 |
+| `adjust`       | Whether to divide by weights or not                                         |
+| `ignore_na`    | Whether to ignore missing values                                            |
+| `min_periods`  | Minimum observations required to return result                              |
+
+**Common EWM Methods**
+
+| Method             | Description                         | Example                              |
+|-------------------|-------------------------------------|--------------------------------------|
+| `.mean()`         | Exponentially weighted mean         | `df['col'].ewm(span=3).mean()`       |
+| `.std()` / `.var()` | EWM std/var                      | `df['col'].ewm(span=3).std()`        |
+| `.corr()`         | EWM correlation                     | `df['a'].ewm(span=2).corr(df['b'])`  |
+
+---
+
+###  **Cumulative Functions**
 
 ```python
-df['expanding_sum'] = df['column'].expanding().sum()
+df['col'].cumsum()      # Cumulative sum  
+df['col'].cumprod()     # Cumulative product  
+df['col'].cummin()      # Cumulative min  
+df['col'].cummax()      # Cumulative max  
+df['col'].cumcount()    # Cumulative count (on GroupBy object)
 ```
 
-#### 3. **Exponential Weighted Function**
+> These work directly on columns or on grouped data, not via a window object.
 
-The `ewm()` function is used for exponential weighting, which assigns more importance to recent values.
+---
+
+###  **Group-based Window Functions**
 
 ```python
-# Exponential weighted function
-df['output'] = df['column'].ewm(
-    span=<float>,            # Decay factor (influences weighting of past values)
-    halflife=<float>,        # Half-life period for the exponential decay
-    adjust=<bool>,           # Whether to adjust the weights (default is True)
-    axis=<axis>              # Axis along which to compute
-).function(<function>)      # Function to apply (e.g., mean(), sum(), var(), etc.)
+df.groupby('group')['col'].rolling(window=3).mean().reset_index(level=0, drop=True)
 ```
 
-##### Example:
+> Allows performing window operations **within each group** (e.g., per user, per category).
 
 ```python
-df['ewm_mean'] = df['column'].ewm(span=3).mean()
+df.groupby('group')['col'].expanding().sum()  
+# Expanding operation by group
 ```
-
-#### 4. **Shifting Data**
-
-The `shift()` function shifts the data by a given number of periods forward or backward.
 
 ```python
-# Shifting data
-df['output'] = df['column'].shift(
-    periods=<int>,            # Number of periods to shift (positive for forward, negative for backward)
-    freq=<str>,               # Frequency string (e.g., 'D' for days, 'H' for hours) (optional)
-    axis=<axis>,              # Axis along which to shift (default is 0)
-    fill_value=<value>        # Value to use for missing values (default is NaN)
-)
+df.groupby('group')['col'].transform(lambda x: x.ewm(span=3).mean())  
+# EWM per group
 ```
 
-##### Example:
+---
+
+###  **Centered Windows**
 
 ```python
-df['shifted'] = df['column'].shift(1)
+df['col'].rolling(window=3, center=True).mean()  
+# Centers the result at the middle of the window
 ```
 
-#### 5. **Ranking**
+---
 
-The `rank()` function assigns ranks to values in the column, with various ranking methods available.
+###  **Custom Functions**
 
 ```python
-# Ranking data
-df['output'] = df['column'].rank(
-    method=<str>,             # Ranking method ('average', 'min', 'max', 'first', 'dense')
-    axis=<axis>,              # Axis along which to compute (default is 0)
-    na_option=<str>,          # Handle NaN values ('keep', 'top', 'bottom')
-    ascending=<bool>,         # Whether to rank in ascending or descending order
-    pct=<bool>                # Whether to return percentile rank
-)
+df['range'] = df['col'].rolling(3).apply(lambda x: x.max() - x.min())  
+# Rolling range calculation
 ```
 
-##### Example:
+---
+
+###  **Window Type Examples (win_type)**  
+Requires `scipy` for certain window types.
 
 ```python
-df['rank'] = df['column'].rank(method='average')
+df['col'].rolling(window=5, win_type='triang').mean()  
+# Triangular weighted rolling average
 ```
 
-### Common Functions Used with Window Functions
-
-- `mean()`: Compute the average.
-- `sum()`: Compute the sum of values.
-- `median()`: Compute the median.
-- `min()`: Compute the minimum.
-- `max()`: Compute the maximum.
-- `std()`: Compute the standard deviation.
-- `var()`: Compute the variance.
-- `count()`: Compute the number of non-null values.
-- `cummax()`: Compute the cumulative maximum.
-- `cummin()`: Compute the cumulative minimum.
-- `cumprod()`: Compute the cumulative product.
-
-### Usage Example for All Window Functions
-
-```python
-# Rolling mean
-df['rolling_mean'] = df['column'].rolling(window=3).mean()
-
-# Expanding sum
-df['expanding_sum'] = df['column'].expanding().sum()
-
-# Exponential weighted mean
-df['ewm_mean'] = df['column'].ewm(span=3).mean()
-
-# Shifting data by one period
-df['shifted'] = df['column'].shift(1)
-
-# Ranking data
-df['rank'] = df['column'].rank(method='average')
-```
-
-#### Usage Scenarios
-
-- **Rolling Mean/Median**: Useful for smoothing time series data or financial data.
-  - Example: Calculating a 7-day moving average of stock prices.
-  
-- **Cumulative Sum**: Useful for cumulative counts, sums, or statistics.
-  - Example: Tracking cumulative sales over a period.
-  
-- **Exponential Weighting**: Useful when recent data points are more important than older ones.
-  - Example: Exponential smoothing in time series forecasting.
-  
-- **Shifting**: Helps to compare current data with past data.
-  - Example: Comparing daily stock prices to the previous day.
-
-#### Considerations
-- **NaN Handling**: Most window functions by default will result in `NaN` for the initial values where the window size cannot be fully applied.
-- **Performance**: For large datasets, window functions can be computationally expensive and may require optimization.
+> Other `win_type` values: `'boxcar'`, `'triang'`, `'blackman'`, `'hamming'`, `'bartlett'`, `'parzen'`, `'bohman'`, `'blackmanharris'`, `'nuttall'`, `'barthann'`.
 
 ---
