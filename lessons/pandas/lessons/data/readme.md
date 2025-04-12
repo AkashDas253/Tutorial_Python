@@ -1,4 +1,4 @@
-# **Comprehensive Conceptual Note on Data in Pandas**
+# **Data in Pandas**
 
 ---
 

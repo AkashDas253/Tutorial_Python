@@ -13,6 +13,7 @@ A `Series` is a one-dimensional, labeled, homogeneous array-like structure in pa
 | Property      | Description                                                    |
 |---------------|----------------------------------------------------------------|
 | 1D structure  | Holds data in a single dimension (like a column)              |
+| Mutable	|    The contents of a Series can be modified, and elements can be updated.  |
 | Indexed       | Every value is paired with a label (index)                    |
 | Homogeneous   | All elements are of the same type                             |
 | NaN support   | Allows missing data (`NaN`, `None`)                           |
@@ -33,13 +34,33 @@ pd.Series(
 )
 ```
 
+### Basic Operations on Series
+
+| **Operation**             | **Description**                                |
+|---------------------------|------------------------------------------------|
+| **Viewing Data**           | Use `.head()` to view the first few elements. |
+| **Indexing**               | Access elements using `[]` with index labels. |
+| **Slicing**                | Slice a `Series` using `.iloc[]` or `.loc[]`. |
+| **Arithmetic Operations**  | Perform element-wise arithmetic operations. |
+| **Handling Missing Data**  | Use `.isnull()`, `.dropna()`, and `.fillna()` for handling missing values. |
+| **Element-wise Operations**| Perform operations on elements like `+`, `-`, `*`, etc. |
+| **Aggregation**            | Use `.sum()`, `.mean()`, `.min()`, `.max()`, etc. for aggregations. |
+
+### Creating a Series  
+
+| Method | Description |  
+|--------|-------------|  
+| `pd.Series(data)` | Creates a Series from a list, tuple, dictionary, scalar, or NumPy array |  
+| `pd.Series(data, index=index_list)` | Creates a Series with a custom index |  
+| `pd.Series(data, dtype=type)` | Specifies the data type of elements |  
+
 ---
 
-## **All Features by Category with Syntax**
+## **All Features and Operations**
 
 ---
 
-### **1. Attributes (Read-only Metadata)**
+### **Attributes (Read-only Metadata)**
 
 | Syntax        | Description                          |
 |---------------|--------------------------------------|
@@ -55,7 +76,7 @@ pd.Series(
 
 ---
 
-### **2. Indexing & Access**
+### **Indexing & Access**
 
 | Syntax                     | Description                     |
 |----------------------------|---------------------------------|
@@ -68,7 +89,7 @@ pd.Series(
 
 ---
 
-### **3. Arithmetic Operations**
+### **Arithmetic Operations**
 
 | Syntax                                                     | Description                      |
 |------------------------------------------------------------|----------------------------------|
@@ -82,7 +103,31 @@ pd.Series(
 
 ---
 
-### **4. Aggregation & Statistics**
+### **Vectorized Operations**
+
+| Operation | Description |  
+|-----------|-------------|  
+| `s + n` | Adds `n` to each element |  
+| `s - n` | Subtracts `n` from each element |  
+| `s * n` | Multiplies each element by `n` |  
+| `s / n` | Divides each element by `n` |  
+| `s ** n` | Raises each element to the power of `n` |  
+| `s % n` | Returns the remainder after division | 
+
+---
+
+### **Checking Conditions** 
+
+| Method | Description |  
+|--------|-------------|  
+| `s > n` | Returns `True` for elements greater than `n` |  
+| `s < n` | Returns `True` for elements less than `n` |  
+| `s == n` | Returns `True` for elements equal to `n` |  
+| `s[s > n]` | Filters elements greater than `n` |  
+
+---
+
+### **Aggregation & Statistics**
 
 | Syntax                                | Description                    |
 |---------------------------------------|--------------------------------|
@@ -98,7 +143,7 @@ pd.Series(
 
 ---
 
-### **5. Value Checks & Insights**
+### **Value Checks & Insights**
 
 | Syntax                             | Description                          |
 |------------------------------------|--------------------------------------|
@@ -110,7 +155,17 @@ pd.Series(
 
 ---
 
-### **6. Handling Missing Data**
+### **Applying Functions**
+
+| Method | Description |  
+|--------|-------------|  
+| `s.apply(func)` | Applies a function to each element |  
+| `s.map(func)` | Applies a function element-wise |  
+| `s.apply(lambda x: x * 2)` | Example of applying a lambda function |  
+
+---
+
+### **Handling Missing Data**
 
 | Syntax                                              | Description                         |
 |-----------------------------------------------------|-------------------------------------|
@@ -122,7 +177,18 @@ pd.Series(
 
 ---
 
-### **7. String Methods (`.str`)**
+### **Combining Multiple Series**  
+
+| Method | Description |  
+|--------|-------------|  
+| `s1.add(s2)` | Adds two Series element-wise |  
+| `s1.sub(s2)` | Subtracts two Series element-wise |  
+| `s1.mul(s2)` | Multiplies two Series element-wise |  
+| `s1.div(s2)` | Divides two Series element-wise |  
+
+---
+
+### **String Methods (`.str`)**
 
 | Syntax                             | Description                        |
 |------------------------------------|------------------------------------|
@@ -132,10 +198,12 @@ pd.Series(
 | `s.str.len()`                      | Length of each string              |
 | `s.str.replace('a', 'b')`          | Replace substrings                 |
 | `s.str.strip()`                    | Remove leading/trailing spaces     |
+| `s.str.replace('old', 'new')` | Replaces a substring |  
+| `s.str.split('delimiter')` | Splits elements based on a delimiter |  
 
 ---
 
-### **8. Date/Time Methods (`.dt`)**
+### **Date/Time Methods (`.dt`)**
 
 | Syntax           | Description                     |
 |------------------|---------------------------------|
@@ -150,7 +218,7 @@ pd.Series(
 
 ---
 
-### **9. Conversion & Casting**
+### **Conversion & Casting**
 
 | Syntax                                  | Description                        |
 |-----------------------------------------|------------------------------------|
@@ -158,10 +226,11 @@ pd.Series(
 | `s.to_numpy(dtype=None)`                | Convert to NumPy array             |
 | `s.to_list()`                           | Convert to Python list             |
 | `s.to_frame(name=None)`                 | Convert Series to single-column DataFrame |
+| `s.to_dict()` | Converts to a dictionary |
 
 ---
 
-### **10. Sorting, Copying, and Reshaping**
+### **Sorting, Copying, and Reshaping**
 
 | Syntax                                       | Description                      |
 |----------------------------------------------|----------------------------------|
@@ -170,5 +239,22 @@ pd.Series(
 | `s.reset_index(drop=False, inplace=False)`   | Reset index                      |
 | `s.rename(name)`                             | Rename the Series                |
 | `s.copy(deep=True)`                          | Deep copy of Series              |
+
+---
+
+### Additional Methods  
+
+| Method | Description |  
+|--------|-------------|  
+| `s.idxmax()` | Returns the index of the maximum value |  
+| `s.idxmin()` | Returns the index of the minimum value |  
+| `s.value_counts()` | Returns a count of unique values |  
+| `s.nunique()` | Returns the number of unique values |  
+| `s.clip(lower, upper)` | Limits values between `lower` and `upper` |  
+| `s.diff()` | Computes the difference between consecutive elements |  
+| `s.pct_change()` | Computes percentage change between elements |  
+| `s.cumsum()` | Cumulative sum of elements |  
+| `s.cumprod()` | Cumulative product of elements |  
+| `s.rolling(window).mean()` | Rolling mean over a window | 
 
 ---

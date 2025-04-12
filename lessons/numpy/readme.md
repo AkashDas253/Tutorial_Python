@@ -6,6 +6,146 @@
 - [Overview](lessons/overview/readme.md)
 
 
+---
+
+
+- [NumPy Basics](lessons/basics/readme.md)
+- [Numpy Data](lessons/data/readme.md)
+    - [ndarray](lessons/ndarray/readme.md)
+    - [ufuncs](lessons/universal_functions/readme.md)
+    - [Custom Universal Functions](lessons/custom_universal_functions/readme.md)
+---
+
+## 2. Array Creation Techniques  
+- From Python Structures (List, Tuple)  
+- Using Built-in Functions:  
+  - `array()`  
+  - `arange()`  
+  - `linspace()`  
+  - `logspace()`  
+  - `zeros()`  
+  - `ones()`  
+  - `full()`  
+  - `eye()`  
+  - `empty()`  
+  - Random Array Creation:  
+    - `random.rand()`  
+    - `random.randn()`  
+    - `random.randint()`  
+
+---
+
+## 3. Array Attributes  
+- `shape`  
+- `size`  
+- `ndim`  
+- `dtype`  
+- `itemsize`  
+- `nbytes`  
+
+---
+
+## 4. Data Types in NumPy  
+- Built-in Data Types  
+- Type Conversion (`astype()`)  
+
+---
+
+## 5. Array Indexing  
+- 1D Indexing  
+- 2D Indexing  
+- nD Indexing  
+- Slicing  
+- Fancy Indexing  
+- Boolean Indexing  
+
+---
+
+## 6. Array Operations  
+- Arithmetic Operations  
+- Relational Operations  
+- Logical Operations  
+- Broadcasting  
+- Vectorized Operations  
+
+---
+
+## 7. Mathematical Functions  
+- Aggregate Functions  
+  - `sum()`  
+  - `mean()`  
+  - `median()`  
+  - `std()`  
+  - `min()`, `max()`  
+- Trigonometric Functions  
+- Exponential & Log Functions  
+
+---
+
+## 8. Array Manipulation  
+- Reshape  
+- Flatten  
+- Transpose  
+- Resize  
+- Concatenation  
+- Stack (`vstack()`, `hstack()`)  
+- Split (`split()`, `array_split()`)  
+
+---
+
+## 9. Copy vs View  
+- Deep Copy  
+- Shallow Copy (View)  
+
+---
+
+## 10. Sorting & Searching  
+- `sort()`  
+- `argsort()`  
+- `where()`  
+- `nonzero()`  
+- `unique()`  
+
+---
+
+## 11. Linear Algebra in NumPy  
+- Matrix Creation  
+- Dot Product  
+- Determinant  
+- Inverse  
+- Eigenvalues & Eigenvectors  
+- Matrix Decomposition  
+
+---
+
+## 12. Random Module  
+- Random Number Generation  
+- Random Seed  
+- Shuffle  
+- Permutation  
+
+---
+
+## 13. File Handling in NumPy  
+- `loadtxt()`  
+- `savetxt()`  
+- `genfromtxt()`  
+- `save()`  
+- `load()`  
+
+---
+
+## 14. Special Functions  
+- `numpy.vectorize()`  
+- `numpy.fromfunction()`  
+- `numpy.meshgrid()`  
+
+---
+
+Would you like me to create this in a Mermaid Diagram?
+
+---
+
 - [NumPy Basics](lessons/numpy_basics/readme.md)  
 - [Creating Arrays](lessons/creating_arrays/readme.md)  
 - [Array Attributes](lessons/array_attributes/readme.md)  
