@@ -43,13 +43,10 @@
 
 
 - Data Specific
-  - [Text/String Operations](lessons/text_string_operations/readme.md)
+  - [Text/String Operations](lessons/string_operations/readme.md)
   - [Date and Time](lessons/date_time/readme.md)
   - [Time Series Data](lessons/time_series_data/readme.md)
   - [Categorical data](lessons/categorical_data/readme.md)
-  
-
-
 
 - [Visualization](lessons/visualization/readme.md)
 
