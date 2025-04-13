@@ -33,6 +33,7 @@ pd.DataFrame(
     copy=False              # Copy data if True
 )
 ```
+
 ### Creating a DataFrame  
 
 | Method | Description |  
@@ -99,12 +100,28 @@ pd.DataFrame(
 
 ### Filtering Rows  
 
-| Condition | Description |  
-|-----------|-------------|  
-| `df[df['col'] > n]` | Selects rows where column value is greater than `n` |  
-| `df[df['col'] == 'value']` | Selects rows where column equals 'value' |  
+| Condition                              | Description                                      |  
+|----------------------------------------|--------------------------------------------------|  
+| `df[df['col'] > n]`                    | Selects rows where column value is greater than `n` |  
+| `df[df['col'] == 'value']`             | Selects rows where column equals 'value'        |  
 | `df[(df['col1'] > n) & (df['col2'] < m)]` | Selects rows where multiple conditions are met |  
-| `df.query('col > n')` | Queries rows using expressions |  
+| `df[df['col'].isin(['value1', 'value2'])]` | Selects rows where column value is in a list   |  
+| `df[~df['col'].isin(['value1', 'value2'])]` | Selects rows where column value is not in a list |  
+| `df[df['col'].str.contains('substring')]` | Selects rows where column contains a substring |  
+| `df.where(condition)`                  | Keep rows where condition is True              |  
+| `df.mask(condition)`                   | Replace rows where condition is True           |  
+
+---
+
+### Querying Rows  
+
+| Syntax                                | Description                            |  
+|---------------------------------------|----------------------------------------|  
+| `df.query('col > n')`                 | Queries rows using expressions         |  
+| `df.query('col == "value"')`          | Queries rows where column equals value |  
+| `df.query('col1 > n & col2 < m')`     | Queries rows with multiple conditions  |  
+| `df.query('col in ["value1", "value2"]')` | Queries rows where column value is in a list |  
+| `df.query('col not in ["value1", "value2"]')` | Queries rows where column value is not in a list |  
 
 ---
 
@@ -162,38 +179,113 @@ pd.DataFrame(
 
 ---
 
-### 4. Aggregation & Statistics
+### Aggregation & Statistics
 
-| Syntax                        | Description                            |
-|-------------------------------|----------------------------------------|
-| `df.sum(axis=0)`              | Sum along axis                         |
-| `df.mean(axis=0)`             | Mean                                   |
-| `df.median(axis=0)`           | Median                                 |
-| `df.min(axis=0)`              | Minimum                                |
-| `df.max(axis=0)`              | Maximum                                |
-| `df.std(axis=0)`              | Standard deviation                     |
-| `df.var(axis=0)`              | Variance                               |
-| `df.mode()`                   | Most frequent value                    |
-| `df.describe()`               | Summary statistics                     |
-| `df.count()`                  | Count non-NA cells                     |
-| `df.cumsum()`                 | Cumulative sum                         |
-| `df.cumprod()`                | Cumulative product                     |
+| Syntax                        | Description                                                                                          |
+|-------------------------------|------------------------------------------------------------------------------------------------------|
+| `df.sum(axis=0)`              | Compute the sum of values along the specified axis. `axis=0` sums over columns, `axis=1` sums over rows. |
+| `df.mean(axis=0)`             | Compute the mean (average) of values along the specified axis.                                       |
+| `df.median(axis=0)`           | Compute the median (middle value) of values along the specified axis.                               |
+| `df.min(axis=0)`              | Compute the minimum value along the specified axis.                                                 |
+| `df.max(axis=0)`              | Compute the maximum value along the specified axis.                                                 |
+| `df.std(axis=0)`              | Compute the standard deviation of values along the specified axis. Measures the spread of the data. |
+| `df.var(axis=0)`              | Compute the variance of values along the specified axis. Measures the variability of the data.      |
+| `df.mode()`                   | Compute the mode (most frequent value) for each column. Returns a DataFrame as there can be multiple modes. |
+| `df.describe()`               | Generate summary statistics for numeric columns, including count, mean, std, min, 25%, 50%, 75%, and max. |
+| `df.count()`                  | Count the number of non-NA/null values for each column or row.                                       |
+| `df.cumsum()`                 | Compute the cumulative sum of values along the specified axis.                                      |
+| `df.cumprod()`                | Compute the cumulative product of values along the specified axis.                                  |
+| `df.corr()`                   | Compute pairwise correlation of numeric columns. Returns a DataFrame with correlation coefficients ranging from -1 to 1. |
+| `df.cov()`                    | Compute pairwise covariance of numeric columns. Returns a DataFrame with covariance values.         |
+
+---
+
+### Grouping & Aggregation  
+
+| Syntax                                | Description                                                                                          |
+|---------------------------------------|------------------------------------------------------------------------------------------------------|
+| `df.groupby('col').sum()`             | Groups the DataFrame by a column and computes the sum of values for each group.                      |
+| `df.groupby('col').mean()`            | Groups the DataFrame by a column and computes the mean (average) of values for each group.           |
+| `df.groupby(['col1', 'col2']).count()`| Groups the DataFrame by multiple columns and counts the number of non-NA values in each group.       |
+| `df.agg({'col1': 'sum', 'col2': 'mean'})` | Applies multiple aggregation functions to specified columns. For example, sums `col1` and computes the mean of `col2`. |
+| `df.groupby('col').min()`             | Groups the DataFrame by a column and computes the minimum value for each group.                      |
+| `df.groupby('col').max()`             | Groups the DataFrame by a column and computes the maximum value for each group.                      |
+| `df.groupby('col').std()`             | Groups the DataFrame by a column and computes the standard deviation for each group.                 |
+| `df.groupby('col').var()`             | Groups the DataFrame by a column and computes the variance for each group.                           |
+| `df.groupby('col').median()`          | Groups the DataFrame by a column and computes the median for each group.                             |
+| `df.groupby('col').first()`           | Groups the DataFrame by a column and returns the first value in each group.                          |
+| `df.groupby('col').last()`            | Groups the DataFrame by a column and returns the last value in each group.                           |
+| `df.groupby('col').size()`            | Groups the DataFrame by a column and returns the size (number of rows) of each group.                |
+| `df.groupby('col').agg(['sum', 'mean'])` | Groups the DataFrame by a column and applies multiple aggregation functions (e.g., sum and mean) to each group. |
+| `df.groupby('col').apply(func)`       | Groups the DataFrame by a column and applies a custom function `func` to each group.                 |
+| `df.pivot_table(values='col', index='col1', columns='col2', aggfunc='mean')` | Creates a pivot table, aggregating data using the specified function (e.g., mean).                   |
+| `df.groupby('col').transform('mean')` | Groups the DataFrame by a column and applies a transformation (e.g., mean) to each group, returning a DataFrame of the same shape. |
+| `df.groupby('col').filter(func)`      | Filters groups based on a custom function `func` that returns `True` or `False` for each group.      |
+
+---
+
+### Pivoting & Reshaping  
+
+| Method                                | Description                                      |  
+|---------------------------------------|--------------------------------------------------|  
+| `df.pivot(index, columns, values)`    | Reshapes data by pivoting a DataFrame based on index, columns, and values. |  
+| `df.melt(id_vars, var_name, value_name)` | Converts wide-format data into long-format data. |  
+| `df.stack()`                          | Stacks the columns of a DataFrame into rows.     |  
+| `df.unstack()`                        | Unstacks rows of a DataFrame into columns.       |  
+
+---
+
+### Merging & Joining  
+
+| Method                                | Description                                      |  
+|---------------------------------------|--------------------------------------------------|  
+| `pd.concat([df1, df2])`               | Concatenates DataFrames along rows (default).    |  
+| `pd.concat([df1, df2], axis=1)`       | Concatenates DataFrames along columns.          |  
+| `df1.merge(df2, on='col')`            | Merges two DataFrames on a common column.        |  
+| `df1.join(df2, on='col')`             | Joins two DataFrames using their index or a key. |  
+
+---
+
+### Exporting Data  
+
+| Method                                | Description                                      |  
+|---------------------------------------|--------------------------------------------------|  
+| `df.to_csv('filename.csv')`           | Exports DataFrame to a CSV file.                |  
+| `df.to_excel('filename.xlsx')`        | Exports DataFrame to an Excel file.             |  
+| `df.to_json('filename.json')`         | Exports DataFrame to a JSON file.               |  
+| `df.to_sql('table_name', connection)` | Writes DataFrame to a SQL table.                |  
+| `df.to_html('filename.html')`         | Exports DataFrame to an HTML file.              |  
+| `df.to_pickle('filename.pkl')`        | Serializes DataFrame to a pickle file.          |  
 
 ---
 
 ### Missing Data Handling
 
-| Syntax                                   | Description                            |
-|------------------------------------------|----------------------------------------|
-| `df.isna()`                              | Detect missing values                  |
-| `df.notna()`                             | Detect non-missing values              |
-| `df.fillna(value, method)`               | Fill missing values                    |
-| `df.dropna(axis=0, how='any')`           | Drop rows/columns with NaN             |
-| `df.replace(to_replace, value)`          | Replace values                         |
+| Syntax                                   | Description                                                                                     |
+|------------------------------------------|-------------------------------------------------------------------------------------------------|
+| `df.isna()`                              | Detect missing values. Returns a DataFrame of the same shape as `df`, with `True` for NaN values and `False` otherwise. |
+| `df.notna()`                             | Detect non-missing values. Returns a DataFrame of the same shape as `df`, with `True` for non-NaN values and `False` otherwise. |
+| `df.fillna(value, method)`               | Fill missing values. Replace NaN values with a specified value or use a method like `ffill` (forward fill) or `bfill` (backward fill). |
+| `df.dropna(axis=0, how='any')`           | Drop rows or columns with NaN values. `axis=0` drops rows, `axis=1` drops columns. `how='any'` drops if any NaN is present, `how='all'` drops only if all values are NaN. |
+| `df.replace(to_replace, value)`          | Replace specific values in the DataFrame. `to_replace` specifies the value(s) to replace, and `value` specifies the replacement. |
+| `df.interpolate(method='linear')`        | Fill NaN values using interpolation. The `method` parameter can be `linear`, `polynomial`, `spline`, etc. |
+| `df.isnull().sum()`                      | Count the number of NaN values in each column. Useful for quickly identifying missing data.     |
+| `df.fillna(df.mean())`                   | Replace NaN values with the mean of each column. Can also use `median`, `mode`, etc., depending on the requirement. |
+| `df.dropna(subset=['column_name'])`      | Drop rows where NaN values are present in specific columns. Replace `'column_name'` with the desired column name. |
+| `df.mask(df < 0, np.nan)`                | Replace values that meet a condition (e.g., negative values) with NaN.                         |
+| `df.ffill()`                             | Forward fill NaN values using the last valid observation.                                       |
+| `df.bfill()`                             | Backward fill NaN values using the next valid observation.                                      |
+| `df.fillna(method='pad')`                | Alias for forward fill (`ffill`).                                                              |
+| `df.fillna(method='backfill')`           | Alias for backward fill (`bfill`).                                                             |
+| `df.dropna(thresh=n)`                    | Drop rows or columns where fewer than `n` non-NaN values are present.                          |
+| `df.fillna({'col1': 0, 'col2': 'missing'})` | Fill NaN values in specific columns with different values.                                      |
+| `df.fillna(inplace=True)`                | Modify the DataFrame in place without creating a new object.                                   |
+| `df.isnull().any(axis=1)`                | Detect rows with at least one NaN value. Returns a boolean Series.                             |
+| `df.isnull().all(axis=1)`                | Detect rows where all values are NaN. Returns a boolean Series.                                |
 
 ---
 
-### 6. Column & Row Manipulation
+### Column & Row Manipulation
 
 | Syntax                                       | Description                            |
 |----------------------------------------------|----------------------------------------|
@@ -206,7 +298,7 @@ pd.DataFrame(
 
 ---
 
-### 7. Sorting & Reindexing
+### Sorting & Reindexing
 
 | Syntax                                      | Description                            |
 |---------------------------------------------|----------------------------------------|
@@ -218,42 +310,26 @@ pd.DataFrame(
 
 ---
 
-### 8. Filtering & Querying
+### Data-Specific Operations
 
-| Syntax                                | Description                            |
-|---------------------------------------|----------------------------------------|
-| `df[df['col'] > 5]`                   | Filter rows with condition             |
-| `df.query('col > 5')`                 | SQL-like querying                      |
-| `df.where(condition)`                 | Keep if condition is True              |
-| `df.mask(condition)`                  | Replace where condition is True        |
+Pandas provides accessors like `.str` for strings, `.dt` for datetime, and `.cat` for categorical data. These accessors allow you to perform operations similar to Python's built-in methods but in a vectorized way, handling exceptions like `NaN` gracefully.
 
----
+| Data Type       | Accessor | Example Syntax                          | Description                                                                 |
+|------------------|----------|-----------------------------------------|-----------------------------------------------------------------------------|
+| String           | `.str`   | `df['col'].str.upper()`                | Operates like Python string methods (e.g., `.upper()`, `.replace()`, etc.). Handles `NaN` without errors. |
+| Datetime         | `.dt`    | `df['col'].dt.year`                    | Extracts parts of datetime (e.g., year, month, day) or formats them.        |
+| Categorical      | `.cat`   | `df['col'].cat.codes`                  | Accesses categorical properties or converts categories to numeric codes.    |
+| Numeric          | N/A      | `df['col'] + 10`                       | Operates directly like Python numeric types (e.g., addition, subtraction).  |
+| General          | `.apply` | `df['col'].apply(lambda x: x + 1)`     | Applies custom Python functions to each element.                           |
 
-### 9. String Operations (`.str`)
-
-| Syntax                         | Description                          |
-|--------------------------------|--------------------------------------|
-| `df['col'].str.lower()`        | Convert to lowercase                 |
-| `df['col'].str.contains('x')`  | Check pattern match                  |
-| `df['col'].str.replace('a','b')`| Replace substrings                  |
-| `df['col'].str.len()`          | Length of each string                |
+### Key Notes:
+- **Vectorized Operations**: These accessors allow operations on entire columns, making them faster than Python loops.
+- **Exception Handling**: Operations automatically skip `NaN` values without raising errors.
+- **Chaining**: You can chain multiple operations, e.g., `df['col'].str.strip().str.upper()`.
 
 ---
 
-### 10. Date/Time Operations (`.dt`)
-
-| Syntax                | Description                              |
-|------------------------|------------------------------------------|
-| `df['date'].dt.year`   | Extract year                            |
-| `df['date'].dt.month`  | Extract month                           |
-| `df['date'].dt.day`    | Extract day                             |
-| `df['date'].dt.weekday`| Day of week                             |
-
-> Note: Works only for datetime-type columns.
-
----
-
-### 11. Type Conversion
+### Type Conversion
 
 | Syntax                          | Description                           |
 |----------------------------------|---------------------------------------|
@@ -267,11 +343,46 @@ pd.DataFrame(
 
 ---
 
-### 12. Copying & Transposing
+### Copying & Transposing
 
 | Syntax                   | Description                     |
 |--------------------------|---------------------------------|
 | `df.copy(deep=True)`     | Deep copy of DataFrame          |
 | `df.T`                   | Transpose rows and columns      |
+
+---
+
+### Handling Duplicates  
+
+| Method                  | Description                          |  
+|-------------------------|--------------------------------------|  
+| `df.duplicated()`       | Checks for duplicate rows.          |  
+| `df.drop_duplicates()`  | Removes duplicate rows.             |  
+
+---
+
+### Value Manipulation  
+
+| Method                  | Description                          |  
+|-------------------------|--------------------------------------|  
+| `df.clip(lower, upper)` | Limits values between `lower` and `upper`. |  
+| `df.nunique()`          | Returns the number of unique values per column. |  
+
+---
+
+### Cumulative Operations  
+
+| Method                  | Description                          |  
+|-------------------------|--------------------------------------|  
+| `df.cumsum()`           | Computes the cumulative sum per column. |  
+| `df.cumprod()`          | Computes the cumulative product per column. |  
+
+---
+
+### Difference Calculation  
+
+| Method                  | Description                          |  
+|-------------------------|--------------------------------------|  
+| `df.diff()`             | Computes the difference between consecutive values. |  
 
 ---

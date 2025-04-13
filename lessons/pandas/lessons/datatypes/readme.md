@@ -5,45 +5,60 @@
 
 ## **Overview**
 
-Pandas is built on top of NumPy and uses its **data types (`dtypes`)** internally, while also introducing **extension types** to better support missing data, categoricals, and more.
+Pandas is built on top of NumPy and uses its **data types (`dtypes`)** internally, while also introducing **extension types** to better support missing data, categoricals, sparse data, and more. It also supports experimental integration with Apache Arrow for enhanced performance.
 
 ---
 
-## **1. Core Data Types in Pandas**
+## **Core Data Types in Pandas**
 
-| Data Type     | Alias in Pandas  | Base Type     | Description                                      | Nullable (via Extension Type) |
-|---------------|------------------|---------------|--------------------------------------------------|-------------------------------|
-| `int64`       | `int`            | NumPy         | Integer (64-bit)                                 | ✅ `Int64`                    |
-| `float64`     | `float`          | NumPy         | Floating-point (64-bit)                          | ✅ `Float64`                  |
-| `bool`        | `bool`           | NumPy         | Boolean                                          | ✅ `boolean`                  |
-| `object`      | `object`         | Python        | Mixed or string types                            | ✅ (but not native support)   |
-| `string`      | `string[python]` | Extension     | Proper string dtype (instead of object)          | ✅                            |
-| `datetime64[ns]` | `datetime`   | NumPy         | Timestamps with nanosecond resolution            | ✅                            |
-| `timedelta64[ns]`| `timedelta`  | NumPy         | Differences between datetimes                    | ✅                            |
-| `category`    | `category`       | Extension     | Finite set of values; memory-efficient           | ✅                            |
-| `complex64`/`128`| `complex`     | NumPy         | Complex numbers                                  | ❌                            |
-
----
-
-## **2. Extension Data Types**
-
-These are pandas-native dtypes used for better **nullable support** and **efficient storage**.
-
-| Extension Dtype  | Description                              | Backed By     | Example Use                                |
-|------------------|------------------------------------------|----------------|---------------------------------------------|
-| `Int64`          | Nullable 64-bit integers                 | pandas         | `Series([1, 2, pd.NA], dtype="Int64")`      |
-| `Float64`        | Nullable float                           | pandas         | `Series([1.1, None], dtype="Float64")`      |
-| `boolean`        | Nullable Boolean                         | pandas         | `Series([True, None], dtype="boolean")`     |
-| `string`         | Proper String dtype                      | pandas         | `Series(['a', None], dtype="string")`       |
-| `CategoricalDtype`| Categorical data                       | pandas         | `Series(["a", "b"], dtype="category")`      |
-| `Sparse[int]`    | Efficient sparse storage for integers     | pandas         | `Series([0, 0, 1], dtype="Sparse[int]")`    |
-| `IntervalDtype`  | For interval data                        | pandas         | Used in binning (`pd.cut`) results          |
-| `PeriodDtype`    | Periods (e.g., yearly, monthly)          | pandas         | `pd.period_range("2020", periods=3, freq="Y")` |
-| `DatetimeTZDtype`| Timezone-aware datetime                  | pandas         | `pd.Series(..., dtype="datetime64[ns, UTC]")` |
+| Data Type         | Alias in Pandas  | Base Type     | Description                                      | Nullable (via Extension Type) |
+|-------------------|------------------|---------------|--------------------------------------------------|-------------------------------|
+| `int64`           | `int`            | NumPy         | Integer (64-bit)                                 | ✅ `Int64`                    |
+| `float64`         | `float`          | NumPy         | Floating-point (64-bit)                          | ✅ `Float64`                  |
+| `bool`            | `bool`           | NumPy         | Boolean                                          | ✅ `boolean`                  |
+| `object`          | `object`         | Python        | Mixed or string types                            | ✅ (but not native support)   |
+| `string`          | `string[python]` | Extension     | Proper string dtype (instead of object)          | ✅                            |
+| `datetime64[ns]`  | `datetime`       | NumPy         | Timestamps with nanosecond resolution            | ✅                            |
+| `timedelta64[ns]` | `timedelta`      | NumPy         | Differences between datetimes                    | ✅                            |
+| `category`        | `category`       | Extension     | Finite set of values; memory-efficient           | ✅                            |
+| `complex64`/`128` | `complex`        | NumPy         | Complex numbers                                  | ❌                            |
+| `uint8`, `uint16`, `uint32`, `uint64` | `uint`       | NumPy         | Unsigned integers                                | ❌                            |
+| `float32`         | `float`          | NumPy         | Floating-point (32-bit)                          | ❌                            |
 
 ---
 
-## **3. dtype Access and Conversion**
+## **Extension Data Types**
+
+These are pandas-native dtypes used for better **nullable support**, **efficient storage**, and **specialized use cases**.
+
+| Extension Dtype      | Description                              | Backed By     | Example Use                                |
+|----------------------|------------------------------------------|---------------|-------------------------------------------|
+| `Int64`              | Nullable 64-bit integers                 | pandas         | `Series([1, 2, pd.NA], dtype="Int64")`    |
+| `Float64`            | Nullable float                           | pandas         | `Series([1.1, None], dtype="Float64")`    |
+| `boolean`            | Nullable Boolean                         | pandas         | `Series([True, None], dtype="boolean")`   |
+| `string`             | Proper String dtype                      | pandas         | `Series(['a', None], dtype="string")`     |
+| `CategoricalDtype`   | Categorical data                         | pandas         | `Series(["a", "b"], dtype="category")`    |
+| `Sparse[int]`        | Efficient sparse storage for integers     | pandas         | `Series([0, 0, 1], dtype="Sparse[int]")`  |
+| `Sparse[float]`      | Efficient sparse storage for floats       | pandas         | `Series([0.0, 0.0, 1.1], dtype="Sparse[float]")` |
+| `Sparse[bool]`       | Efficient sparse storage for booleans     | pandas         | `Series([True, False], dtype="Sparse[bool]")` |
+| `IntervalDtype`      | For interval data                        | pandas         | Used in binning (`pd.cut`) results        |
+| `PeriodDtype`        | Periods (e.g., yearly, monthly)          | pandas         | `pd.period_range("2020", periods=3, freq="Y")` |
+| `DatetimeTZDtype`    | Timezone-aware datetime                  | pandas         | `pd.Series(..., dtype="datetime64[ns, UTC]")` |
+| `ArrowStringDtype`   | Apache Arrow-backed string dtype         | Arrow          | Experimental: `Series(["a"], dtype="ArrowStringDtype")` |
+
+---
+
+## **Experimental and Custom Data Types**
+
+1. **Arrow-backed Data Types**:
+   - Pandas supports experimental integration with Apache Arrow for certain data types like `ArrowStringDtype`, which can improve performance for string operations.
+
+2. **Custom Extension Types**:
+   - Users can define custom data types by subclassing `pandas.api.extensions.ExtensionDtype`.
+
+---
+
+## **dtype Access and Conversion**
 
 | Property or Method     | Description                                      | Example                              |
 |------------------------|--------------------------------------------------|--------------------------------------|
@@ -54,7 +69,7 @@ These are pandas-native dtypes used for better **nullable support** and **effici
 
 ---
 
-## **4. Common Type Mappings Between Python and Pandas**
+## **Common Type Mappings Between Python and Pandas**
 
 | Python Type      | Typical Pandas dtype         | Nullable Version     |
 |------------------|------------------------------|----------------------|
@@ -65,10 +80,11 @@ These are pandas-native dtypes used for better **nullable support** and **effici
 | `datetime`       | `datetime64[ns]`             | `datetime64[ns]`     |
 | `timedelta`      | `timedelta64[ns]`            | `timedelta64[ns]`    |
 | `list/dict`      | `object`                     | —                    |
+| `complex`        | `complex64` / `complex128`   | —                    |
 
 ---
 
-## **5. Inferred Dtype Categories (via `Series.inferred_type`)**
+## **Inferred Dtype Categories (via `Series.inferred_type`)**
 
 | Inferred Type     | Description                                 |
 |-------------------|---------------------------------------------|
@@ -83,7 +99,7 @@ These are pandas-native dtypes used for better **nullable support** and **effici
 
 ---
 
-## **6. Data Type Behavior in Operations**
+## **Data Type Behavior in Operations**
 
 | Operation                    | Behavior (based on dtype)                          |
 |------------------------------|----------------------------------------------------|

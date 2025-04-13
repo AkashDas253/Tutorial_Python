@@ -1,5 +1,5 @@
 
-## **Window Functions in Pandas (Generalized & Complete)**
+## **Window Functions in Pandas**
 
 Window functions in Pandas allow operations across **sliding**, **expanding**, or **weighted** windows. These are used for **trend analysis**, **smoothing**, **time-series**, and **group-based rolling statistics**.
 
