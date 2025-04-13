@@ -5,7 +5,7 @@ These operations are used to combine multiple DataFrames into a single one by al
 
 ---
 
-### 1. `merge()` – SQL-style Join on Columns
+### `merge()` – SQL-style Join on Columns
 
 ```python
 pd.merge(
@@ -25,13 +25,25 @@ pd.merge(
 )
 ```
 
-**Examples:**
+#### **Examples:**
 
 ```python
 pd.merge(df1, df2, on="id")  # Inner join on 'id'
 pd.merge(df1, df2, how="left", left_on="key1", right_on="key2")
 pd.merge(df1, df2, how="outer", on=["key1", "key2"])
 ```
+ 
+| Method | Description |  
+|--------|-------------|  
+| `pd.merge(df1, df2, on='key')` | Merges two DataFrames on a common column or index (`key`) |  
+| `pd.merge(df1, df2, how='inner')` | Performs an inner join (default) between two DataFrames |  
+| `pd.merge(df1, df2, how='outer')` | Performs an outer join, including all rows from both DataFrames |  
+| `pd.merge(df1, df2, how='left')` | Performs a left join, keeping all rows from the left DataFrame |  
+| `pd.merge(df1, df2, how='right')` | Performs a right join, keeping all rows from the right DataFrame |  
+| `pd.merge(df1, df2, left_on='key1', right_on='key2')` | Merges DataFrames with different column names for merging |  
+| `pd.merge(df1, df2, left_index=True, right_index=True)` | Merges DataFrames using their index instead of columns |  
+| `pd.merge(df1, df2, indicator=True)` | Adds a `_merge` column to track which DataFrame the row originated from |  
+
 
 ---
 
@@ -47,7 +59,7 @@ pd.merge(df1, df2, how="outer", on=["key1", "key2"])
 
 ---
 
-### 2. `.join()` – Join on Index or Column
+### `.join()` – Join on Index or Column
 
 ```python
 df.join(
@@ -69,9 +81,19 @@ df1.set_index("id").join(df2.set_index("id")) # Join on index
 
 > Use `.join()` when working with indexes or combining columns horizontally.
 
+| Method | Description |  
+|--------|-------------|  
+| `df1.join(df2, on='key')` | Joins two DataFrames on a specified column (`key`) |  
+| `df1.join(df2, how='inner')` | Performs an inner join on two DataFrames |  
+| `df1.join(df2, how='outer')` | Performs an outer join on two DataFrames |  
+| `df1.join(df2, how='left')` | Performs a left join on two DataFrames |  
+| `df1.join(df2, how='right')` | Performs a right join on two DataFrames |  
+| `df1.join(df2, lsuffix='_left', rsuffix='_right')` | Adds suffixes to overlapping column names when joining |  
+
+
 ---
 
-### 3. `concat()` – Concatenation Along a Particular Axis
+### `concat()` – Concatenation Along a Particular Axis
 
 ```python
 pd.concat(
@@ -95,9 +117,18 @@ pd.concat([df1, df2], axis=1)             # Stack columns
 pd.concat([df1, df2], ignore_index=True)  # Reindex after stacking
 ```
 
+| Method | Description |  
+|--------|-------------|  
+| `pd.concat([df1, df2], axis=0)` | Concatenates DataFrames vertically (row-wise) |  
+| `pd.concat([df1, df2], axis=1)` | Concatenates DataFrames horizontally (column-wise) |  
+| `pd.concat([df1, df2], ignore_index=True)` | Concatenates DataFrames and reindexes rows |  
+| `pd.concat([df1, df2], keys=['df1', 'df2'])` | Adds hierarchical index to the concatenated DataFrame |  
+| `pd.concat([df1, df2], join='inner')` | Concatenates DataFrames with intersection of columns (inner join) |  
+| `pd.concat([df1, df2], join='outer')` | Concatenates DataFrames with union of columns (outer join) | 
+
 ---
 
-### 4. `append()` (Deprecated)
+### `append()` (Deprecated)
 
 ```python
 df1.append(
@@ -126,46 +157,6 @@ df1.append(df2, ignore_index=True)
 | `join()`      | Columns  | Index or Column   | Joining on index (or keys)             |
 | `concat()`    | 0 or 1   | N/A               | Stack or combine multiple DataFrames   |
 | `append()`    | 0        | N/A               | Add rows (deprecated, use `concat()`)  |
-
----
-
-## **Merging, Joining, and Concatenation in Pandas**
-
-### **Merging**  
-| Method | Description |  
-|--------|-------------|  
-| `pd.merge(df1, df2, on='key')` | Merges two DataFrames on a common column or index (`key`) |  
-| `pd.merge(df1, df2, how='inner')` | Performs an inner join (default) between two DataFrames |  
-| `pd.merge(df1, df2, how='outer')` | Performs an outer join, including all rows from both DataFrames |  
-| `pd.merge(df1, df2, how='left')` | Performs a left join, keeping all rows from the left DataFrame |  
-| `pd.merge(df1, df2, how='right')` | Performs a right join, keeping all rows from the right DataFrame |  
-| `pd.merge(df1, df2, left_on='key1', right_on='key2')` | Merges DataFrames with different column names for merging |  
-| `pd.merge(df1, df2, left_index=True, right_index=True)` | Merges DataFrames using their index instead of columns |  
-| `pd.merge(df1, df2, indicator=True)` | Adds a `_merge` column to track which DataFrame the row originated from |  
-
----
-
-### **Joining**  
-| Method | Description |  
-|--------|-------------|  
-| `df1.join(df2, on='key')` | Joins two DataFrames on a specified column (`key`) |  
-| `df1.join(df2, how='inner')` | Performs an inner join on two DataFrames |  
-| `df1.join(df2, how='outer')` | Performs an outer join on two DataFrames |  
-| `df1.join(df2, how='left')` | Performs a left join on two DataFrames |  
-| `df1.join(df2, how='right')` | Performs a right join on two DataFrames |  
-| `df1.join(df2, lsuffix='_left', rsuffix='_right')` | Adds suffixes to overlapping column names when joining |  
-
----
-
-### **Concatenation**  
-| Method | Description |  
-|--------|-------------|  
-| `pd.concat([df1, df2], axis=0)` | Concatenates DataFrames vertically (row-wise) |  
-| `pd.concat([df1, df2], axis=1)` | Concatenates DataFrames horizontally (column-wise) |  
-| `pd.concat([df1, df2], ignore_index=True)` | Concatenates DataFrames and reindexes rows |  
-| `pd.concat([df1, df2], keys=['df1', 'df2'])` | Adds hierarchical index to the concatenated DataFrame |  
-| `pd.concat([df1, df2], join='inner')` | Concatenates DataFrames with intersection of columns (inner join) |  
-| `pd.concat([df1, df2], join='outer')` | Concatenates DataFrames with union of columns (outer join) |  
 
 ---
 
