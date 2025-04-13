@@ -1,4 +1,4 @@
-# Comprehensive Note on Data in NumPy  
+# Data in NumPy  
 
 ---
 
