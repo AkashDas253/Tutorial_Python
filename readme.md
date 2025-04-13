@@ -71,8 +71,8 @@
     - [**Tensorflow**](https://github.com/AkashDas253/Tutorial_Tensorflow)
 - **Web Scraping**:
     - [BeautifulSoup](lessons/beautifulsoup/readme.md)
-
-### Projects
-
-- [Tic Tac Toe](mini_projects/tic_tac_toe/readme.md)
-
+- **Automation**
+    - [Selenium (Python)](https://github.com/AkashDas253/Tutorial_Selenium)
+- **Testing**
+    - [unittest](lessons/unittest/readme.md)
+    - [pytest](lessons/pytest/readme.md)
