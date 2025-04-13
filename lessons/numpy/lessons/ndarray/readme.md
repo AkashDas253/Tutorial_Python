@@ -1,14 +1,14 @@
 
-# **NumPy ndarray**
+# NumPy ndarray
 
 ---
 
-## **Definition**
-An `ndarray` is a **multidimensional, fixed-size, homogeneous data container** in NumPy. It allows efficient numerical operations and broadcasting, and it forms the base of all numerical computations in NumPy.
+## Definition
+An `ndarray` is a multidimensional, fixed-size, homogeneous data container in NumPy. It allows efficient numerical operations and broadcasting, and it forms the base of all numerical computations in NumPy.
 
 ---
 
-## **Properties**
+## Properties
 
 | Property           | Description                                                      |
 |--------------------|------------------------------------------------------------------|
@@ -20,7 +20,7 @@ An `ndarray` is a **multidimensional, fixed-size, homogeneous data container** i
 
 ---
 
-## **Declaration Syntax**
+## Declaration Syntax
 
 ```python
 np.array(
@@ -34,7 +34,7 @@ np.array(
 
 ---
 
-## **1. Attributes (Object Metadata)**
+## Attributes (Object Metadata)
 
 | Syntax                | Description                                      |
 |------------------------|--------------------------------------------------|
@@ -52,11 +52,11 @@ np.array(
 
 ---
 
-## **2. Methods (Attached to ndarray objects)**
+## Methods (Attached to ndarray objects)
 
 ---
 
-### **a. Shape & Type Manipulation**
+### a. Shape & Type Manipulation
 
 | Syntax                    | Description                                  |
 |---------------------------|----------------------------------------------|
@@ -72,7 +72,7 @@ np.array(
 
 ---
 
-### **b. Data Access & Indexing**
+### b. Data Access & Indexing
 
 | Syntax                      | Description                          |
 |-----------------------------|--------------------------------------|
@@ -85,7 +85,7 @@ np.array(
 
 ---
 
-### **c. Mathematical Operations**
+### c. Mathematical Operations
 
 | Syntax                     | Description                             |
 |----------------------------|-----------------------------------------|
@@ -103,7 +103,7 @@ np.array(
 
 ---
 
-### **d. Boolean & Condition Checks**
+### d. Boolean & Condition Checks
 
 | Syntax                        | Description                            |
 |-------------------------------|----------------------------------------|
@@ -115,7 +115,7 @@ np.array(
 
 ---
 
-### **e. Copying and Views**
+### e. Copying and Views
 
 | Syntax                  | Description                            |
 |-------------------------|----------------------------------------|
@@ -124,7 +124,7 @@ np.array(
 
 ---
 
-### **f. Sorting & Searching**
+### f. Sorting & Searching
 
 | Syntax                          | Description                            |
 |----------------------------------|----------------------------------------|
@@ -135,7 +135,7 @@ np.array(
 
 ---
 
-### **g. Linear Algebra (for 2D/nd arrays)**
+### g. Linear Algebra (for 2D/nd arrays)
 
 | Syntax                        | Description                             |
 |-------------------------------|-----------------------------------------|
@@ -148,7 +148,7 @@ np.array(
 
 ---
 
-### **h. Miscellaneous**
+### h. Miscellaneous
 
 | Syntax                    | Description                         |
 |---------------------------|-------------------------------------|
