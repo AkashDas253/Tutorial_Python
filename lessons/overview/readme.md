@@ -1,4 +1,4 @@
-## **Comprehensive Overview of Python for Experienced Developers**  
+## **Overview of Python**  
 
 Python is a **high-level, dynamically typed, interpreted programming language** designed for **readability, simplicity, and versatility**. It is widely used in **web development, data science, AI, automation, and systems programming**. Python follows a **multi-paradigm approach**, supporting **object-oriented, procedural, and functional programming**.
 

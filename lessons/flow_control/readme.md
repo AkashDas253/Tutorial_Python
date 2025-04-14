@@ -7,7 +7,7 @@ Flow control determines how statements execute in a program. It includes:
 
 ---
 
-## **1. Conditional Statements**  
+## **Conditional Statements**  
 
 ### **Syntax**
 ```python
@@ -35,7 +35,7 @@ else:
 
 ---
 
-## **2. Loops**  
+## **Loops**  
 
 ### **`for` Loop**  
 
@@ -85,7 +85,7 @@ while x < 3:
 
 ---
 
-## **3. Loop Control Statements**  
+## **Loop Control Statements**  
 
 | Statement | Purpose | Syntax |
 |-----------|---------|--------|
@@ -144,12 +144,13 @@ for i in range(3):
 
 ---
 
-## **4. Function Control Statements**  
+## **Function Control Statements**  
 
 | Statement | Purpose | Syntax |
 |-----------|---------|--------|
 | `return` | Exits function and returns a value | `return value` |
 | `yield` | Returns generator value and continues execution | `yield value` |
+| `pass` | Placeholder, does nothing | `pass` |
 
 ### **`return` Example**  
 ```python
@@ -181,7 +182,7 @@ print(next(gen))
 
 ---
 
-## **5. Exit Control Statements**  
+## **Exit Control Statements**  
 
 | Statement | Purpose | Syntax |
 |-----------|---------|--------|

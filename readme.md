@@ -4,9 +4,8 @@
 
 ### Python
 
-- [Fundamentals](lessons/fundamentals/readme.md)
-
 - [Concepts](lessons/concepts/readme.md)
+- [Overview](lessons/overview/readme.md)
 
 - [Basics](lessons/basics/readme.md)
     - [Syntax](lessons/syntax/readme.md)

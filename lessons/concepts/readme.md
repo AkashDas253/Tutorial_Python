@@ -1,4 +1,4 @@
-Here’s a comprehensive overview of **Python concepts and subconcepts** organized in a detailed structure:
+# **Python concepts and subconcepts** 
 
 ---
 
