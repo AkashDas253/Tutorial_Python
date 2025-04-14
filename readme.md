@@ -1,19 +1,17 @@
 # Python Tutorial
 
-## Content
-
-### Python
-
 - [Concepts](lessons/concepts/readme.md)
 - [Overview](lessons/overview/readme.md)
 
 - [Basics](lessons/basics/readme.md)
-    - [Syntax](lessons/syntax/readme.md)
-    - [Variables](lessons/variables/readme.md)
-    - [Input/Output](lessons/input_output/readme.md)
-    - [Scope and Access](lessons/scope/readme.md) 
-    - [Flow Control](lessons/flow_control/readme.md)
-    - [Function](lessons/functions/readme.md)
+
+### Fundamentals
+- [Syntax](lessons/syntax/readme.md)
+- [Variables](lessons/variables/readme.md)
+- [Input/Output](lessons/input_output/readme.md)
+- [Scope and Access](lessons/scope/readme.md) 
+- [Flow Control](lessons/flow_control/readme.md)
+- [Function](lessons/functions/readme.md)
 
 - [Datatypes](lessons/datatypes/readme.md)
     - Primitive Datatypes

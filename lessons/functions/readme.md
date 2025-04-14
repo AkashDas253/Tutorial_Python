@@ -4,7 +4,7 @@ Functions are reusable blocks of code that perform a specific task. They improve
 
 ---
 
-## **1. Defining and Calling Functions**  
+## **Defining and Calling Functions**  
 
 ### **Syntax**  
 ```python
@@ -28,7 +28,7 @@ Hello, Alice!
 
 ---
 
-## **2. Function Parameters and Arguments**  
+## **Function Parameters and Arguments**  
 
 | Type | Description |
 |------|------------|
@@ -103,7 +103,7 @@ print(info(name="Alice", age=25, city="New York"))
 
 ---
 
-## **3. Function Scope**  
+## **Function Scope**  
 
 | Scope | Description |
 |-------|-------------|
@@ -156,7 +156,7 @@ outer()
 
 ---
 
-## **4. Lambda (Anonymous) Functions**  
+## **Lambda (Anonymous) Functions**  
 
 ### **Syntax**  
 ```python
@@ -173,7 +173,7 @@ print(square(5))
 
 ---
 
-## **5. Higher-Order Functions**  
+## **Higher-Order Functions**  
 Functions that take other functions as arguments.
 
 ### **`map()` Example**  
