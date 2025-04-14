@@ -13,6 +13,7 @@
 - [Flow Control](lessons/flow_control/readme.md)
 - [Function](lessons/functions/readme.md)
 
+### [Data](lessons/data/readme.md)
 - [Datatypes](lessons/datatypes/readme.md)
     - Primitive Datatypes
         - [Integer](lessons/integer/readme.md)
