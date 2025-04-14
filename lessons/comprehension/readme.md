@@ -4,7 +4,7 @@ Python **comprehensions** provide a concise way to create collections like lists
 
 ---
 
-## **1. List Comprehension**  
+## **List Comprehension**  
 
 ### **Syntax**  
 ```python
@@ -31,7 +31,7 @@ print(matrix)  # Output: [[1, 2, 3], [2, 4, 6], [3, 6, 9]]
 
 ---
 
-## **2. Set Comprehension**  
+## **Set Comprehension**  
 
 ### **Syntax**  
 ```python
@@ -46,7 +46,7 @@ print(unique_squares)  # Output: {16, 1, 4, 9}
 
 ---
 
-## **3. Dictionary Comprehension**  
+## **Dictionary Comprehension**  
 
 ### **Syntax**  
 ```python
@@ -61,7 +61,7 @@ print(squares_dict)  # Output: {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}
 
 ---
 
-## **4. Generator Comprehension**  
+## **Generator Comprehension**  
 
 ### **Syntax**  
 ```python
