@@ -15,21 +15,12 @@
 
 ### [Data](lessons/data/readme.md)
 - [Datatypes](lessons/datatypes/readme.md)
-    - Primitive Datatypes
-        - [Integer](lessons/integer/readme.md)
-        - [Float](lessons/float/readme.md)
-        - [Complex](lessons/complex/readme.md)
-        - [String](lessons/string/readme.md)
-        - [Boolean](lessons/boolean/readme.md)
-    - Collections
-        - [List](lessons/list/readme.md)
-        - [Tuples](lessons/tuples/readme.md)
-        - [Set](lessons/set/readme.md)
-        - [Dictionary](lessons/dictionary/readme.md)
+    - Numeric: [Integer](lessons/integer/readme.md), [Float](lessons/float/readme.md), [Complex](lessons/complex/readme.md)
+    - String: [String](lessons/string/readme.md)
+    - Boolean: [Boolean](lessons/boolean/readme.md)
+    - Collections: [List](lessons/list/readme.md), [Tuples](lessons/tuples/readme.md), [Set](lessons/set/readme.md), [Dictionary](lessons/dictionary/readme.md)
     - Collection Module
-        - [Bytes](lessons/bytes/readme.md)
-        - [Bytearray](lessons/bytearray/readme.md)
-        - [Memoryview](lessons/memoryview/readme.md)
+    - Binary: [Bytes](lessons/bytes/readme.md), [Bytearray](lessons/bytearray/readme.md), [Memoryview](lessons/memoryview/readme.md)
 
 - [Comprehension](lessons/comprehension/readme.md)        
 
