@@ -61,7 +61,7 @@
 - **Web Scraping**:
     - [BeautifulSoup](lessons/beautifulsoup/readme.md)
 - **Automation**
-    - [Selenium (Python)](https://github.com/AkashDas253/Tutorial_Selenium)
+    - [Selenium (Python)](lessons/selenium/readme.md)
 - **Testing**
     - [unittest](lessons/unittest/readme.md)
     - [pytest](lessons/pytest/readme.md)
