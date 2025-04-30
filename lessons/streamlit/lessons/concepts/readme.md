@@ -1,193 +1,98 @@
-## Core Concepts
-- **App Structure**
-  - Script-based execution
-  - Caching for performance
-  - Session state management
-- **Widgets**
-  - Buttons, checkboxes, sliders
-  - Text inputs, number inputs, file uploader
-  - Date pickers, multi-selects, dropdowns
-- **Layouts & Containers**
-  - Sidebar, columns, expandable sections
-  - Tabs, empty spaces, dividers
-- **Displaying Data**
-  - Text elements (title, header, markdown)
-  - Tables, dataframes
-  - Metric display, JSON output
-- **Media Handling**
-  - Images, videos, audio
-- **Charts & Visualization**
-  - Matplotlib, Seaborn, Plotly
-  - Altair, Bokeh, Vega-Lite
-- **Data Interaction**
-  - Forms and input collection
-  - File handling (CSV, Excel, JSON)
-- **Session State**
-  - User interaction memory
-  - Callback functions
-- **Advanced Features**
-  - Custom components
-  - Theming and configuration
-  - URL parameters handling
-- **Deployment**
-  - Local execution
-  - Streamlit Cloud, Docker, AWS, GCP
+## **Streamlit** concepts and their subconcepts:  
 
+### 1. **Basics of Streamlit**
+   - What is Streamlit
+   - Installing Streamlit
+   - Running a Streamlit App (`streamlit run app.py`)
+   - Streamlit Command Line Options
 
----
----
+### 2. **User Interface Components**
+   - **Text and Formatting**
+     - `st.title()`
+     - `st.header()`
+     - `st.subheader()`
+     - `st.text()`
+     - `st.markdown()`
+     - `st.latex()`
+     - `st.write()`
+   - **Data Display**
+     - `st.dataframe()`
+     - `st.table()`
+     - `st.json()`
+     - `st.metric()`
+   - **Media Elements**
+     - `st.image()`
+     - `st.audio()`
+     - `st.video()`
 
+### 3. **Input Widgets**
+   - `st.button()`
+   - `st.checkbox()`
+   - `st.radio()`
+   - `st.selectbox()`
+   - `st.multiselect()`
+   - `st.slider()`
+   - `st.select_slider()`
+   - `st.text_input()`
+   - `st.text_area()`
+   - `st.number_input()`
+   - `st.date_input()`
+   - `st.time_input()`
+   - `st.file_uploader()`
+   - `st.color_picker()`
 
-## **concepts and sub-concepts** in Streamlit:
+### 4. **Layouts and Containers**
+   - `st.sidebar`
+   - `st.columns`
+   - `st.expander()`
+   - `st.container()`
+   - `st.empty()`
 
----
+### 5. **Control Flow**
+   - `st.stop()`
+   - `st.form()`
+     - `st.form_submit_button()`
+   - `st.spinner()`
 
-### **1. Installation and Setup**
-- Installing Streamlit
-- Running Streamlit Apps (`streamlit run <app_name>.py`)
-- Updating Streamlit
-- Configuration Options (`config.toml`)
+### 6. **Charts and Visualization**
+   - **Built-in Chart Functions**
+     - `st.line_chart()`
+     - `st.area_chart()`
+     - `st.bar_chart()`
+   - **Custom Visualizations**
+     - `st.pyplot()`
+     - `st.altair_chart()`
+     - `st.plotly_chart()`
+     - `st.bokeh_chart()`
+     - `st.graphviz_chart()`
+     - `st.vega_lite_chart()`
+   - **Map Visualization**
+     - `st.map()`
 
----
+### 7. **State Management**
+   - `st.session_state`
+   - Callbacks and Widget Key Management
 
-### **2. Basic Components**
-#### **a. Text Display**
-- `st.title()`
-- `st.header()`
-- `st.subheader()`
-- `st.markdown()`
-- `st.caption()`
-- `st.code()`
-- `st.latex()`
+### 8. **Interactivity**
+   - `st.experimental_data_editor()`
+   - `st.experimental_get_query_params()`
+   - `st.experimental_set_query_params()`
 
-#### **b. Data Display**
-- `st.write()`
-- `st.json()`
-- `st.dataframe()`
-- `st.table()`
-- `st.metric()`
+### 9. **Theming and Configurations**
+   - Customizing themes with `.streamlit/config.toml`
+   - Environment variables for configuration
 
-#### **c. Media**
-- `st.image()`
-- `st.audio()`
-- `st.video()`
+### 10. **Advanced Features**
+   - Caching with `@st.cache_data` and `@st.cache_resource`
+   - File handling with `st.download_button()`
+   - `st.experimental_memo` (deprecated)
+   - Experimental components and APIs
 
-#### **d. User Input Widgets**
-- Text Input:
-  - `st.text_input()`
-  - `st.text_area()`
-- Numeric Input:
-  - `st.number_input()`
-- Date/Time Input:
-  - `st.date_input()`
-  - `st.time_input()`
-- Selections:
-  - `st.selectbox()`
-  - `st.multiselect()`
-  - `st.radio()`
-  - `st.checkbox()`
-- Sliders:
-  - `st.slider()`
-  - `st.select_slider()`
-- File Upload:
-  - `st.file_uploader()`
-- Buttons:
-  - `st.button()`
-  - `st.form_submit_button()`
-- Others:
-  - `st.color_picker()`
+### 11. **Deployment**
+   - Deploying on **Streamlit Cloud**
+   - Deploying on other platforms (Heroku, AWS, Azure, etc.)
+   - Streamlit sharing options
 
----
-
-### **3. Layout and Structure**
-#### **a. Containers**
-- `st.container()`
-- `st.expander()`
-- `st.columns()`
-
-#### **b. Sidebars**
-- `st.sidebar.<element>()`
-
-#### **c. Tabs**
-- `st.tabs()`
-
-#### **d. Layout Management**
-- `st.set_page_config()`
-  - Parameters: `page_title`, `page_icon`, `layout`, `initial_sidebar_state`
-
----
-
-### **4. Charts and Visualization**
-#### **a. Built-in Charting**
-- `st.line_chart()`
-- `st.area_chart()`
-- `st.bar_chart()`
-- `st.map()`
-
-#### **b. Custom Charts**
-- `st.pyplot()`
-- `st.altair_chart()`
-- `st.vega_lite_chart()`
-- `st.plotly_chart()`
-- `st.bokeh_chart()`
-- `st.pydeck_chart()`
-- `st.graphviz_chart()`
-
----
-
-### **5. Interactivity and State Management**
-#### **a. Session State**
-- `st.session_state`
-- Key-value storage and callbacks
-
-#### **b. Forms**
-- `st.form()`
-- `st.form_submit_button()`
-
----
-
-### **6. Theming**
-- Customizing themes via `config.toml`
-  - Colors, fonts, and styles
-
----
-
-### **7. Advanced Features**
-#### **a. Custom Components**
-- Using external JavaScript or iframe-based components
-- `streamlit-component-template`
-
-#### **b. Caching**
-- `@st.cache_data`
-- `@st.cache_resource`
-
-#### **c. Progress and Status**
-- `st.progress()`
-- `st.spinner()`
-- `st.balloons()`
-- `st.toast()` (Experimental)
-
-#### **d. Error Handling**
-- `st.exception()`
-- `st.error()`
-- `st.warning()`
-- `st.success()`
-- `st.info()`
-
-#### **e. File Handling**
-- `st.download_button()`
-
----
-
-### **8. Deployment and Sharing**
-- Streamlit Cloud
-- Deploying on AWS/GCP/Heroku
-- Sharing via Public URL
-
----
-
-### **9. Debugging and Monitoring**
-- Debug Mode (`streamlit run --global.logLevel debug`)
-- `st.echo()`
-
----
+### 12. **Extensions**
+   - Streamlit Components API
+   - Using Third-party Streamlit Components  

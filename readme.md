@@ -46,7 +46,7 @@
 - **Web Development**:
     - [Django](https://github.com/AkashDas253/Tutorial_Django) 
     - [**Flask**](lessons/flask/readme.md)
-    - [Streamlit](lessons/streamlit/readme.md)
+    - [**Streamlit**](lessons/streamlit/readme.md)
 - **Data Analysis**:
     - [**Pandas**](lessons/pandas/readme.md)
     - [**Numpy**](lessons/numpy/readme.md)
@@ -61,7 +61,7 @@
 - **Web Scraping**:
     - [BeautifulSoup](lessons/beautifulsoup/readme.md)
 - **Automation**
-    - [Selenium (Python)](lessons/selenium/readme.md)
+    - [**Selenium (Python)**](lessons/selenium/readme.md)
 - **Testing**
     - [unittest](lessons/unittest/readme.md)
     - [pytest](lessons/pytest/readme.md)
