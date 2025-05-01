@@ -1,4 +1,4 @@
-### **Control Flow in Streamlit**
+## **Control Flow in Streamlit**
 
 Control flow in Streamlit refers to the way the app reacts to user interactions and dynamically updates based on inputs. It is achieved through conditional statements, loops, and Streamlit-specific state management.
 

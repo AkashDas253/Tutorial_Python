@@ -1,6 +1,3 @@
-Here’s a **comprehensive note on Data Inspection in Pandas**, including all standard and advanced methods to **understand, audit, and preview datasets**, with **complete syntax**, parameter details, and categorized usage.
-
----
 
 ## **Data Inspection in Pandas**
 

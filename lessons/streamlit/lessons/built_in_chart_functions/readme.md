@@ -4,7 +4,7 @@ Streamlit provides **high-level chart functions** that make it easy to create co
 
 ---
 
-## 🔹 Overview of Built-in Chart Functions
+## Overview of Built-in Chart Functions
 
 | Function             | Description                          | Data Types Supported                  |
 |----------------------|--------------------------------------|----------------------------------------|
@@ -16,11 +16,11 @@ Streamlit provides **high-level chart functions** that make it easy to create co
 
 ---
 
-## 🔸 `st.line_chart()`
+## `st.line_chart()`
 
 - **Purpose**: Display trends over time or continuous variables.
 
-### ✅ Syntax:
+### Syntax:
 ```python
 st.line_chart(data, x=None, y=None, width=0, height=0, use_container_width=True)
 ```
@@ -34,33 +34,33 @@ st.line_chart(data, x=None, y=None, width=0, height=0, use_container_width=True)
 
 ---
 
-## 🔸 `st.area_chart()`
+## `st.area_chart()`
 
 - **Purpose**: Like a line chart, but fills the area beneath the lines.
 
-### ✅ Syntax:
+### Syntax:
 ```python
 st.area_chart(data, x=None, y=None, width=0, height=0, use_container_width=True)
 ```
 
 ---
 
-## 🔸 `st.bar_chart()`
+## `st.bar_chart()`
 
 - **Purpose**: Compare values across discrete categories.
 
-### ✅ Syntax:
+### Syntax:
 ```python
 st.bar_chart(data, x=None, y=None, width=0, height=0, use_container_width=True)
 ```
 
 ---
 
-## 🔸 `st.map()`
+## `st.map()`
 
 - **Purpose**: Geospatial plotting using latitude and longitude.
 
-### ✅ Syntax:
+### Syntax:
 ```python
 st.map(data, zoom=10, use_container_width=True)
 ```
@@ -73,11 +73,11 @@ st.map(data, zoom=10, use_container_width=True)
 
 ---
 
-## 🔸 `st.metric()`
+## `st.metric()`
 
 - **Purpose**: Displays key performance indicators (KPIs).
 
-### ✅ Syntax:
+### Syntax:
 ```python
 st.metric(label, value, delta=None, delta_color="normal", help=None)
 ```
@@ -92,7 +92,7 @@ st.metric(label, value, delta=None, delta_color="normal", help=None)
 
 ---
 
-## 🧩 Example:
+## Example:
 
 ```python
 import streamlit as st

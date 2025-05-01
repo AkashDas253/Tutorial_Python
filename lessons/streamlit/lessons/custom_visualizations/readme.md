@@ -1,10 +1,10 @@
-# Comprehensive Note on **Custom Visualizations in Streamlit**
+## **Custom Visualizations in Streamlit**
 
 Streamlit allows developers to embed **custom visualizations** using popular external charting libraries for highly interactive and tailored visual outputs beyond the built-in chart functions.
 
 ---
 
-## 🔹 Supported Libraries for Custom Visualizations
+## Supported Libraries for Custom Visualizations
 
 | Library           | Streamlit Function            | Description                                      |
 |------------------|-------------------------------|--------------------------------------------------|
@@ -18,12 +18,12 @@ Streamlit allows developers to embed **custom visualizations** using popular ext
 
 ---
 
-## 🔸 `st.pyplot()`
+## `st.pyplot()`
 
 - **Used With**: `matplotlib.pyplot`
 - **Usage**: Displays a Matplotlib figure.
 
-### ✅ Syntax:
+### Syntax:
 ```python
 st.pyplot(fig=None, clear_figure=True, **kwargs)
 ```
@@ -35,11 +35,11 @@ st.pyplot(fig=None, clear_figure=True, **kwargs)
 
 ---
 
-## 🔸 `st.plotly_chart()`
+## `st.plotly_chart()`
 
 - **Used With**: `plotly.graph_objects` or `plotly.express`
 
-### ✅ Syntax:
+### Syntax:
 ```python
 st.plotly_chart(fig, use_container_width=False, sharing="auto")
 ```
@@ -52,11 +52,11 @@ st.plotly_chart(fig, use_container_width=False, sharing="auto")
 
 ---
 
-## 🔸 `st.altair_chart()`
+## `st.altair_chart()`
 
 - **Used With**: `altair.Chart`
 
-### ✅ Syntax:
+### Syntax:
 ```python
 st.altair_chart(chart, use_container_width=False, theme=None)
 ```
@@ -68,33 +68,33 @@ st.altair_chart(chart, use_container_width=False, theme=None)
 
 ---
 
-## 🔸 `st.bokeh_chart()`
+## `st.bokeh_chart()`
 
 - **Used With**: Bokeh figures
 
-### ✅ Syntax:
+### Syntax:
 ```python
 st.bokeh_chart(fig, use_container_width=False)
 ```
 
 ---
 
-## 🔸 `st.pydeck_chart()`
+## `st.pydeck_chart()`
 
 - **Used With**: PyDeck for WebGL 3D maps
 
-### ✅ Syntax:
+### Syntax:
 ```python
 st.pydeck_chart(deck_chart, use_container_width=False)
 ```
 
 ---
 
-## 🔸 `st.vega_lite_chart()`
+## `st.vega_lite_chart()`
 
 - **Used With**: Raw Vega-Lite specifications
 
-### ✅ Syntax:
+### Syntax:
 ```python
 st.vega_lite_chart(data, spec, use_container_width=False)
 ```
@@ -129,7 +129,7 @@ st.altair_chart(chart)
 
 ---
 
-## 📌 Summary of Use-Cases
+## Summary of Use-Cases
 
 | Goal                              | Recommended Library |
 |-----------------------------------|---------------------|

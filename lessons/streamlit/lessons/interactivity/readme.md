@@ -1,4 +1,4 @@
-### **Comprehensive Note on Interactivity in Streamlit**
+## **Comprehensive Note on Interactivity in Streamlit**
 
 Interactivity in Streamlit is centered around user inputs, dynamic responses, conditionally displayed content, and state management. It allows building responsive, data-driven apps that update in real time based on user actions.
 

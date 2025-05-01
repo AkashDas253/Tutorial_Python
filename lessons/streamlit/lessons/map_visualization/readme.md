@@ -4,11 +4,11 @@ Streamlit supports geospatial data visualization using simple built-in methods a
 
 ---
 
-## 🔹 Built-in Map Function: `st.map()`
+## Built-in Map Function: `st.map()`
 
 - Quick and simple way to plot points on a map using latitude and longitude.
 
-### ✅ Syntax:
+### Syntax:
 ```python
 st.map(data, zoom=10, use_container_width=True)
 ```
@@ -19,7 +19,7 @@ st.map(data, zoom=10, use_container_width=True)
 | `zoom`                | Initial zoom level (default is `10`)                |
 | `use_container_width`| Adjusts map width to the layout (default: `True`)   |
 
-### ✅ Example:
+### Example:
 ```python
 import streamlit as st
 import pandas as pd
@@ -34,16 +34,16 @@ st.map(df)
 
 ---
 
-## 🔸 Advanced Map: `st.pydeck_chart()`
+## Advanced Map: `st.pydeck_chart()`
 
 - Enables rich geospatial 2D/3D maps using **PyDeck** (WebGL-powered).
 
-### ✅ Syntax:
+### Syntax:
 ```python
 st.pydeck_chart(pydeck_obj, use_container_width=False)
 ```
 
-### ✅ Example with Pydeck:
+### Example with Pydeck:
 ```python
 import pydeck as pdk
 
@@ -72,7 +72,7 @@ st.pydeck_chart(chart)
 
 ---
 
-## 🔸 Using Plotly for Maps
+## Using Plotly for Maps
 
 - **Plotly Express** supports scatter maps and choropleths.
 
@@ -86,7 +86,7 @@ st.plotly_chart(fig)
 
 ---
 
-## 🔸 Optional: Folium via Components
+## Optional: Folium via Components
 
 - For more custom maps (heatmaps, tile layers), Folium can be used via `streamlit_folium`.
 
@@ -106,13 +106,13 @@ folium_static(m)
 
 ---
 
-## 📌 Summary Table
+## Summary Table
 
 | Method              | Library      | Best For                                | Interactivity |
 |---------------------|--------------|------------------------------------------|---------------|
 | `st.map()`          | Built-in     | Simple geo-point plotting                | ❌ Basic only |
-| `st.pydeck_chart()` | PyDeck       | WebGL 2D/3D visualization                | ✅ High       |
-| `st.plotly_chart()` | Plotly       | Interactive map-based scatter plots      | ✅ High       |
-| `folium_static()`   | Folium       | Custom Leaflet-based maps                | ✅ Moderate   |
+| `st.pydeck_chart()` | PyDeck       | WebGL 2D/3D visualization                | High       |
+| `st.plotly_chart()` | Plotly       | Interactive map-based scatter plots      | High       |
+| `folium_static()`   | Folium       | Custom Leaflet-based maps                | Moderate   |
 
 ---

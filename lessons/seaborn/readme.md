@@ -1,8 +1,14 @@
 ## Seaborn
 
+- [Cheatsheet](lessons/cheatsheet/readme.md)
 - [Concepts](lessons/concepts/readme.md)
+- [Components](lessons/components/readme.md)
+
+- [Overview](lessons/overview/readme.md)
+- [Overview for Developers](lessons/overview_developer/readme.md)
 
 - [Basic Usage](lessons/basic_usage/readme.md)
+
 - [Plot Styles and Themes](lessons/plot_styles_themes/readme.md)
 - [Categorical Plots](lessons/categorical_plots/readme.md)
 - [Relational Plots](lessons/relational_plots/readme.md)

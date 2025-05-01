@@ -1,211 +1,138 @@
-# **Pandas Data Input / Output (I/O)**
+## Input/Output in Pandas
+
+### 📌 Definition  
+Pandas provides a suite of **I/O functions** to read from and write to a variety of file formats such as **CSV, Excel, JSON, SQL, Parquet, HDF5, HTML, XML**, and others. These functions convert between persistent file formats and in-memory Pandas objects like `DataFrame` or `Series`.
 
 ---
 
-### **CSV**
+### 📥 Input Functions
 
+| Function              | Description                         |
+|-----------------------|-------------------------------------|
+| `read_csv()`          | Read a CSV file                     |
+| `read_excel()`        | Read Excel (.xls/.xlsx) file        |
+| `read_json()`         | Read JSON format                    |
+| `read_html()`         | Read HTML tables                    |
+| `read_sql()`          | Read from SQL database              |
+| `read_sql_query()`    | Run SQL query and return DataFrame  |
+| `read_sql_table()`    | Read entire SQL table               |
+| `read_parquet()`      | Read a Parquet file                 |
+| `read_hdf()`          | Read from HDF5 file                 |
+| `read_pickle()`       | Load serialized object (via pickle) |
+| `read_feather()`      | Read Apache Feather format          |
+| `read_orc()`          | Read ORC file format                |
+| `read_xml()`          | Read XML file or string             |
+| `read_clipboard()`    | Read from clipboard (as table)      |
+
+---
+
+### 📤 Output Functions
+
+| Function              | Description                         |
+|-----------------------|-------------------------------------|
+| `to_csv()`            | Write DataFrame to CSV              |
+| `to_excel()`          | Write to Excel file                 |
+| `to_json()`           | Convert to JSON                     |
+| `to_html()`           | Convert to HTML table               |
+| `to_sql()`            | Store in SQL table                  |
+| `to_parquet()`        | Write to Parquet file               |
+| `to_hdf()`            | Write to HDF5 format                |
+| `to_pickle()`         | Serialize to pickle                 |
+| `to_feather()`        | Write to Feather format             |
+| `to_orc()`            | Write to ORC format                 |
+| `to_xml()`            | Export to XML format                |
+| `to_clipboard()`      | Copy table to clipboard             |
+
+---
+
+### ⚙️ Common Parameters in I/O Functions
+
+| Parameter         | Purpose                                           |
+|-------------------|---------------------------------------------------|
+| `sep`, `delimiter`| Field separator for CSV/TSV                      |
+| `header`          | Row to use as column names                        |
+| `index_col`       | Use column as row labels                          |
+| `usecols`         | Subset of columns to read                         |
+| `dtype`           | Specify column data types                         |
+| `parse_dates`     | Convert date-like strings to datetime             |
+| `chunksize`       | Read file in chunks (for large files)             |
+| `compression`     | Handle zipped formats (e.g., 'gzip', 'zip')       |
+| `na_values`       | Values to recognize as NA                         |
+| `encoding`        | Handle file encodings (e.g., 'utf-8', 'latin1')   |
+| `engine`          | Backend engine to use (e.g., 'python', 'c')       |
+| `sheet_name`      | Specify sheet in Excel                            |
+| `storage_options` | Cloud storage or file system options              |
+
+---
+
+### 📂 File Formats Supported
+
+| Format     | Extension(s)         | Key Notes                                      |
+|------------|----------------------|------------------------------------------------|
+| CSV        | `.csv`               | Plain text, widely used                        |
+| Excel      | `.xls`, `.xlsx`      | Needs `openpyxl` or `xlrd`                     |
+| JSON       | `.json`              | Flexible, hierarchical                         |
+| HTML       | `.html`              | Table extraction requires `lxml` or `html5lib` |
+| SQL        | `.db`, `.sqlite`, etc| Requires SQLAlchemy/DBAPI                      |
+| Parquet    | `.parquet`           | Binary, columnar, fast                         |
+| HDF5       | `.h5`                | Hierarchical, good for large datasets          |
+| Pickle     | `.pkl`               | Python-specific, not portable                  |
+| XML        | `.xml`               | Tree-structured data format                    |
+| ORC        | `.orc`               | Optimized Row Columnar format (big data)       |
+| Feather    | `.feather`           | Very fast, good for data interchange           |
+
+---
+
+### 🧪 Sample Usage
+
+#### Read CSV with custom separator and header
 ```python
-pd.read_csv(
-    filepath_or_buffer,       # path, URL, or file-like object
-    sep=',',                  # delimiter between fields
-    header='infer',           # row to use as column names
-    index_col=None,           # column to use as index
-    usecols=None,             # which columns to read
-    dtype=None,               # data types for columns
-    parse_dates=False         # parse datetime columns
-)
+df = pd.read_csv('data.tsv', sep='\t', header=0)
+```
 
-df.to_csv(
-    path_or_buf,              # file path or buffer to write
-    sep=',',                  # separator to use
-    index=True,               # write row index
-    header=True,              # write column names
-    encoding=None,            # encoding like 'utf-8'
-    compression=None          # e.g., 'gzip', 'zip', etc.
-)
+#### Write DataFrame to Excel
+```python
+df.to_excel('output.xlsx', sheet_name='Report')
+```
+
+#### Read JSON and parse dates
+```python
+df = pd.read_json('data.json', convert_dates=True)
+```
+
+#### Export to compressed CSV
+```python
+df.to_csv('data.csv.gz', compression='gzip')
+```
+
+#### Read large CSV in chunks
+```python
+for chunk in pd.read_csv('big.csv', chunksize=5000):
+    process(chunk)
 ```
 
 ---
 
-### **Excel**
+### 📦 Notes on Performance
 
-```python
-pd.read_excel(
-    io,                       # file path or buffer
-    sheet_name=0,             # sheet name or index
-    header=0,                 # row for column headers
-    index_col=None,           # column to set as index
-    usecols=None              # read only specific columns
-)
-
-df.to_excel(
-    excel_writer,             # file path or ExcelWriter object
-    sheet_name='Sheet1',      # name of the sheet
-    index=True,               # write index
-    header=True               # write column names
-)
-```
+| Optimization Technique         | Benefit                            |
+|--------------------------------|-------------------------------------|
+| Use `chunksize`               | Handle large files incrementally    |
+| Use binary formats (Parquet)  | Faster I/O and smaller file size    |
+| Use specific engines (`c`)    | Faster parsing for CSV              |
+| Avoid Pickle for portability  | Prefer open formats like JSON/CSV   |
+| Use `columns` or `usecols`    | Reduce memory by selective reading  |
 
 ---
 
-### **JSON**
+### 🔄 Round-Trip Compatibility
 
-```python
-pd.read_json(
-    path_or_buf,              # path or buffer
-    orient=None,              # expected JSON orientation
-    lines=False               # read JSON lines format
-)
-
-df.to_json(
-    path_or_buf,              # file path or buffer
-    orient='records',         # format of JSON structure
-    lines=False               # write as JSON lines
-)
-```
-
----
-
-### **SQL**
-
-```python
-pd.read_sql(
-    sql,                      # SQL query or table name
-    con,                      # SQLAlchemy or DBAPI connection
-    index_col=None,           # index column
-    parse_dates=None          # convert columns to datetime
-)
-
-df.to_sql(
-    name,                     # name of SQL table
-    con,                      # connection object
-    if_exists='fail',         # 'fail', 'replace', or 'append'
-    index=True,               # write DataFrame index
-    index_label=None          # name for index column
-)
-```
-
----
-
-### **Parquet**
-
-```python
-pd.read_parquet(
-    path,                     # file path or buffer
-    engine='auto'             # 'auto', 'pyarrow', or 'fastparquet'
-)
-
-df.to_parquet(
-    path,                     # output file path
-    engine='auto',            # parquet engine to use
-    index=True                # include index in output
-)
-```
-
----
-
-### **HDF5**
-
-```python
-pd.read_hdf(
-    path_or_buf,              # HDF file path or buffer
-    key=None                  # dataset name in file
-)
-
-df.to_hdf(
-    path_or_buf,              # output path or buffer
-    key,                      # name for dataset
-    mode='a',                 # append, read, or write mode
-    format=None               # 'fixed' or 'table'
-)
-```
-
----
-
-### **ORC**
-
-```python
-pd.read_orc(
-    path                      # ORC file path
-)
-
-df.to_orc(
-    path                      # path to save ORC file
-)
-```
-
----
-
-### **HTML**
-
-```python
-pd.read_html(
-    io,                       # URL or HTML string
-    match='.+',               # regex for matching table
-    header=0                  # row to use as column names
-)
-
-df.to_html(
-    buf=None,                 # file path or buffer
-    columns=None,             # list of columns to write
-    header=True,              # write column names
-    index=True                # write row index
-)
-```
-
----
-
-### **Clipboard**
-
-```python
-pd.read_clipboard()           # reads copied table into DataFrame
-
-df.to_clipboard(
-    index=False               # whether to write index
-)
-```
-
----
-
-### **Stata**
-
-```python
-pd.read_stata(
-    filepath_or_buffer        # Stata file to read
-)
-
-df.to_stata(
-    path,                     # output path
-    write_index=True          # include index column
-)
-```
-
----
-
-### **SAS**
-
-```python
-pd.read_sas(
-    filepath_or_buffer,       # SAS file path
-    format='sas7bdat'         # file format type
-)
-```
-
----
-
-### **Common Parameters Across I/O**
-
-| Parameter        | Description                                                      |
-|------------------|------------------------------------------------------------------|
-| `encoding`       | Character encoding (e.g., `'utf-8'`, `'latin1'`)                 |
-| `compression`    | Compression type (`'gzip'`, `'bz2'`, `'zip'`, `'xz'`, `'infer'`) |
-| `index`          | Whether to include the DataFrame index                          |
-| `header`         | Include column names in output                                   |
-| `chunksize`      | Read/write data in chunks for large files                        |
-| `nrows`          | Number of rows to read                                           |
-| `skiprows`       | Skip initial rows                                                |
-| `usecols`        | Import only specific columns                                     |
-| `dtype`          | Explicitly set data types                                        |
-| `parse_dates`    | Convert string columns to datetime automatically                 |
+| Format      | Round-Trip Safe | Notes                              |
+|-------------|------------------|------------------------------------|
+| CSV         | No               | Type info and index may be lost    |
+| Excel       | Partial          | Type loss possible, esp. dates     |
+| JSON        | Partial          | Nested structures can be tricky    |
+| Parquet     | Yes              | Supports all dtypes, efficient     |
+| HDF5        | Yes              | Ideal for large, hierarchical data |
 
 ---

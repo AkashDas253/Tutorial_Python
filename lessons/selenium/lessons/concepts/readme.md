@@ -1,4 +1,3 @@
-
 ## **Selenium for Python – All Concepts and Subconcepts**
 
 ### **Introduction to Selenium**

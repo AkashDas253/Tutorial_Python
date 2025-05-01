@@ -1,4 +1,4 @@
-### **Sorting in Data Manipulation**
+## **Sorting in Data Manipulation**
 
 Sorting is a key operation in data manipulation that organizes data in ascending or descending order. It can be applied to rows, columns, or values in data structures like Pandas DataFrames, Series, or NumPy arrays.
 

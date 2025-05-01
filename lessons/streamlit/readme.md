@@ -4,6 +4,7 @@
 
 - [Concepts](lessons/concepts/readme.md)
 - [Cheatsheet](lessons/cheatsheet/readme.md)
+- [Components](lessons/components/readme.md)
 
 - [Overview](lessons/overview/readme.md)
 - [Overview for Developers](lessons/overview_developer/readme.md)

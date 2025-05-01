@@ -1,4 +1,4 @@
-### **Layouts and Containers in Streamlit**
+## **Layouts and Containers in Streamlit**
 
 Streamlit provides powerful tools for arranging components on a page through layouts and containers. Below is a detailed explanation of the layouts, containers, and their use cases.
 

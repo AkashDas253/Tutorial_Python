@@ -1,4 +1,4 @@
-## **Comprehensive Note on Charts and Visualization in Streamlit**
+## **Charts and Visualization in Streamlit**
 
 Streamlit provides multiple methods for creating **interactive and static visualizations** using its built-in API as well as integration with popular libraries like **Matplotlib, Seaborn, Plotly, Altair, Pydeck**, and more.
 

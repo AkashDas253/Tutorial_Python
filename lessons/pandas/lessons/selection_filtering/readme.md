@@ -70,7 +70,7 @@ df[(df["A"] == 1) | (df["B"] == 2)]
 | Operator | Meaning |
 |----------|---------|
 | `&`      | AND     |
-| `|`      | OR      |
+| `\|`      | OR      |
 | `~`      | NOT     |
 📌 Use parentheses `()` around each condition.
 

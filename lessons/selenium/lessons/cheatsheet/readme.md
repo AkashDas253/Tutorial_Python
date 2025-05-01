@@ -1,4 +1,3 @@
-
 ##  Selenium Cheatsheet (Python)
 
 ###  Setup

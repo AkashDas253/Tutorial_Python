@@ -1,4 +1,3 @@
-
 ## 📚 In-Depth Overview of `tkinter` – More Than Just Widgets
 
 ### 🧠 What *is* `tkinter`, Really?

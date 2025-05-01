@@ -1,9 +1,11 @@
 # Scikit-Learn
 
+- [Cheatsheet](lessons/cheatsheet/readme.md)
 - [Concepts](lessons/concepts/readme.md)
-
 - [Overview](lessons/overview/readme.md)
 
+
+### Basics
 - [Estimator](lessons/estimator/readme.md)
 - [Transformer](lessons/transformer/readme.md)
 - [Pipeline](lessons/pipeline/readme.md)

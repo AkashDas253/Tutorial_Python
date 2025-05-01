@@ -1,152 +1,126 @@
 
-## Useful Utilities
+## 📘 Useful Utilities in Pandas
 
-Pandas provides general-purpose utilities that enhance **data inspection, transformation, and optimization** workflows. Below is a categorized and complete reference.
-
----
-
-### 1. Data Copy & Conversion
-
-```python
-df.copy(deep=True)                    # Deep copy (default)
-df.T                                  # Transpose DataFrame
-df.values                             # Convert to NumPy array (legacy)
-df.to_numpy()                         # Preferred way to convert to NumPy
-```
+Pandas offers many utility functions and configuration tools that support tasks like debugging, performance tuning, value replacement, and settings control. These are not tied to specific operations but enhance usability and flexibility.
 
 ---
 
-### 2. Structure & Size
+### ⚙️ 1. **Utility Functions**
 
-```python
-df.shape                              # (rows, columns)
-df.size                               # Total elements
-df.ndim                               # Number of dimensions
-df.axes                               # List of axis labels
-```
-
----
-
-### 3. Summary & Info
-
-```python
-df.info()                             # Summary of structure
-df.describe()                         # Summary statistics
-```
+| Function | Description |
+|----------|-------------|
+| `pd.to_numeric()` | Converts values to numeric, coercing errors if needed |
+| `pd.to_datetime()` | Converts object/string to datetime |
+| `pd.to_timedelta()` | Converts to time delta |
+| `pd.infer_freq()` | Infers frequency string from a DatetimeIndex |
+| `pd.unique()` | Returns unique values of a Series |
+| `pd.isna()` / `pd.notna()` | Checks for missing values |
+| `pd.NA` | Generic missing value marker for all data types |
+| `pd.factorize()` | Encodes input values as integer labels |
+| `pd.get_dummies()` | One-hot encodes categorical variables |
+| `pd.qcut()` / `pd.cut()` | Bins data into quantile-based or fixed intervals |
 
 ---
 
-### 4. Column Membership
+### 🛠️ 2. **Options and Settings**
 
-```python
-"col" in df.columns                   # Check column existence
-df.columns.isin(["col1", "col2"])     # Check multiple columns
-```
+Pandas has a flexible **options system** for controlling display, performance, and behavior.
 
----
+#### Key tools:
 
-### 5. Null Checks
+| Tool | Description |
+|------|-------------|
+| `pd.set_option()` | Set global option (e.g., display max rows) |
+| `pd.get_option()` | Get current value of an option |
+| `pd.reset_option()` | Reset option to default |
+| `pd.describe_option()` | Describe what an option does |
+| `pd.option_context()` | Temporary option context manager (useful in `with` blocks) |
 
-```python
-df.isna()                             # Detect missing (NaN)
-df.notna()                            # Detect non-missing
-pd.isnull(df["col"])                  # Alias of isna()
-pd.notnull(df["col"])                 # Alias of notna()
-```
-
----
-
-### 6. Duplicate Handling
-
-```python
-df.duplicated(subset=None, keep="first")
-df.drop_duplicates(subset=None, keep="first", inplace=False)
-```
+#### Common Options:
+| Option | Use |
+|--------|-----|
+| `'display.max_rows'` | Max number of rows to display |
+| `'display.float_format'` | Format for floats (e.g., `'%.2f'`) |
+| `'mode.chained_assignment'` | Warn/error on chained assignments |
 
 ---
 
-### 7. Rename & Assign Columns
+### 🔍 3. **Data Inspection Helpers**
 
-```python
-df.rename(columns={"old": "new"}, index={0: "row1"}, inplace=False)
-df.assign(new_col=df["col1"] * 2)     # Add or overwrite columns
-```
-
----
-
-### 8. Data Type Utilities
-
-```python
-df["col"].astype("float")             # Convert dtype
-df.convert_dtypes()                   # Auto convert to optimal dtypes
-
-pd.api.types.is_numeric_dtype(df["col"])
-pd.api.types.is_string_dtype(df["col"])
-pd.api.types.is_datetime64_any_dtype(df["col"])
-```
+| Tool | Description |
+|------|-------------|
+| `df.info()` | Summary of DataFrame (dtype, memory usage) |
+| `df.memory_usage()` | Shows memory usage by column |
+| `df.describe()` | Summary statistics |
+| `df.sample()` | Random sample of rows |
+| `df.head()` / `df.tail()` | First/last rows |
 
 ---
 
-### 9. Memory Usage
+### 🔁 4. **Data Copying and Comparison**
 
-```python
-df.memory_usage(index=True, deep=False)
-```
-
----
-
-### 10. Value Distribution
-
-```python
-df["col"].value_counts(normalize=False, sort=True, dropna=True)
-df["col"].unique()                    # Unique values
-df["col"].nunique()                   # Number of unique values
-```
+| Function | Description |
+|----------|-------------|
+| `df.copy()` | Creates a deep or shallow copy |
+| `df.equals(other)` | Checks if two DataFrames are equal |
+| `df.duplicated()` | Boolean mask for duplicate rows |
+| `df.drop_duplicates()` | Removes duplicates |
 
 ---
 
-### 11. Binning
+### 🧹 5. **Cleaning Helpers**
 
-```python
-pd.cut(df["age"], bins=[0, 18, 35, 60, 100], labels=["Teen", "Young", "Adult", "Senior"])
-pd.qcut(df["income"], q=4)           # Quantile-based binning
-```
-
----
-
-### 12. Clipping & Rounding
-
-```python
-df["col"].clip(lower=0, upper=100)   # Limit range
-df.round(decimals=2)                 # Round all numeric columns
-df["col"].round(0)                   # Round single column
-```
+| Tool | Description |
+|------|-------------|
+| `df.fillna()` | Replace missing values |
+| `df.replace()` | Replace values using dictionary or rules |
+| `df.where()` / `df.mask()` | Conditional replacement |
+| `df.clip()` | Limit values to bounds |
 
 ---
 
-### 13. Evaluate Expressions
+### 🔍 6. **Performance and Profiling**
 
-```python
-df.eval('new_col = col1 + col2')     # Inline expression with variables
-```
-
----
-
-### 14. Conditional Logic
-
-```python
-import numpy as np
-np.where(condition, val_if_true, val_if_false)
-```
+| Tool | Description |
+|------|-------------|
+| `%timeit` | Jupyter magic to measure execution time |
+| `df.memory_usage(deep=True)` | Deep memory profiling |
+| `df.astype()` | Change dtypes for memory efficiency |
 
 ---
 
-### 15. Pandas Options
+### 📂 7. **File and Path Utilities**
 
-```python
-pd.set_option("display.max_columns", 100)
-pd.get_option("display.max_rows")
-pd.reset_option("display.max_columns")
-```
+| Function | Description |
+|----------|-------------|
+| `df.to_pickle()` / `pd.read_pickle()` | Fast serialization of objects |
+| `df.to_hdf()` / `pd.read_hdf()` | HDF5 support |
+| `Path()` (from `pathlib`) | Cleaner path handling with pandas I/O |
+
+---
+
+### 🧪 8. **Testing Utilities**
+
+Pandas includes helpers for writing unit tests:
+
+| Function | Description |
+|----------|-------------|
+| `pd.testing.assert_frame_equal()` | Check two DataFrames are equal |
+| `pd.testing.assert_series_equal()` | Compare two Series |
+| `pd.util.testing` | Legacy testing module (deprecated) |
+
+---
+
+### ✅ Summary
+
+| Category | Tools |
+|----------|-------|
+| Type Conversion | `to_numeric`, `to_datetime`, `to_timedelta` |
+| Missing Values | `isna`, `notna`, `NA`, `fillna`, `dropna` |
+| Data Inspection | `info`, `describe`, `memory_usage`, `sample` |
+| Option Management | `set_option`, `get_option`, `option_context` |
+| Cleanup & Comparison | `copy`, `equals`, `duplicated`, `replace` |
+| Performance | `memory_usage(deep=True)`, `astype()` |
+| Testing | `assert_frame_equal`, `assert_series_equal` |
 
 ---

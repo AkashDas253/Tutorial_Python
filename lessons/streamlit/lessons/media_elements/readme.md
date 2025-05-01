@@ -4,7 +4,7 @@ Streamlit supports embedding various **media types** — including images, audio
 
 ---
 
-## 🔹 Supported Media Functions
+## Supported Media Functions
 
 | Function           | Media Type        | Purpose                               |
 |--------------------|-------------------|----------------------------------------|
@@ -14,11 +14,11 @@ Streamlit supports embedding various **media types** — including images, audio
 
 ---
 
-## 🔸 `st.image()`
+## `st.image()`
 
 - **Purpose**: Display static or animated images (e.g., PNG, JPEG, GIF).
 
-### ✅ Syntax:
+### Syntax:
 ```python
 st.image(image, caption=None, width=None, use_column_width=False, clamp=False, channels="RGB", output_format="auto")
 ```
@@ -33,7 +33,7 @@ st.image(image, caption=None, width=None, use_column_width=False, clamp=False, c
 | `channels`           | `"RGB"` or `"BGR"` for arrays                                |
 | `output_format`      | `"JPEG"` or `"PNG"` (default: `"auto"`)                      |
 
-### 🔹 Example:
+### Example:
 ```python
 from PIL import Image
 img = Image.open("photo.jpg")
@@ -42,11 +42,11 @@ st.image(img, caption="Sample Photo", use_column_width=True)
 
 ---
 
-## 🔸 `st.audio()`
+## `st.audio()`
 
 - **Purpose**: Embed an audio player to play `.mp3`, `.wav`, `.ogg`, etc.
 
-### ✅ Syntax:
+### Syntax:
 ```python
 st.audio(data, format="audio/wav", start_time=0)
 ```
@@ -57,7 +57,7 @@ st.audio(data, format="audio/wav", start_time=0)
 | `format`      | MIME type of the audio (e.g., `"audio/mp3"`)         |
 | `start_time`  | Time (in seconds) where audio starts                 |
 
-### 🔹 Example:
+### Example:
 ```python
 audio_file = open("sound.mp3", "rb")
 st.audio(audio_file.read(), format="audio/mp3")
@@ -65,11 +65,11 @@ st.audio(audio_file.read(), format="audio/mp3")
 
 ---
 
-## 🔸 `st.video()`
+## `st.video()`
 
 - **Purpose**: Embed videos from local files, byte streams, or URLs (YouTube, Vimeo).
 
-### ✅ Syntax:
+### Syntax:
 ```python
 st.video(data, format="video/mp4", start_time=0)
 ```
@@ -80,14 +80,14 @@ st.video(data, format="video/mp4", start_time=0)
 | `format`      | MIME type of video (e.g., `"video/mp4"`)             |
 | `start_time`  | Start time in seconds (if supported)                 |
 
-### 🔹 Example:
+### Example:
 ```python
 st.video("https://www.youtube.com/watch?v=abc123")
 ```
 
 ---
 
-## 🧩 When to Use Each
+## When to Use Each
 
 | Requirement                     | Use Function    |
 |----------------------------------|------------------|
@@ -97,7 +97,7 @@ st.video("https://www.youtube.com/watch?v=abc123")
 
 ---
 
-## 📝 Combined Example
+## Combined Example
 
 ```python
 import streamlit as st

@@ -1,9 +1,11 @@
 ## Selenium with Python
 
 - [Cheatsheet](lessons/cheatsheet/readme.md)
+- [Concepts](lessons/concepts/readme.md)
+- [Components](lessons/components/readme.md)
 
 - [Overview](lessons/overview/readme.md)
-- [Concepts](lessons/concepts/readme.md)
+- [Overview for Developers](lessons/overview_developers/readme.md)
 
 - [Introduction to Selenium](lessons/introduction/readme.md)
   <!-- - [What is Selenium?](lessons/introduction_to_selenium/what_is_selenium.md)
