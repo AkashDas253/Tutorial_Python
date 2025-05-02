@@ -1,86 +1,121 @@
-## BeautifulSoup Concepts and Subconcepts  
+## BeautifulSoup Concepts and Subconcepts
 
-#### **1. Installation and Setup**  
-- Installing BeautifulSoup (`pip install beautifulsoup4`)  
-- Required dependencies (e.g., `lxml`, `html.parser`, `html5lib`)  
+### Basics
 
-#### **2. Parsing HTML and XML**  
-- `html.parser` (built-in)  
-- `lxml` (faster, requires installation)  
-- `html5lib` (most lenient, creates valid trees)  
-- `xml` (for parsing XML)  
+* What is BeautifulSoup
+* Installation (`pip install beautifulsoup4`)
+* Importing (`from bs4 import BeautifulSoup`)
+* Parser choices
 
-#### **3. Creating a Soup Object**  
-- `BeautifulSoup(html_content, parser)`  
-- Handling different encodings (`from_encoding`)  
+  * `html.parser`
+  * `lxml`
+  * `html5lib`
 
-#### **4. Navigating the Parse Tree**  
-- **Tag Objects** (`soup.tag_name`)  
-- **Navigating Up and Down**  
-  - `.parent`, `.parents`  
-  - `.contents`, `.children`  
-- **Navigating Sideways**  
-  - `.next_sibling`, `.previous_sibling`  
-  - `.next_siblings`, `.previous_siblings`  
+### Creating a Soup Object
 
-#### **5. Searching the Parse Tree**  
-- **Find Methods**  
-  - `find(name, attrs, recursive, text, limit, **kwargs)`  
-  - `find_all(name, attrs, recursive, text, limit, **kwargs)`  
-  - `find_parent()`, `find_parents()`  
-  - `find_next()`, `find_all_next()`  
-  - `find_previous()`, `find_all_previous()`  
-- **CSS Selectors**  
-  - `select(selector)`, `select_one(selector)`  
+* From string
+* From file
+* Parser argument
 
-#### **6. Modifying the Parse Tree**  
-- **Changing Tag Attributes** (`tag['attribute'] = value`)  
-- **Modifying Tag Content** (`tag.string = new_value`)  
-- **Appending and Inserting Elements**  
-  - `.append()`, `.insert()`  
-  - `.extend()`  
-- **Replacing and Deleting Elements**  
-  - `.replace_with(new_element)`  
-  - `.decompose()`, `.extract()`  
+### Navigating the Parse Tree
 
-#### **7. Getting Data from Tags**  
-- `.text` (extracts all text)  
-- `.string` (extracts direct text)  
-- `.get_text(separator, strip)`  
+* `.tagname`
+* `.contents`
+* `.children`
+* `.descendants`
+* `.string`
+* `.strings`
+* `.stripped_strings`
+* `.parent`
+* `.parents`
+* `.next_sibling`, `.previous_sibling`
+* `.next_siblings`, `.previous_siblings`
+* `.next_element`, `.previous_element`
+* `.next_elements`, `.previous_elements`
 
-#### **8. Handling Attributes**  
-- `.attrs` (dictionary of attributes)  
-- `tag['attribute']` (accessing specific attributes)  
-- `.get('attribute', default_value)`  
+### Searching the Tree
 
-#### **9. Encoding and Output Formatting**  
-- `.prettify()` (pretty-printing HTML)  
-- `.encode()`, `.decode()`  
+* `find(name, attrs, recursive, string, **kwargs)`
+* `find_all(name, attrs, recursive, string, limit, **kwargs)`
+* `find_parent(name, attrs, **kwargs)`
+* `find_parents(name, attrs, **kwargs)`
+* `find_next_sibling(name, attrs, **kwargs)`
+* `find_next_siblings(name, attrs, **kwargs)`
+* `find_previous_sibling(name, attrs, **kwargs)`
+* `find_previous_siblings(name, attrs, **kwargs)`
+* `find_next(name, attrs, **kwargs)`
+* `find_all_next(name, attrs, **kwargs)`
+* `find_previous(name, attrs, **kwargs)`
+* `find_all_previous(name, attrs, **kwargs)`
+* Search by tag name
+* Search by attributes
+* Search by class (`class_`)
+* Search by id (`id`)
+* Search by text (`string=`)
+* Search using regular expressions
+* Search using custom functions
 
-#### **10. Handling NavigableString Objects**  
-- `NavigableString` (text inside a tag)  
-- `tag.string.replace_with(new_string)`  
+### Modifying the Tree
 
-#### **11. Working with Comments**  
-- `Comment` object (`from bs4 import Comment`)  
-- Extracting comments (`isinstance(tag, Comment)`)  
+* `.insert(position, new_element)`
+* `.append(new_element)`
+* `.extend([elements])`
+* `.insert_before(new_element)`
+* `.insert_after(new_element)`
+* `.replace_with(new_element)`
+* `.replace_with_children()`
+* `.wrap(wrapper_tag)`
+* `.unwrap()`
+* `.extract()`
+* `.decompose()`
+* `.clear()`
 
-#### **12. Handling Malformed HTML**  
-- BeautifulSoup's auto-fix feature  
-- Choosing `html5lib` for strict correction  
+### Attributes
 
-#### **13. Extracting Links and Images**  
-- Extracting URLs (`soup.find_all('a')['href']`)  
-- Extracting image sources (`soup.find_all('img')['src']`)  
+* Access with `tag['attribute']`
+* Get all attributes: `tag.attrs`
+* Check if attribute exists
+* Modify attributes
+* Delete attributes
 
-#### **14. Working with Tables**  
-- Extracting table rows (`find_all('tr')`)  
-- Extracting table data (`find_all('td')`)  
+### Working with Strings
 
-#### **15. Combining with Requests for Web Scraping**  
-- Fetching HTML with `requests`  
-- Parsing the fetched content  
+* `.string`
+* `.get_text(strip=False, separator='')`
+* `.text` (alias for `.get_text()`)
 
-#### **16. Handling JavaScript-Rendered Content**  
-- Using Selenium or requests-html  
-- Extracting dynamically loaded data  
+### Output
+
+* `.prettify()`
+* `str(soup)`
+* `.encode()`
+* `.decode()`
+
+### CSS Selectors
+
+* `select(selector)`
+* `select_one(selector)`
+* Supported selectors
+
+  * Tag
+  * Class (`.class`)
+  * ID (`#id`)
+  * Descendant (`tag1 tag2`)
+  * Child (`tag1 > tag2`)
+  * Attribute selector (`[attr=value]`)
+
+### Advanced Usage
+
+* Custom parsers
+* Working with malformed HTML
+* Integration with requests module
+* NavigableString, Tag, Comment objects
+* Handling namespaces
+* XML support
+
+### Utilities
+
+* `BeautifulSoup.new_tag(name, attrs)`
+* `BeautifulSoup.new_string(text)`
+* `BeautifulSoup.decode_contents()`
+* `BeautifulSoup.encode_contents()`
