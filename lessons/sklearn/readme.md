@@ -1,16 +1,17 @@
-# Scikit-Learn
+## Scikit-Learn
 
 - [Cheatsheet](lessons/cheatsheet/readme.md)
 - [Concepts](lessons/concepts/readme.md)
+- [Components](lessons/components/readme.md)
 - [Overview](lessons/overview/readme.md)
 
 
-### Basics
+### [Basics](lessons/basics/readme.md)
 - [Estimator](lessons/estimator/readme.md)
 - [Transformer](lessons/transformer/readme.md)
 - [Pipeline](lessons/pipeline/readme.md)
 
-
+### [Data preprocessing](lessons/data_preprocessing/readme.md)
 - [Feature Scaling](lessons/feature_scaling/readme.md)
 - [Feature Selection](lessons/feature_selection/readme.md)
   - [Filter Methods](lessons/filter_methods/readme.md)  
@@ -21,9 +22,7 @@
 - [Data Transformation](lessons/data_transformation/readme.md)
 - [Handling Missing Values](lessons/handling_missing_values/readme.md)
 
-
-
-## Model Selection & Validation
+## [Model Selection & Validation](lessonss/model_selection_validation/readme.md)
 
 - [Cross-Validation](lessons/cross_validation/readme.md)
 - [Hyperparameter Tuning](lessons/hyperparameter_tuning/readme.md) 
@@ -94,7 +93,6 @@
   <!-- - [One-Hot Encoding](lessons/feature_engineering/categorical_encoding/one_hot_encoding/readme.md)  
   - [Label Encoding](lessons/feature_engineering/categorical_encoding/label_encoding/readme.md)  
   - [Target Encoding](lessons/feature_engineering/categorical_encoding/target_encoding/readme.md)   -->
-
 - [Interaction Features](lessons/interaction_features/readme.md)  
 - [Binning](lessons//binning/readme.md)  
 - [Polynomial Features](lessons/polynomial_features/readme.md)  
@@ -127,42 +125,3 @@
 - [GPU Utilization](lessons/gpu_scikit_learn/readme.md)
 - [Sparse Matrices for Large Datasets](lessons/sparse_matrices/readme.md)  
 
-
-
-
----
----
-
-
-
-
-## Topics
-- [Cheatsheet](lessons/cheat_sheet/readme.md)
-
-- [About](lessons/about/readme.md)
-
-- [Basics](lessons/basics/readme.md)
-
-
-- [Components](lessons/components/readme.md)
-
-- [Model Selection](lessons/model_selection/readme.md)
-
-- [Dimentiality Reduction](lessons/dimension_reduction/readme.md)
-- [Classification](lessons/classification/readme.md)
-- [Regression](lessons/regression/readme.md)
-- [Clustering](lessons/clustering/readme.md)
-- [Ensemble Methods](lessons/ensemble_methods/readme.md)
-
-- Models
-  - [Unsupervised Learning](lessons/unsupervised_learning/readme.md)
-  - [Supervised Learning](lessons/supervised_learning/readme.md)
-  - [Decision Tree](lessons/decision_tree/readme.md)
-  - [KNN](lessons/knn/readme.md)
-  - [SVM](lessons/svm/readme.md)
-
-- [Data Preprocessing](lessons/data_preprocessing/readme.md)
-
-- [Model Evaluation](lessons/model_evaluation/readme.md)
-
-- [Hyperparameter Tuning](lessons/hyperparameter_tuning/readme.md)

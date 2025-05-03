@@ -43,14 +43,14 @@
 
 ### Packages and Frameworks
 
-- **Web Development**: [Django](https://github.com/AkashDas253/Tutorial_Django), [**Flask**](lessons/flask/readme.md), [**Streamlit**](lessons/streamlit/readme.md)
+- **Web Development**: [**Django**](https://github.com/AkashDas253/Tutorial_Django), [**Flask**](lessons/flask/readme.md), [**Streamlit**](lessons/streamlit/readme.md)
 - **Data Analysis**: [**Pandas**](lessons/pandas/readme.md), [**Numpy**](lessons/numpy/readme.md)
 - **Visualization**: [**MatplotLib**](lessons/matplotlib/readme.md), [**Seaborn**](lessons/seaborn/readme.md)
 - **Database Connector**: [**Pyodbc**](lessons/pyodbc/readme.md)
 - **GUI Creation**:
     - [**Tkinter**](lessons/tkinter/readme.md), [**PySimpleGUI**](lessons/pysimplegui/readme.md)
 - **Machine Learning**:
-    - [Scikit Learn](lessons/sklearn/readme.md)
+    - [**Scikit Learn**](lessons/sklearn/readme.md)
     - [Tensorflow](https://github.com/AkashDas253/Tutorial_Tensorflow)
 - **Web Scraping**:
     - [BeautifulSoup](lessons/beautifulsoup/readme.md)
