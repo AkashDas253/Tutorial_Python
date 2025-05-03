@@ -22,24 +22,23 @@
     - Collection Module
     - Binary: [Bytes](lessons/bytes/readme.md), [Bytearray](lessons/bytearray/readme.md), [Memoryview](lessons/memoryview/readme.md)
 
+### Miscellenious
 - [Comprehension](lessons/comprehension/readme.md)        
-
 - [Exception and Exception Handling](lessons/exception/readme.md)
 - [Iterator](lessons/iterator/readme.md)
 - [Decorators](lessons/decorators/readme.md)
-- [OOPS](lessons/oops/readme.md)
-
-    - [Class and Objects](lessons/class/readme.md)
-    - [Inheritance](lessons/inheritance/readme.md)
-    - [Polymorphism](lessons/polymorphism/readme.md)
-
 - [File Handling](lessons/file_handling/readme.md)
 - [Built-in Functions](lessons/built_in_functions/readme.md)
 
-- [Multithreading and Multiprocessing](lessons/multithreading_multiprocessing/readme.md)
-    - [Multithreading](lessons/multithreading/readme.md)
-    - [Multiprocessing](lessons/multiprocessing/readme.md)
-    - [Asyncio](lessons/asyncio/readme.md)
+### [OOPS](lessons/oops/readme.md)
+- [Class and Objects](lessons/class/readme.md)
+- [Inheritance](lessons/inheritance/readme.md)
+- [Polymorphism](lessons/polymorphism/readme.md)
+
+### [Multithreading and Multiprocessing](lessons/multithreading_multiprocessing/readme.md)
+- [Multithreading](lessons/multithreading/readme.md)
+- [Multiprocessing](lessons/multiprocessing/readme.md)
+- [Asyncio](lessons/asyncio/readme.md)
 
 ### Packages and Frameworks
 
@@ -52,8 +51,7 @@
 - **Machine Learning**:
     - [**Scikit Learn**](lessons/sklearn/readme.md)
     - [Tensorflow](https://github.com/AkashDas253/Tutorial_Tensorflow)
-- **Web Scraping**:
-    - [BeautifulSoup](lessons/beautifulsoup/readme.md)
+- **Web Scraping**: [**BeautifulSoup**](lessons/beautifulsoup/readme.md)
 - **Automation**: [**Selenium (Python)**](lessons/selenium/readme.md)
 - **Testing**:
     - [unittest](lessons/unittest/readme.md)

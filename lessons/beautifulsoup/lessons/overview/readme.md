@@ -1,4 +1,4 @@
-## BeautifulSoup: Comprehensive Overview
+## Comprehensive Overview of BeautifulSoup
 
 ### Introduction
 
