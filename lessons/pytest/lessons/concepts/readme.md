@@ -1,111 +1,149 @@
+## Pytest Concepts and Subconcepts
 
-### pytest Concepts and Subconcepts
+### Basics
 
-- **Test Discovery**
-  - File Naming Conventions (`test_*.py`, `*_test.py`)
-  - Test Function Naming Conventions (`test_`)
-  
-- **Test Execution**
-  - Running Tests (`pytest`)
-  - Running Specific Tests
-  - Output Formats (Default, Detailed, XML)
-  
-- **Assertions**
-  - Using `assert` Statements
-  - Detailed Assertion Failures
-  - Assertion introspection
-  
-- **Fixtures**
-  - Defining Fixtures (`@pytest.fixture`)
-  - Fixture Scope (Function, Class, Module, Session)
-  - Yield-Based Fixtures (Setup and Teardown)
-  - Autouse Fixtures
-  - Fixture Dependencies
-  
-- **Markers**
-  - Marking Tests (`@pytest.mark`)
-  - Custom Markers
-  - Marker-based Test Selection (e.g., `pytest -k`)
+* Test Discovery
 
-- **Test Parametrization**
-  - Parametrize Decorator (`@pytest.mark.parametrize`)
-  - Multiple Parameterization
-  - Combining Multiple Parametrized Tests
+  * Naming conventions
+  * File and function patterns
+* Running Tests
 
-- **Test Skipping and Expected Failures**
-  - Skipping Tests (`@pytest.mark.skip`)
-  - Conditional Skipping (`@pytest.mark.skipif`)
-  - Expected Failures (`@pytest.mark.xfail`)
-  - Skipping Tests Based on Conditions
-  
-- **Test Reporting**
-  - Verbose Output
-  - Test Result Reporting (Success, Fail, Skip)
-  - JUnit XML Output
-  - Reporting Plugins (e.g., `pytest-html`)
-  
-- **Plugins**
-  - Built-in Plugins (e.g., `pytest-cov`, `pytest-xdist`)
-  - Custom Plugins
-  - Plugin Configuration and Usage
-  
-- **Test Setup and Teardown**
-  - Setup and Teardown Using Fixtures
-  - Module and Class-Level Setup
-  - Setup and Teardown with `yield` in Fixtures
-  
-- **Test Dependencies**
-  - Sharing Data Between Tests Using Fixtures
-  - Fixture Injection into Test Functions
-  - Scoped Fixtures for Cross-Test Dependencies
-  
-- **Parallel Test Execution**
-  - Parallel Execution with `pytest-xdist`
-  - Load Balancing Across Test Workers
-  - Running Tests in Parallel (`pytest -n`)
-  
-- **Mocking and Patching**
-  - Using `unittest.mock` with pytest
-  - Mocking External APIs and Services
-  - Patching Functions and Classes in Tests
-  
-- **Test Coverage**
-  - Measuring Test Coverage with `pytest-cov`
-  - Coverage Reporting (`--cov`)
-  - Combining Coverage Reports
-  
-- **Test Organization**
-  - Organizing Tests into Files and Directories
-  - Using Test Suites and Subdirectories
-  - Grouping Tests with Markers
-  
-- **Test Fixtures Usage**
-  - Function-Level Fixtures
-  - Class-Level Fixtures
-  - Module-Level Fixtures
-  - Session-Level Fixtures
-  - Autouse Fixtures for Implicit Use
-  
-- **Test Assertions and Fixtures Interaction**
-  - Parametrized Fixtures
-  - Using Fixtures for Cleanup After Tests
-  - Passing Fixtures as Arguments in Test Functions
-  
-- **Advanced Test Selection**
-  - Running Tests with Specific Markers (`-m`)
-  - Selecting Tests by Name (`-k`)
-  - Running Tests Based on Conditions
-  
-- **Test Debugging**
-  - Debugging Failing Tests with `pytest --pdb`
-  - Using `pytest.set_trace()` for Interactive Debugging
-  
-- **Test Results Handling**
-  - Handling Test Failures with Hooks
-  - Customizing Failure Output
-  
-- **Mocking External Systems**
-  - Mocking Functions with `pytest-mock`
-  - Patching APIs, Database Calls, and Services
+  * `pytest` command
+  * Command-line options
+
+### Assertions
+
+* Built-in `assert` statements
+* Custom assertion introspection
+* `pytest.raises`
+* `pytest.warns`
+* Exception info (`excinfo`)
+
+### Fixtures
+
+* Basic fixtures
+
+  * `@pytest.fixture`
+  * Scope: `function`, `class`, `module`, `package`, `session`
+* Fixture parameters
+* Autouse fixtures
+* Conftest fixtures (`conftest.py`)
+* Yield fixtures
+* Fixture finalization (`request.addfinalizer`, `yield`)
+* Dynamic fixtures with `request`
+
+### Parametrization
+
+* `@pytest.mark.parametrize`
+* Multiple argument combinations
+* Parametrizing fixtures
+* Indirect parametrization
+
+### Markers
+
+* Built-in markers
+
+  * `skip`, `skipif`, `xfail`
+  * `usefixtures`
+  * `filterwarnings`
+* Custom markers (`@pytest.mark.custom`)
+* Marker registration (`pytest.ini`)
+
+### Test Organization
+
+* Test classes
+* Setup and teardown methods
+
+  * `setup_function`, `teardown_function`
+  * `setup_method`, `teardown_method`
+  * `setup_class`, `teardown_class`
+* Modular structure
+* `conftest.py`
+
+### Plugins
+
+* Built-in plugins
+* External plugins (`pytest-cov`, `pytest-mock`, `pytest-django`, etc.)
+* Plugin hooks
+* Writing custom plugins
+
+### Configuration
+
+* Configuration files
+
+  * `pytest.ini`
+  * `pyproject.toml`
+  * `tox.ini`
+* CLI options
+* `addopts`, `markers`, `testpaths`
+
+### Logging and Output
+
+* Capturing output (`capsys`, `caplog`)
+* Verbose mode (`-v`)
+* Showing locals (`--showlocals`)
+* Summary output control
+
+### Test Reporting
+
+* `--junitxml=report.xml`
+* `--tb=short`, `--tb=long`, `--tb=no`
+* Custom test report formats
+* HTML reports (`pytest-html`)
+
+### Test Coverage
+
+* `pytest-cov`
+
+  * Coverage report options
+  * Coverage configuration
+
+### Mocking
+
+* `unittest.mock`
+* `pytest-mock` plugin
+* Patching (`mocker.patch`)
+
+### Debugging
+
+* `--pdb`
+* `--trace`
+* Dropping to interactive shell
+
+### Parametrized Fixtures
+
+* `pytest.fixture(params=[...])`
+* Accessing parameter with `request.param`
+
+### Skipping and Expected Failures
+
+* `@pytest.mark.skip`
+* `@pytest.mark.skipif(condition)`
+* `@pytest.mark.xfail`
+* `strict=True` option
+
+### Test Selection
+
+* Keyword expression (`-k`)
+* Marker expression (`-m`)
+* Directory/file/path filtering
+
+### Test Dependency and Order
+
+* `pytest-dependency`
+* `pytest-order`
+
+### Async Testing
+
+* `pytest-asyncio`
+* `pytest.mark.asyncio`
+
+### CLI Utilities
+
+* `--maxfail`
+* `--disable-warnings`
+* `--collect-only`
+* `--fixtures`
+* `--help`
 
 ---

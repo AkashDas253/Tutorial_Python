@@ -1,151 +1,111 @@
-## All Concepts and Subconcepts of `unittest` in Python
 
-### 📦 Test Structure
-- **Test Module**
-  - Python file containing test classes and methods
-- **Test Class**
-  - Inherits from `unittest.TestCase`
-- **Test Method**
-  - Method name starts with `test`
-- **Test Function (Standalone)**
-  - Used with `unittest.FunctionTestCase`
+### pytest Concepts and Subconcepts
 
----
+- **Test Discovery**
+  - File Naming Conventions (`test_*.py`, `*_test.py`)
+  - Test Function Naming Conventions (`test_`)
+  
+- **Test Execution**
+  - Running Tests (`pytest`)
+  - Running Specific Tests
+  - Output Formats (Default, Detailed, XML)
+  
+- **Assertions**
+  - Using `assert` Statements
+  - Detailed Assertion Failures
+  - Assertion introspection
+  
+- **Fixtures**
+  - Defining Fixtures (`@pytest.fixture`)
+  - Fixture Scope (Function, Class, Module, Session)
+  - Yield-Based Fixtures (Setup and Teardown)
+  - Autouse Fixtures
+  - Fixture Dependencies
+  
+- **Markers**
+  - Marking Tests (`@pytest.mark`)
+  - Custom Markers
+  - Marker-based Test Selection (e.g., `pytest -k`)
 
-### 🧪 Core Components
-- **TestCase**
-  - Inheritance base for all test classes
-  - Encapsulates individual test logic
-- **TestSuite**
-  - Groups multiple test cases or other test suites
-- **TestLoader**
-  - Loads tests from modules, classes, or functions
-- **TestRunner**
-  - Runs test suites
-  - Outputs results to console or files
+- **Test Parametrization**
+  - Parametrize Decorator (`@pytest.mark.parametrize`)
+  - Multiple Parameterization
+  - Combining Multiple Parametrized Tests
 
----
-
-### 🛠 Lifecycle Methods
-- **setUp(self)**
-  - Runs before each test method
-- **tearDown(self)**
-  - Runs after each test method
-- **setUpClass(cls)**
-  - Runs once before all test methods (class-level)
-- **tearDownClass(cls)**
-  - Runs once after all test methods (class-level)
-
----
-
-### ✅ Assertion Methods
-- **Equality & Identity**
-  - `assertEqual(a, b)`
-  - `assertNotEqual(a, b)`
-  - `assertIs(a, b)`
-  - `assertIsNot(a, b)`
-- **Truthiness**
-  - `assertTrue(x)`
-  - `assertFalse(x)`
-  - `assertIsNone(x)`
-  - `assertIsNotNone(x)`
-- **Containment**
-  - `assertIn(a, b)`
-  - `assertNotIn(a, b)`
-- **Type & Instance**
-  - `assertIsInstance(obj, cls)`
-  - `assertNotIsInstance(obj, cls)`
-- **Exception Testing**
-  - `assertRaises(exc, callable, *args)`
-  - `assertRaisesRegex(exc, regex, callable, *args)`
-- **Warnings Testing**
-  - `assertWarns(warn, callable, *args)`
-  - `assertWarnsRegex(warn, regex, callable, *args)`
-- **Floating Point**
-  - `assertAlmostEqual(a, b, places)`
-  - `assertNotAlmostEqual(a, b, places)`
-- **Comparison**
-  - `assertGreater(a, b)`
-  - `assertGreaterEqual(a, b)`
-  - `assertLess(a, b)`
-  - `assertLessEqual(a, b)`
-- **Collection**
-  - `assertCountEqual(a, b)`
-  - `assertListEqual(a, b)`
-  - `assertTupleEqual(a, b)`
-  - `assertSetEqual(a, b)`
-  - `assertDictEqual(a, b)`
-
----
-
-### 🏃 Running Tests
-- **Command Line Execution**
-  - `python -m unittest`
-  - `python -m unittest test_module`
-  - `python -m unittest test_module.TestClass`
-  - `python -m unittest test_module.TestClass.test_method`
-- **Inside Script**
-  - `unittest.main()`
-  - `unittest.TextTestRunner().run(suite)`
-
----
-
-### 🧰 Test Discovery
-- **Automatic Test Discovery**
-  - `python -m unittest discover`
-- **Directory Options**
-  - `-s` (start directory)
-  - `-p` (pattern to match test files)
-  - `-t` (top-level directory)
-
----
-
-### 🧪 Fixtures and Cleanups
-- **addCleanup(func, *args, **kwargs)**
-  - Registers cleanup actions
-- **doCleanups()**
-  - Forces cleanup manually
-
----
-
-### 🧩 Advanced Features
-- **Skip Decorators**
-  - `@unittest.skip(reason)`
-  - `@unittest.skipIf(condition, reason)`
-  - `@unittest.skipUnless(condition, reason)`
-- **Expected Failures**
-  - `@unittest.expectedFailure`
-- **Subtests**
-  - `with self.subTest(var=value):`
-- **Mocking (via `unittest.mock`)**
-  - `Mock`, `patch`, `MagicMock`, etc.
-
----
-
-### 📁 Test Suite Composition
-- **Manually Building Suites**
-  - `suite = unittest.TestSuite()`
-  - `suite.addTest(TestClass("test_method"))`
-- **Loading from Classes/Modules**
-  - `unittest.TestLoader().loadTestsFromTestCase(TestClass)`
-  - `unittest.TestLoader().loadTestsFromModule(module)`
-
----
-
-### 📤 Output and Result Handling
-- **TextTestRunner**
-  - Console output
-- **TestResult**
-  - Internal structure to collect pass/fail/error info
-- **failfast**, **buffer**, **catchbreak**
-  - Optional args to `unittest.main()` or `TextTestRunner()`
-
----
-
-### 🔄 Integration
-- **CI/CD Pipelines**
-  - Works with GitHub Actions, Jenkins, etc.
-- **IDE Integration**
-  - Supported in PyCharm, VSCode, Eclipse-PyDev
+- **Test Skipping and Expected Failures**
+  - Skipping Tests (`@pytest.mark.skip`)
+  - Conditional Skipping (`@pytest.mark.skipif`)
+  - Expected Failures (`@pytest.mark.xfail`)
+  - Skipping Tests Based on Conditions
+  
+- **Test Reporting**
+  - Verbose Output
+  - Test Result Reporting (Success, Fail, Skip)
+  - JUnit XML Output
+  - Reporting Plugins (e.g., `pytest-html`)
+  
+- **Plugins**
+  - Built-in Plugins (e.g., `pytest-cov`, `pytest-xdist`)
+  - Custom Plugins
+  - Plugin Configuration and Usage
+  
+- **Test Setup and Teardown**
+  - Setup and Teardown Using Fixtures
+  - Module and Class-Level Setup
+  - Setup and Teardown with `yield` in Fixtures
+  
+- **Test Dependencies**
+  - Sharing Data Between Tests Using Fixtures
+  - Fixture Injection into Test Functions
+  - Scoped Fixtures for Cross-Test Dependencies
+  
+- **Parallel Test Execution**
+  - Parallel Execution with `pytest-xdist`
+  - Load Balancing Across Test Workers
+  - Running Tests in Parallel (`pytest -n`)
+  
+- **Mocking and Patching**
+  - Using `unittest.mock` with pytest
+  - Mocking External APIs and Services
+  - Patching Functions and Classes in Tests
+  
+- **Test Coverage**
+  - Measuring Test Coverage with `pytest-cov`
+  - Coverage Reporting (`--cov`)
+  - Combining Coverage Reports
+  
+- **Test Organization**
+  - Organizing Tests into Files and Directories
+  - Using Test Suites and Subdirectories
+  - Grouping Tests with Markers
+  
+- **Test Fixtures Usage**
+  - Function-Level Fixtures
+  - Class-Level Fixtures
+  - Module-Level Fixtures
+  - Session-Level Fixtures
+  - Autouse Fixtures for Implicit Use
+  
+- **Test Assertions and Fixtures Interaction**
+  - Parametrized Fixtures
+  - Using Fixtures for Cleanup After Tests
+  - Passing Fixtures as Arguments in Test Functions
+  
+- **Advanced Test Selection**
+  - Running Tests with Specific Markers (`-m`)
+  - Selecting Tests by Name (`-k`)
+  - Running Tests Based on Conditions
+  
+- **Test Debugging**
+  - Debugging Failing Tests with `pytest --pdb`
+  - Using `pytest.set_trace()` for Interactive Debugging
+  
+- **Test Results Handling**
+  - Handling Test Failures with Hooks
+  - Customizing Failure Output
+  
+- **Mocking External Systems**
+  - Mocking Functions with `pytest-mock`
+  - Patching APIs, Database Calls, and Services
 
 ---
