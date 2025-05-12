@@ -480,3 +480,277 @@
 - **Command-Line Arguments**
   - `argparse`, `click`
 
+---
+---
+
+Here is a comprehensive list of **all major Python standard library modules and their notable submodules or key contents**, organized by category.
+
+---
+
+## **Text Processing**
+
+* `string`
+* `re` – Regular expressions
+* `difflib`
+* `textwrap`
+* `unicodedata`
+* `stringprep`
+* `readline`
+* `rlcompleter`
+
+---
+
+## **Data Types**
+
+* `collections`
+
+  * `namedtuple`
+  * `deque`
+  * `Counter`
+  * `OrderedDict`
+  * `defaultdict`
+  * `ChainMap`
+* `array`
+* `types`
+* `enum`
+* `datetime`
+* `calendar`
+* `heapq`
+* `bisect`
+* `decimal`
+* `fractions`
+* `random`
+* `statistics`
+
+---
+
+## **Numeric and Mathematical**
+
+* `math`
+* `cmath`
+* `decimal`
+* `fractions`
+* `random`
+* `statistics`
+
+---
+
+## **Functional Programming**
+
+* `itertools`
+* `functools`
+* `operator`
+
+---
+
+## **File and Directory Access**
+
+* `os`
+
+  * `os.path`
+* `shutil`
+* `glob`
+* `fnmatch`
+* `pathlib`
+* `fileinput`
+* `tempfile`
+* `stat`
+
+---
+
+## **Data Persistence**
+
+* `pickle`
+* `copyreg`
+* `shelve`
+* `marshal`
+* `dbm`
+
+  * `dbm.dumb`, `dbm.gnu`, `dbm.ndbm`
+* `sqlite3`
+
+---
+
+## **Data Compression and Archiving**
+
+* `zlib`
+* `gzip`
+* `bz2`
+* `lzma`
+* `zipfile`
+* `tarfile`
+
+---
+
+## **File Formats**
+
+* `csv`
+* `configparser`
+* `netrc`
+* `xdrlib`
+* `plistlib`
+
+---
+
+## **Cryptographic Services**
+
+* `hashlib`
+* `hmac`
+* `secrets`
+
+---
+
+## **Internet Data Handling**
+
+* `webbrowser`
+* `html`
+
+  * `html.parser`
+* `xml`
+
+  * `xml.etree.ElementTree`
+  * `xml.dom`, `xml.sax`
+* `json`
+* `mailbox`
+* `email`
+
+  * `email.mime`, `email.parser`, `email.policy`
+* `mailcap`
+
+---
+
+## **Internet Protocols**
+
+* `urllib`
+
+  * `urllib.request`, `urllib.parse`, `urllib.error`
+* `http`
+
+  * `http.client`, `http.server`, `http.cookies`
+* `ftplib`
+* `poplib`
+* `imaplib`
+* `nntplib`
+* `smtplib`
+* `telnetlib`
+* `uuid`
+* `socket`
+* `ssl`
+
+---
+
+## **Web Services**
+
+* `cgi`
+* `cgitb`
+* `wsgiref`
+* `http.server`
+
+---
+
+## **Operating System Services**
+
+* `os`
+* `io`
+* `time`
+* `argparse`
+* `getopt`
+* `logging`
+* `getpass`
+* `platform`
+* `shlex`
+
+---
+
+## **Concurrency**
+
+* `threading`
+* `multiprocessing`
+* `concurrent.futures`
+* `subprocess`
+* `sched`
+* `signal`
+* `queue`
+
+---
+
+## **Context Management and Runtime**
+
+* `contextlib`
+* `abc`
+* `atexit`
+* `traceback`
+* `warnings`
+* `sys`
+* `sysconfig`
+
+---
+
+## **Importing Modules**
+
+* `importlib`
+* `pkgutil`
+* `zipimport`
+* `pkg_resources` (from `setuptools`)
+
+---
+
+## **Code Tools**
+
+* `code`
+* `codeop`
+* `pdb`
+* `trace`
+* `dis`
+* `inspect`
+* `site`
+* `tokenize`
+* `ast`
+* `symtable`
+* `compileall`
+* `pyclbr`
+
+---
+
+## **Development Tools**
+
+* `doctest`
+* `unittest`
+* `unittest.mock`
+* `test`
+
+---
+
+## **GUI Programming**
+
+* `tkinter`
+
+  * `tkinter.ttk`, `tkinter.tix`, `tkinter.scrolledtext`
+
+---
+
+## **Internationalization**
+
+* `gettext`
+* `locale`
+
+---
+
+## **Security**
+
+* `ssl`
+* `hashlib`
+* `hmac`
+* `secrets`
+
+---
+
+## **Others**
+
+* `uuid`
+* `typing`
+* `dataclasses`
+* `zoneinfo` (Python 3.9+)
+* `pprint`
+
+---
