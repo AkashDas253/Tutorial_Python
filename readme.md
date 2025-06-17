@@ -29,6 +29,7 @@
 - [Decorators](lessons/decorators/readme.md)
 - [File Handling](lessons/file_handling/readme.md)
 - [Built-in Functions](lessons/built_in_functions/readme.md)
+- [Monkey Patching](lessons/monkey_patching/readme.md)
 
 ### [OOPS](lessons/oop/readme.md)
 - [Class and Objects](lessons/class_and_object/readme.md)
@@ -51,6 +52,7 @@
     - [Interface](lessons/interface/readme.md)
     - [ABC Class](lessons/abc_class/readme.md)
 - [OOP Cheatsheet](lessons/oops_cheatsheet/readme.md)
+
 ### [Multithreading and Multiprocessing](lessons/multithreading_multiprocessing/readme.md)
 - [Multithreading](lessons/multithreading/readme.md)
 - [Multiprocessing](lessons/multiprocessing/readme.md)
