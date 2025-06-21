@@ -60,17 +60,23 @@
 
 ### [Packages and Frameworks](lessons/packages_framework/readme.md)
 
-- **Web Development**: [**Django**](https://github.com/AkashDas253/Tutorial_Django), [**Flask**](lessons/flask/readme.md), [**Streamlit**](lessons/streamlit/readme.md)
-- **Data Analysis**: [**Pandas**](lessons/pandas/readme.md), [**Numpy**](lessons/numpy/readme.md)
-- **Visualization**: [**MatplotLib**](lessons/matplotlib/readme.md), [**Seaborn**](lessons/seaborn/readme.md)
-- **Database Connector**: [**Pyodbc**](lessons/pyodbc/readme.md)
-- **GUI Creation**:
-    - [**Tkinter**](lessons/tkinter/readme.md), [**PySimpleGUI**](lessons/pysimplegui/readme.md)
-- **Machine Learning**:
-    - [**Scikit Learn**](lessons/sklearn/readme.md)
-    - [Tensorflow](https://github.com/AkashDas253/Tutorial_Tensorflow)
-- **Web Scraping**: [**BeautifulSoup**](lessons/beautifulsoup/readme.md)
-- **Automation**: [**Selenium (Python)**](lessons/selenium/readme.md)
-- **Testing**:
-    - [unittest](lessons/unittest/readme.md)
-    - [pytest](lessons/pytest/readme.md)
+-  **Web Development**: [**Django**](frameworks/django/readme.md), [**Flask**](frameworks/flask/readme.md), [**Streamlit**](frameworks/streamlit/readme.md)
+
+- **GUI Creation**: [**Tkinter**](frameworks/tkinter/readme.md), [**PySimpleGUI**](frameworks/pysimplegui/readme.md)
+
+- **Data Analysis**: [**Pandas**](libraries/pandas/readme.md), [**Numpy**](packages/numpy/readme.md)
+
+- **Visualization**: [**MatplotLib**](packages/matplotlib/readme.md), [**Seaborn**](packages/seaborn/readme.md)
+
+- **Database Connector**: [**Pyodbc**](packages/pyodbc/readme.md)
+
+- **Machine Learning**: [**Scikit Learn**](packages/sklearn/readme.md), [Tensorflow](https://github.com/AkashDas253/Tutorial_Tensorflow)
+
+- **Web Scraping**: [**BeautifulSoup**](packages/beautifulsoup/readme.md)
+
+- **Automation**: [**Selenium (Python)**](packages/selenium/readme.md)
+
+- **Testing**: [unittest](frameworks/unittest/readme.md), [pytest](packages/pytest/readme.md)
+
+
+
