@@ -30,6 +30,7 @@
 - [File Handling](lessons/file_handling/readme.md)
 - [Built-in Functions](lessons/built_in_functions/readme.md)
 - [Monkey Patching](lessons/monkey_patching/readme.md)
+- [Meta class](lessons/meta_class/readme.md)
 
 ### [OOPS](lessons/oop/readme.md)
 - [Class and Objects](lessons/class_and_object/readme.md)
