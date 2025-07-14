@@ -1,108 +1,108 @@
-## **Data Cleaning in Pandas**  
-A complete guide to handling missing, inconsistent, duplicate, or incorrect data.
+## Data Cleaning in Pandas
+
+### Purpose
+
+Data cleaning is the process of **preparing raw data for analysis** by correcting errors, handling inconsistencies, filling gaps, and ensuring uniformity. Clean data leads to accurate analysis, better model performance, and improved interpretability.
 
 ---
 
-### **Detecting Missing Data**
+### Key Goals of Data Cleaning
 
-```python
-df.isna()                      # Detect NaN values (returns boolean DataFrame)
-df.isnull()                    # Same as isna()
-
-df.notna()                     # Detect non-NaN values
-df.notnull()                   # Same as notna()
-```
-
----
-
-### **Removing Missing Data**
-
-```python
-df.dropna()                                # Drop rows with any NaN
-df.dropna(axis=1)                          # Drop columns with any NaN
-df.dropna(how='all')                       # Drop rows where all values are NaN
-df.dropna(subset=['A', 'B'])               # Drop rows where 'A' or 'B' is NaN
-df.dropna(thresh=2)                        # Keep rows with at least 2 non-NaNs
-```
+| Goal                     | Focus                                |
+| ------------------------ | ------------------------------------ |
+| Handle missing values    | Ensure continuity and completeness   |
+| Remove duplicates        | Ensure uniqueness and avoid bias     |
+| Correct data types       | Prevent type-related errors          |
+| Fix inconsistent formats | Standardize values and structure     |
+| Detect anomalies         | Identify and flag outliers or errors |
+| Rename/relabel           | Improve readability and consistency  |
+| Normalize structure      | Flatten or reshape for uniformity    |
 
 ---
 
-### **Filling Missing Data**
+### Major Cleaning Operations
 
-```python
-df.fillna(0)                               # Replace all NaNs with 0
-df.fillna(method='ffill')                 # Forward fill (propagate previous value)
-df.fillna(method='bfill')                 # Backward fill (use next value)
-df.fillna(value={'A': 0, 'B': 'NA'})      # Fill different values per column
-df.fillna(df.mean())                      # Fill NaNs with column mean
-```
+#### Missing Values Handling
 
----
+* Detect and quantify missingness
+* Options:
 
-### **Replacing Values**
+  * Fill with default/statistical values
+  * Forward/backward fill
+  * Interpolate values
+  * Drop rows/columns
 
-```python
-df.replace(999, np.nan)                   # Replace 999 with NaN
-df.replace([1, 2], [100, 200])            # Replace multiple values
-df.replace({'A': {'old': 'new'}})         # Column-specific replacements
-```
+#### Duplicate Detection
 
----
+* Identify duplicate rows (partial or full)
+* Remove while preserving one occurrence
+* Use custom subset of columns to check
 
-### **Renaming Columns or Index**
+#### Type Conversion
 
-```python
-df.rename(columns={'old': 'new'})         # Rename column
-df.rename(index={0: 'row1'})              # Rename index
-df.columns = ['a', 'b', 'c']              # Rename all columns directly
-```
+* Ensure columns have appropriate dtypes
+* Convert object columns to numeric, datetime, category, etc.
+* Use inferencing or explicit casting
 
----
+#### String Cleaning & Normalization
 
-### **Changing Data Types**
+* Strip extra spaces, symbols
+* Standardize case, formatting
+* Replace unwanted substrings
+* Normalize encoding (e.g., Unicode cleanup)
 
-```python
-df['col'].astype('int')                   # Convert data type
-df.astype({'A': 'int', 'B': 'float'})     # Convert multiple columns
-```
+#### Renaming
 
----
+* Rename columns to consistent naming conventions
+* Set index names or reset if needed
 
-### **Detecting and Removing Duplicates**
+#### Value Correction
 
-```python
-df.duplicated()                           # Returns True for duplicated rows
-df.duplicated(subset=['A'])               # Check duplicates based on column 'A'
-df.drop_duplicates()                      # Remove duplicated rows
-df.drop_duplicates(subset=['A'], keep='last')  # Keep last occurrence
-```
+* Correct known data entry errors
+* Replace placeholder or invalid values (e.g., '-999', 'N/A')
+
+#### Column/Row Dropping
+
+* Remove irrelevant, redundant, or empty fields
+* Drop by name or based on content (e.g., % missing)
 
 ---
 
-### **String Cleaning**
+### Commonly Used Tools
 
-```python
-df['col'].str.strip()                     # Remove leading/trailing whitespace
-df['col'].str.lower()                     # Convert to lowercase
-df['col'].str.upper()                     # Convert to uppercase
-df['col'].str.replace('$', '', regex=False)  # Replace characters
-```
-
----
-
-### **Outlier Handling (Basic)**
-
-```python
-df[df['col'] < df['col'].quantile(0.95)]  # Filter out top 5% values
-df.clip(lower=0, upper=100)               # Clip all values within range
-```
+| Tool                    | Focus                                     |
+| ----------------------- | ----------------------------------------- |
+| `isnull()`, `notnull()` | Missing data mask                         |
+| `fillna()`              | Impute missing values                     |
+| `dropna()`              | Remove nulls                              |
+| `duplicated()`          | Flag duplicates                           |
+| `drop_duplicates()`     | Remove duplicate entries                  |
+| `astype()`              | Change data types                         |
+| `replace()`             | Replace specific values                   |
+| `str` accessor          | String cleaning operations                |
+| `rename()`              | Rename columns/index                      |
+| `drop()`                | Drop rows or columns                      |
+| `interpolate()`         | Estimate missing values based on patterns |
 
 ---
 
-### **Standardizing Column Names**
+### Best Practices
 
-```python
-df.columns = df.columns.str.strip().str.lower().str.replace(' ', '_')  # Clean column names
-```
+* Always profile data before cleaning
+* Work on copies or use `inplace=False` to avoid unintentional overwrite
+* Combine logical filters with cleaning steps (e.g., drop rows with outliers + nulls)
+* Clean data incrementally and validate each step
+* Document each cleaning decision for reproducibility
+
+---
+
+### Integration with Workflow
+
+Data cleaning typically happens:
+
+* **Before EDA**: To ensure summaries reflect true data
+* **Before modeling**: To avoid bias and errors
+* **After merging**: To resolve inconsistencies across sources
+* **During feature engineering**: To prep derived attributes
 
 ---

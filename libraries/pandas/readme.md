@@ -13,6 +13,8 @@
 ### Inbuilt Functions
 - [IO functions](lessons/io_functions/readme.md)
 - [Selection & Filtering Functions](lessons/selection_filtering_functions/readme.md): [Selection](lessons/selection_function/readme.md), [Filtering](lessons/filtering_function/readme.md)
+- [Data Cleaning Functions](lessons/data_cleaning_functions/readme.md)
+- [Data Manipulation functions*](lessons/data_manipulation_functions/readme.md)
 
 ### Operations
 - Create/Save Data:
@@ -20,22 +22,24 @@
 
 - [Exploration](lessons/exploration/readme.md):
 - [Selecting & Filtering Data](lessons/data_selection_filtering/readme.md): [Selection & Filtering Functions](lessons/selection_filtering_functions/readme.md)
-- Data Cleaning:
-- Data Manipulation:
+- [Data Cleaning](lessons/data_cleaning/readme.md): [Data Cleaning Functions](lessons/data_cleaning_functions/readme.md)
+- [Data Manipulation](lessons/data_manipulation/readme.md): 
+  - [Data Manipulation functions*](lessons/data_manipulation_functions/readme.md) 
+  - [Adding and Removing Columns](lessons/adding_and_removing_columns/readme.md)
 - Grouping & Aggregation: 
 - Merging & Joining:
 - Reshaping & Pivoting:
 
 
 ---
-- [Data manipulation](lessons/data_manipulation/readme.md)
+
 
 
   - 
 - [Sorting & Ranking](lessons/sorting_ranking/readme.md)
   - [Sorting](lessons/sorting/readme.md)
 - [Indexing & Alignment](lessons/data_alignment_and_indexing/readme.md)
-- [Adding and Removing Columns](lessons/adding_and_removing_columns/readme.md)
+
 - [Renaming Columns/Indexes](lessons/renaming/readme.md)
 - [Data Transformation](lessons/data_transformation/readme.md)
   - [Reshaping & Pivoting](lessons/reshaping_pivoting/readme.md)
