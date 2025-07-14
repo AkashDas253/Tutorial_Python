@@ -71,7 +71,7 @@ Pandas provides a powerful set of tools for reading and writing data across mult
 
 ---
 
-## 📤 **Output Capabilities (Writing/Exporting)**
+## **Output Capabilities (Writing/Exporting)**
 
 ### CSV, TXT, TSV
 
