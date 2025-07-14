@@ -5,33 +5,17 @@
 - [Components](lessons/components/readme.md)
 - [Overview](lessons/overview/readme.md)
 
-### Core
-- [Data](lessons/data/readme.md)
+### [Data](lessons/data/readme.md)
 - Data Structures: [Series](lessons/series/readme.md), [Dataframe](lessons/dataframe/readme.md), [Index](lessons/index/readme.md)
 - [Datatypes](lessons/datatypes/readme.md)
 
-### Inbuilt Functions
+### [IO for File](lessons/io/readme.md)
 - [IO functions](lessons/io_functions/readme.md)
-- [Selection & Filtering Functions](lessons/selection_filtering_functions/readme.md): [Selection](lessons/selection_function/readme.md), [Filtering](lessons/filtering_function/readme.md)
 
-### Operations
-- Create/Save Data:
-  - [Input/Output from files](lessons/io/readme.md): [IO functions](lessons/io_functions/readme.md)
-
-- [Exploration](lessons/exploration/readme.md):
-- [Selecting & Filtering Data](lessons/data_selection_filtering/readme.md): [Selection & Filtering Functions](lessons/selection_filtering_functions/readme.md)
-- Data Cleaning:
-- Data Manipulation:
-- Grouping & Aggregation: 
-- Merging & Joining:
-- Reshaping & Pivoting:
-
-
----
-- [Data manipulation](lessons/data_manipulation/readme.md)
-
-
-  - 
+### [Data manipulation](lessons/data_manipulation/readme.md)
+- [Selection & Filtering](lessons/selection_filtering/readme.md)
+  - [Selection](lessons/selection/readme.md)
+  - [Filtering](lessons/filtering/readme.md)
 - [Sorting & Ranking](lessons/sorting_ranking/readme.md)
   - [Sorting](lessons/sorting/readme.md)
 - [Indexing & Alignment](lessons/data_alignment_and_indexing/readme.md)
@@ -63,8 +47,6 @@
 - [Date and Time Handling](lessons/date_time/readme.md)
 - [Time Series Data](lessons/time_series_data/readme.md)
 - [Categorical data](lessons/categorical_data/readme.md)
-
----
 
 ### [Visualization](lessons/visualization/readme.md)
 
