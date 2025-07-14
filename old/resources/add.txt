@@ -1,0 +1,12 @@
+lessons/basics/
+lessons/datatypes/
+lessons/oops/
+lessons/exception/
+lessons/modules/
+lessons/built_in_functions/
+lessons/file_handling/
+lessons/modules_internet/
+lessons/modules_maths/
+lessons/numpy/
+lessons/pandas/
+lessons/sklearn/
