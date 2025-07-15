@@ -75,7 +75,7 @@
 
 - **Web Scraping**: [**BeautifulSoup**](packages/beautifulsoup/readme.md)
 
-- **Automation**: [**Selenium (PythonAPI)**](https://github.com/AkashDas253/Tutorial_Tools/python_support/readme.md)
+- **Automation**: [**Selenium (PythonAPI)**](https://github.com/AkashDas253/Tutorial_Tools/selenium/python_support/readme.md)
 
 - **Testing**: [unittest](frameworks/unittest/readme.md), [pytest](packages/pytest/readme.md)
 
