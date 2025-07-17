@@ -8,7 +8,7 @@
 ### Fundamentals
 - [Syntax](lessons/syntax/readme.md)
 - [Variables](lessons/variables/readme.md)
-- [Input/Output](lessons/input_output/readme.md)
+- [Input/Output](lessons/input_output/readme.md): [Input/Output Functions](lessons/input_output_functions/readme.md)
 - [Scope and Access](lessons/scope/readme.md) 
 - [Flow Control](lessons/flow_control/readme.md)
 - [Function](lessons/functions/readme.md)
@@ -22,7 +22,10 @@
     - Collections: [List](lessons/list/readme.md), [Tuples](lessons/tuples/readme.md), [Set](lessons/set/readme.md), [Dictionary](lessons/dictionary/readme.md)
     - Collection Module
     - Binary: [Bytes](lessons/bytes/readme.md), [Bytearray](lessons/bytearray/readme.md), [Memoryview](lessons/memoryview/readme.md)
-
+- [Input/Output Functions](lessons/input_output_functions/readme.md):
+    - [High Level Input/Output](lessons/high_level_input_output/readme.md)
+    - [Low level Input/Output](lessons/low_level_input_output/readme.md)
+    - [Data Serialization](lessons/data_serialization/readme.md)
 
 ### Miscellenious
 - [Comprehension](lessons/comprehension/readme.md)        
