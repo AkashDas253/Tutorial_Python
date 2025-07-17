@@ -1,173 +1,190 @@
-# Input and Output in Python
+## Input/Output in Python 
+
+### Definition
+
+Input and output (I/O) in Python refers to **reading data into a program (input)** and **sending data from the program to the outside world (output)**. Python supports multiple methods of I/O for various mediums like keyboard, screen, file, memory, and network.
 
 ---
 
-### **Overview**
+### Categories of I/O in Python
 
-Python provides built-in functions for basic **Input** and **Output** operations. Input is commonly performed using `input()` and output using `print()`. For more advanced needs, Python offers formatted printing, file-based I/O, and the `sys` module for lower-level operations.
+* **Standard I/O**
 
----
+  * **Input:** From keyboard using `input()` or low-level `sys.stdin`
+  * **Output:** To screen using `print()` or low-level `sys.stdout`
 
-## **Input**
+* **File I/O**
 
----
+  * Persistent storage interaction through `open()`, file objects, file modes, and buffering
 
-### `input(prompt=None)`
+* **Binary vs Text I/O**
 
-Reads a line from standard input and returns it as a string.
+  * **Text Mode:** Handles string data; includes line endings translation
+  * **Binary Mode:** Handles bytes; no transformation
 
-- `prompt`: *(Optional)* A string displayed before user input. If omitted, no prompt is shown.
+* **Formatted I/O**
 
-**Returns**: Always returns a string (use `int()`, `float()`, etc. to convert as needed).
+  * String formatting via `f-strings`, `format()`, or `%` operator
 
-```py
-name = input("Enter your name: ")
-print("Hello,", name)
-```
+* **Buffered vs Unbuffered I/O**
 
----
-
-## **Output**
+  * **Buffered I/O:** Stores data temporarily in memory to optimize speed
+  * **Unbuffered I/O:** Direct I/O, often slower but more immediate
 
 ---
 
-### `print(*objects, sep=' ', end='\n', file=sys.stdout, flush=False)`
+### Streams in Python
 
-Used to print output to standard output or other writable streams.
-
-- `*objects`: One or more objects to print, separated by `sep`.
-- `sep`: *(Default: `' '`)* String inserted between objects.
-- `end`: *(Default: `'\n'`)* String added after the final value.
-- `file`: *(Default: `sys.stdout`)* A file-like object (stream) where output is sent.
-- `flush`: *(Default: `False`)* If `True`, flushes the output buffer immediately.
-
-```py
-x = 10
-y = 20
-print("The sum is", x + y)  # default sep=' ', end='\n'
-print(x, y, sep=' -> ', end=' !!!\n')
-```
+| Type          | Description                               |
+| ------------- | ----------------------------------------- |
+| Text Stream   | Handles characters; decodes bytes to text |
+| Binary Stream | Handles raw byte data                     |
+| Buffered      | High-level wrapper for performance        |
+| Raw           | Unbuffered, lowest-level byte interface   |
 
 ---
 
-## **Formatted Output**
+### Input Sources
 
-Python offers **formatted string literals** (f-strings), **`str.format()`**, and the **`%` operator** for formatted output.
+* **Standard Input (Keyboard)**
 
----
+  * `input()` → always returns string
+  * `sys.stdin` for more control (line-buffered)
 
-### `str.format(*args, **kwargs)`
+* **File Input**
 
-Used to create formatted strings.
+  * Reading from `.txt`, `.csv`, `.json`, etc.
+  * Can be sequential or random-access
 
-- `*args`: Positional arguments for format placeholders.
-- `**kwargs`: Keyword arguments for named placeholders.
+* **In-memory Input**
 
-```py
-name = "Alice"
-score = 95
-print("Name: {}, Score: {}".format(name, score))
-print("Name: {n}, Score: {s}".format(n=name, s=score))
-```
+  * Using `io.StringIO` or `io.BytesIO` to mimic file I/O in memory
 
----
+* **Network Input**
 
-### `format(value, format_spec='')`
-
-Applies formatting to a single value using a format specification.
-
-- `value`: The value to format.
-- `format_spec`: The format string defining presentation (e.g., width, precision).
-
-```py
-pi = 3.14159
-print(format(pi, ".2f"))       # 2 decimal places
-print(format(42, "04"))        # padded with zeros: 0042
-```
+  * Via sockets or APIs (requires additional modules)
 
 ---
 
-## **String Formatting Methods**
+### Output Targets
+
+* **Standard Output (Screen)**
+
+  * `print()`, `sys.stdout.write()`
+
+* **File Output**
+
+  * Write/append data to files
+  * File modes like `'w'`, `'a'`, `'r+'`, `'x'`
+
+* **In-memory Output**
+
+  * `io.StringIO`, `io.BytesIO`
+
+* **Network Output**
+
+  * Data written to sockets or remote servers
 
 ---
 
-### **f-Strings (Python 3.6+)**
+### Modes of File I/O
 
-Prefixed with `f`, allows embedding expressions inside string literals using `{}`.
-
-```py
-name = "Bob"
-age = 25
-print(f"My name is {name} and I am {age} years old.")
-```
-
----
-
-### `%` Formatting
-
-Uses C-style formatting operators, e.g., `%s`, `%d`, `%f`.
-
-```py
-score = 90.5
-print("Score: %.2f" % score)
-print("Name: %s, Age: %d" % ("Charlie", 30))
-```
+| Mode   | Description                      |
+| ------ | -------------------------------- |
+| `'r'`  | Read (text)                      |
+| `'rb'` | Read (binary)                    |
+| `'w'`  | Write (overwrite, text)          |
+| `'wb'` | Write (overwrite, binary)        |
+| `'a'`  | Append (text)                    |
+| `'ab'` | Append (binary)                  |
+| `'x'`  | Create new file, fail if exists  |
+| `'r+'` | Read & write (text, no truncate) |
 
 ---
 
-## **Low-level I/O**
+### I/O Abstractions
+
+* **File object**: High-level interface to file data
+* **Stream**: Abstract layer over input/output
+* **Buffer**: Temporary memory for optimizing I/O
 
 ---
 
-### `sys.stdin.read([n])`, `sys.stdout.write(s)`, `sys.stderr.write(s)`
+### Memory I/O (In-Memory Buffers)
 
-From the `sys` module (must be imported):
-
-- `sys.stdin.read([n])`: Reads `n` characters or until EOF.
-- `sys.stdout.write(s)`: Writes the string `s` to standard output (no newline).
-- `sys.stderr.write(s)`: Writes string to the standard error stream.
-
-```py
-import sys
-
-# Writing directly
-sys.stdout.write("This is stdout\n")
-sys.stderr.write("This is stderr\n")
-
-# Reading directly
-# Uncomment if using real input
-# data = sys.stdin.read()
-# print("You typed:", data)
-```
+* Useful for **testing** and **temporary storage**
+* `io.StringIO`: for text
+* `io.BytesIO`: for binary
 
 ---
 
-## **File I/O Functions** (Quick Reference)
+### Error Handling in I/O
 
-Use the `open()` function for file operations, covered in detail under File Handling.
+* Common Exceptions:
+
+  * `FileNotFoundError`
+  * `PermissionError`
+  * `IsADirectoryError`
+  * `UnicodeDecodeError` / `UnicodeEncodeError`
+
+* Best Practice:
+
+  * Always use `try...except` or context managers (`with`)
 
 ---
 
-### `open(file, mode='r', buffering=-1, encoding=None, errors=None, newline=None, closefd=True, opener=None)`
+### Context Manager (`with` Statement)
 
-- `file`: Path or file name to open.
-- `mode`: File mode (e.g., `'r'`, `'w'`, `'a'`, `'rb'`, `'wb'`).
-- `buffering`: Buffer policy (`0`, `1`, or larger integer).
-- `encoding`: Text encoding (e.g., `'utf-8'`).
-- `errors`: Error handling (`'strict'`, `'ignore'`, etc.).
-- `newline`: Controls newline translation.
-- `closefd`: If `False`, keeps file descriptor open when closing file.
-- `opener`: Custom opener for opening the file.
+* Automatically handles:
 
-```py
-# Write to a file
-with open("example.txt", "w", encoding="utf-8") as f:
-    f.write("Hello File\n")
+  * File opening
+  * Resource management
+  * Closing file (even on error)
 
-# Read from a file
-with open("example.txt", "r", encoding="utf-8") as f:
-    content = f.read()
-    print(content)
-```
+---
+
+### Unicode Handling
+
+* Python 3 supports Unicode natively
+* Ensure correct encoding/decoding (`utf-8`, `ascii`, `latin-1`, etc.)
+* Always specify `encoding` explicitly for cross-platform compatibility
+
+---
+
+### Data Serialization I/O
+
+* For writing/reading structured data:
+
+  * **JSON:** via `json` module
+  * **Pickle:** via `pickle` (Python object serialization)
+  * **CSV/XML/YAML:** via respective modules
+* These enable structured input/output beyond plain text or binary
+
+---
+
+### Buffered Layers (File I/O Stack)
+
+| Layer      | Class                  | Description              |
+| ---------- | ---------------------- | ------------------------ |
+| High-level | `TextIOWrapper`        | Text encoding/decoding   |
+| Buffered   | `BufferedReader`, etc. | Performance optimization |
+| Raw        | `FileIO`               | Basic read/write from OS |
+
+---
+
+### Advanced Topics
+
+* **Redirection of input/output**
+
+  * Using `sys.stdin`, `sys.stdout`, and `sys.stderr` redirection
+* **Non-blocking I/O**
+
+  * Via `select`, `asyncio`, or threading for concurrent operations
+* **File Descriptor I/O**
+
+  * Low-level interaction with OS descriptors via `os` module
+* **Logging Output**
+
+  * Using `logging` module for structured output instead of `print()`
 
 ---
