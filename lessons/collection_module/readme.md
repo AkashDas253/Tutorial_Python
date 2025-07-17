@@ -93,3 +93,75 @@ The `collections` module is part of Python’s **standard library** and provides
 | Subclassing dict/list/str safely | `UserDict`, `UserList`, `UserString` |
 
 ---
+
+### Heirarchy of the classes
+
+```mermaid
+classDiagram
+    class object;
+
+    class tuple;
+    object <|-- tuple;
+
+    class list;
+    object <|-- list;
+
+    class dict;
+    object <|-- dict;
+
+    class str;
+    object <|-- str;
+
+    class deque;
+    object <|-- deque;
+
+    class namedtuple;
+    tuple <|-- namedtuple;
+
+    class Counter;
+    dict <|-- Counter;
+
+    class OrderedDict;
+    dict <|-- OrderedDict;
+
+    class defaultdict;
+    dict <|-- defaultdict;
+
+    class ChainMap;
+    object <|-- ChainMap;
+
+    class UserDict;
+    object <|-- UserDict;
+
+    class UserList;
+    object <|-- UserList;
+
+    class UserString;
+    object <|-- UserString;
+
+    class MutableMapping;
+    object <|-- MutableMapping;
+
+    Counter <|-- MutableMapping;
+    OrderedDict <|-- MutableMapping;
+    defaultdict <|-- MutableMapping;
+
+    class Mapping;
+    object <|-- Mapping;
+
+    MutableMapping <|-- Mapping;
+    ChainMap <|-- Mapping;
+
+    class Sequence;
+    object <|-- Sequence;
+
+    class MutableSequence;
+    Sequence <|-- MutableSequence;
+
+    list <|-- MutableSequence;
+    deque <|-- MutableSequence;
+    UserList <|-- MutableSequence;
+
+    class MutableSet;
+    object <|-- MutableSet;
+```
