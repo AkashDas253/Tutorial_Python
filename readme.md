@@ -13,6 +13,7 @@
 - [Flow Control](lessons/flow_control/readme.md)
 - [Function](lessons/functions/readme.md)
 
+
 ### [Data](lessons/data/readme.md)
 - [Datatypes](lessons/datatypes/readme.md)
     - Numeric: [Integer](lessons/integer/readme.md), [Float](lessons/float/readme.md), [Complex](lessons/complex/readme.md)
@@ -21,6 +22,7 @@
     - Collections: [List](lessons/list/readme.md), [Tuples](lessons/tuples/readme.md), [Set](lessons/set/readme.md), [Dictionary](lessons/dictionary/readme.md)
     - Collection Module
     - Binary: [Bytes](lessons/bytes/readme.md), [Bytearray](lessons/bytearray/readme.md), [Memoryview](lessons/memoryview/readme.md)
+
 
 ### Miscellenious
 - [Comprehension](lessons/comprehension/readme.md)        
@@ -31,6 +33,7 @@
 - [Built-in Functions](lessons/built_in_functions/readme.md)
 - [Monkey Patching](lessons/monkey_patching/readme.md)
 - [Meta class](lessons/meta_class/readme.md)
+- [String formatting](lessons/string_formatting/readme.md)
 
 ### [OOPS](lessons/oop/readme.md)
 - [Class and Objects](lessons/class_and_object/readme.md)
@@ -58,6 +61,13 @@
 - [Multithreading](lessons/multithreading/readme.md)
 - [Multiprocessing](lessons/multiprocessing/readme.md)
 - [Asyncio](lessons/asyncio/readme.md)
+
+### Tools and Support
+- [Package Manager](lessons/package_manager/readme.md): [pip](lessons/pip/readme.md), [conda](lessons/conda/readme.md), [virtualenv](lessons/virtualenv/readme.md), [venv](lessons/venv/readme.md)
+
+
+### 
+
 
 ### [Packages and Frameworks](lessons/packages_framework/readme.md)
 
