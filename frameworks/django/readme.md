@@ -2,7 +2,9 @@
 
 - [Cheatsheet](lessons/cheatsheet/readme.md)
 - [Concepts](lessons/concepts/readme.md)
-- [Overview](lessons/overview/readme.md) 
+
+### Core concepts
+- [Django](lessons/django/readme.md) 
 - [Components](lessons/components/readme.md) 
 
 - [Basics](lessons/basics/readme.md)
@@ -168,3 +170,5 @@
   - [Social Authentication](lessons/social_authentication/readme.md)
   - [Storage Backends](lessons/storage_backends/readme.md)
 
+### Practical Aspects
+- [] 

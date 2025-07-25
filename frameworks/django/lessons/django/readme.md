@@ -1,4 +1,4 @@
-## Overview of Django
+## Django
 
 ### Definition
 
