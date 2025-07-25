@@ -161,17 +161,14 @@
 - [Generic Relations](lessons/generic_relations/readme.md)
 
 - Third-party Integrations
-  - [Django REST Framework (DRF)](extensions/django_rest_framework/readme.md)
-  - [Celery Integration](extensions/celery_integration/readme.md)
-  - [Channels (WebSockets)](extensions/channels_websockets/readme.md)
-  - [Django Allauth](extensions/django_allauth/readme.md)
-  - [Django Debug Toolbar](extensions/django_debug_toolbar/readme.md)
-  - [Django Extensions](extensions/django_extensions/readme.md)
-  - [Social Authentication](extensions/social_authentication/readme.md)
-  - [Storage Backends](extensions/storage_backends/readme.md)
+  - [Django REST Framework (DRF)](lessons/django_rest_framework/readme.md)
+  - [Celery Integration](lessons/celery_integration/readme.md)
+  - [Channels (WebSockets)](lessons/channels_websockets/readme.md)
+  - [Django Allauth](lessons/django_allauth/readme.md)
+  - [Django Debug Toolbar](lessons/django_debug_toolbar/readme.md)
+  - [Django Extensions](lessons/django_extensions/readme.md)
+  - [Social Authentication](lessons/social_authentication/readme.md)
+  - [Storage Backends](lessons/storage_backends/readme.md)
 
 ### Practical Aspects
 - [] 
-
-
-
