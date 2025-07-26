@@ -39,9 +39,28 @@
 - [Class Based View](lessons/cbv/readme.md)  
 - [Generic Class Based View](lessons/gcbv/readme.md)  
 
+### Models and Database
+- [Django Models](lessons/django_models_overview/readme.md)
+
+### Migration
+- [Django Migration](lessons/migrations_overview/readme.md)
+- [Migration Tools](lessons/migrations_tools/readme.md)
+
 ### Templates
 - [Template Loader](lessons/templates_loader/readme.md)  
 - [Template Inheritance](lessons/template_inheritance/readme.md)
+
+### Admin
+- [Django Admin](lessons/django_admin_overview/readme.md)
+
+### Testing
+- [Tesing](lessons/testing_overview/readme.md)
+- [Adding Selenium](lessons/selenium_test/readme.md)
+
+### Deployment
+- [Deployment](lessons/deployment_overview/readme.md)
+- Server Options: [Gunicorn](lessons/gunicorn/readme.md), [uwsgi](lessons/uwsgi/readme.md)
+- Platform options: [Heroku](lessons/heroku/readme.md), [PythonAnywhere](lessons/pythonanywhere/readme.md)
 
 ### Third-party Integrations
 - [Django REST Framework (DRF)](extensions/django_rest_framework/readme.md)
@@ -63,7 +82,11 @@
 - [Using View](lessons/using_views/readme.md)
 - [Routing](lessons/routing/readme.md)  
 - [Adding Template](lessons/adding_templates/readme.md) 
-
+- [Using Template](lessons/using_templates/readme.md)
+- [Add database](lessons/adding_database/readme.md)
+- [Create Models](lessons/create_models/readme.md)
+- [Use database](lessons/using_database/readme.md)
+- [Use manage.py commands](lessons/using_manage_command/readme.md)
 
 ### Mini Projects
 - [ToDo Project](mini_projects/todo_proj/readme.md)
