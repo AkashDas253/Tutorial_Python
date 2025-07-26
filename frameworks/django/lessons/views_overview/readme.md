@@ -2,14 +2,14 @@
 
 ---
 
-### 📌 Purpose of Views
+### Purpose of Views
 
 * Views are Python functions or classes that receive web requests and return web responses.
 * They **contain the logic** of what data to display and how.
 
 ---
 
-### 🧱 Types of Views
+### Types of Views
 
 | Type                                 | Description                                                                        |
 | ------------------------------------ | ---------------------------------------------------------------------------------- |
@@ -22,9 +22,9 @@
 
 ---
 
-### 🧠 Core Concepts
+### Core Concepts
 
-#### 🔹 Request and Response Flow
+#### Request and Response Flow
 
 * Django routes request using `urls.py` to the appropriate view.
 * Views interact with:
@@ -33,7 +33,7 @@
   * Templates → to render responses.
   * HttpResponse → to return plain/text or custom responses.
 
-#### 🔹 View Responsibilities
+#### View Responsibilities
 
 * Accept `HttpRequest`.
 * Execute business logic.
@@ -42,7 +42,7 @@
 
 ---
 
-### 🔹 Function-Based Views (FBV)
+### Function-Based Views (FBV)
 
 ```python
 from django.http import HttpResponse
@@ -56,7 +56,7 @@ def hello_view(request):
 
 ---
 
-### 🔹 Class-Based Views (CBV)
+### Class-Based Views (CBV)
 
 ```python
 from django.views import View
@@ -72,7 +72,7 @@ class HelloView(View):
 
 ---
 
-### 🔹 Generic Class-Based Views (GCBV)
+### Generic Class-Based Views (GCBV)
 
 > Pre-built views for CRUD and common tasks.
 
@@ -87,11 +87,11 @@ class HelloView(View):
 | `RedirectView` | Perform HTTP redirects    |
 | `FormView`     | Display and process forms |
 
-> ✅ All extend from `View` and are found in `django.views.generic`.
+> All extend from `View` and are found in `django.views.generic`.
 
 ---
 
-### 🔹 Async Views (Django 3.1+)
+### Async Views (Django 3.1+)
 
 ```python
 from django.http import JsonResponse
@@ -106,7 +106,7 @@ async def async_view(request):
 
 ---
 
-### 🔹 Template Rendering in Views
+### Template Rendering in Views
 
 ```python
 from django.shortcuts import render
@@ -117,7 +117,7 @@ def home(request):
 
 ---
 
-### 🔹 Redirects and HTTP Response Types
+### Redirects and HTTP Response Types
 
 ```python
 from django.http import HttpResponseRedirect, JsonResponse
@@ -128,7 +128,7 @@ def my_view(request):
 
 ---
 
-### 🔹 Decorators for Views
+### Decorators for Views
 
 | Decorator                                | Purpose                         |
 | ---------------------------------------- | ------------------------------- |
@@ -138,7 +138,7 @@ def my_view(request):
 
 ---
 
-### 🔹 Custom Error Views
+### Custom Error Views
 
 * Custom handlers for 404, 500, 403, 400:
 
@@ -148,7 +148,7 @@ handler404 = 'myapp.views.custom_404'
 
 ---
 
-### 🧩 View Utilities
+### View Utilities
 
 | Utility               | Description                          |
 | --------------------- | ------------------------------------ |
@@ -160,7 +160,7 @@ handler404 = 'myapp.views.custom_404'
 
 ---
 
-### 🔹 Common Import Paths
+### Common Import Paths
 
 | Component               | Path                                          |
 | ----------------------- | --------------------------------------------- |

@@ -1,10 +1,10 @@
-## 🧱 Django Project Structure – Comprehensive Overview
+## Django Project Structure
 
 A Django project consists of a **project-level directory** and one or more **app-level directories**, along with configuration and utility files.
 
 ---
 
-### 🔹 Basic Structure after `django-admin startproject projectname`
+### Basic Structure after `django-admin startproject projectname`
 
 ```
 projectname/
@@ -18,7 +18,7 @@ projectname/
 │   └── wsgi.py
 ```
 
-#### 📄 File/Folder Descriptions:
+#### File/Folder Descriptions:
 
 | Name           | Description                                                                       |
 | -------------- | --------------------------------------------------------------------------------- |
@@ -32,7 +32,7 @@ projectname/
 
 ---
 
-### 🔹 After `python manage.py startapp appname`
+### After `python manage.py startapp appname`
 
 ```
 projectname/
@@ -49,7 +49,7 @@ projectname/
 │       └── __init__.py
 ```
 
-#### 📄 File/Folder Descriptions:
+#### File/Folder Descriptions:
 
 | Name          | Description                                                             |
 | ------------- | ----------------------------------------------------------------------- |
@@ -63,7 +63,7 @@ projectname/
 
 ---
 
-### 🔹 Optional Common Additions
+### Optional Common Additions
 
 | Folder / File          | Purpose                                                |
 | ---------------------- | ------------------------------------------------------ |
@@ -76,7 +76,7 @@ projectname/
 
 ---
 
-### 🔹 Deployment Files
+### Deployment Files
 
 | File               | Purpose                                                            |
 | ------------------ | ------------------------------------------------------------------ |
@@ -87,7 +87,7 @@ projectname/
 
 ---
 
-### 🔹 Modular Project Layout (Best Practice for Large Projects)
+### Modular Project Layout (Best Practice for Large Projects)
 
 ```
 projectname/
@@ -111,7 +111,7 @@ projectname/
 
 ---
 
-### 🔹 Key Points
+### Key Points
 
 * Each **app** is a modular component of the project.
 * `INSTALLED_APPS` in `settings.py` must include all apps.
@@ -124,7 +124,7 @@ Here is the **continued note** with the `. directory` and other special folders 
 
 ---
 
-### 🔹 Dot Directory (`.`) in Project Structure
+### Dot Directory (`.`) in Project Structure
 
 When you run:
 
@@ -145,7 +145,7 @@ current_directory/
 │   └── wsgi.py
 ```
 
-#### 🔸 Key Differences:
+#### Key Differences:
 
 | Aspect          | `startproject projectname`            | `startproject projectname .`           |
 | --------------- | ------------------------------------- | -------------------------------------- |
@@ -155,7 +155,7 @@ current_directory/
 
 ---
 
-### 🔹 Other Special or Optional Files/Folders (if added)
+### Other Special or Optional Files/Folders (if added)
 
 | File/Folder  | Purpose                                                                                         |
 | ------------ | ----------------------------------------------------------------------------------------------- |

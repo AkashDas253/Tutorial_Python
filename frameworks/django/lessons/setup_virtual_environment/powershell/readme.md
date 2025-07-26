@@ -1,6 +1,6 @@
-## ⚙️ Virtual Environment Setup on **Windows (PowerShell)** for Django
+## Virtual Environment Setup on **Windows (PowerShell)** for Django
 
-### ✅ Step-by-step Commands
+### Step-by-step Commands
 
 ```powershell
 # Step 1: Create a virtual environment named .venv
@@ -29,11 +29,11 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 * Activates the `.venv` so that `python` and `pip` refer to the virtual environment.
 
-> 🔹 After this, your prompt will change to show `(.venv)` at the beginning, indicating the environment is active.
+> After this, your prompt will change to show `(.venv)` at the beginning, indicating the environment is active.
 
 ---
 
-### ✅ Step 4: Install Django
+### Step 4: Install Django
 
 ```powershell
 pip install django
@@ -41,7 +41,7 @@ pip install django
 
 ---
 
-### ✅ Step 5: Save dependencies
+### Step 5: Save dependencies
 
 ```powershell
 pip freeze > requirements.txt
@@ -49,7 +49,7 @@ pip freeze > requirements.txt
 
 ---
 
-### ✅ Step 6: Add to `.gitignore`
+### Step 6: Add to `.gitignore`
 
 ```
 .venv/
@@ -57,7 +57,7 @@ pip freeze > requirements.txt
 
 ---
 
-### 🔹 To Deactivate
+### To Deactivate
 
 ```powershell
 deactivate
@@ -65,7 +65,7 @@ deactivate
 
 ---
 
-### 🧩 Alternative Activation Methods
+### Alternative Activation Methods
 
 | Shell      | Command                         |
 | ---------- | ------------------------------- |

@@ -1,8 +1,8 @@
-## 📁 Django Project Files
+## Django Project Files
 
 ---
 
-### 🔹 1. **Core Project Files (created by `startproject`)**
+### 1. **Core Project Files (created by `startproject`)**
 
 | File/Folder       | Purpose                                                                            |
 | ----------------- | ---------------------------------------------------------------------------------- |
@@ -16,7 +16,7 @@
 
 ---
 
-### 🔹 2. **App-Level Files (created by `startapp`)**
+### 2. **App-Level Files (created by `startapp`)**
 
 Each app is a self-contained module in `appname/`:
 
@@ -33,7 +33,7 @@ Each app is a self-contained module in `appname/`:
 
 ---
 
-### 🔹 3. **Optional App-Level Files (manually created)**
+### 3. **Optional App-Level Files (manually created)**
 
 | File                       | Purpose                                                                 |
 | -------------------------- | ----------------------------------------------------------------------- |
@@ -49,7 +49,7 @@ Each app is a self-contained module in `appname/`:
 
 ---
 
-### 🔹 4. **Project-Level Shared Resources**
+### 4. **Project-Level Shared Resources**
 
 | Folder          | Purpose                                                             |
 | --------------- | ------------------------------------------------------------------- |
@@ -62,7 +62,7 @@ Each app is a self-contained module in `appname/`:
 
 ---
 
-### 🔹 5. **Environment and Configuration Files**
+### 5. **Environment and Configuration Files**
 
 | File                       | Purpose                                                       |
 | -------------------------- | ------------------------------------------------------------- |
@@ -81,7 +81,7 @@ Each app is a self-contained module in `appname/`:
 
 ---
 
-### 🔹 6. **Deployment Files**
+### 6. **Deployment Files**
 
 | File                 | Purpose                                          |
 | -------------------- | ------------------------------------------------ |
@@ -93,7 +93,7 @@ Each app is a self-contained module in `appname/`:
 
 ---
 
-### 🔹 7. **IDE/Tool Specific Files**
+### 7. **IDE/Tool Specific Files**
 
 | File/Folder                         | Purpose                               |
 | ----------------------------------- | ------------------------------------- |
@@ -103,7 +103,7 @@ Each app is a self-contained module in `appname/`:
 
 ---
 
-### 🔹 8. **Runtime/Generated Files (Not Version Controlled)**
+### 8. **Runtime/Generated Files (Not Version Controlled)**
 
 | File/Folder      | Purpose                                         |
 | ---------------- | ----------------------------------------------- |
@@ -116,7 +116,7 @@ Each app is a self-contained module in `appname/`:
 
 ---
 
-### 🔹 9. **Advanced Patterns (for large projects)**
+### 9. **Advanced Patterns (for large projects)**
 
 | Pattern / Structure | Description                                                |
 | ------------------- | ---------------------------------------------------------- |

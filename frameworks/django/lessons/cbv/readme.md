@@ -1,8 +1,8 @@
-## 📘 Class-Based Views (CBVs) 
+## Class-Based Views (CBVs) 
 
 ---
 
-### 🔹 What are CBVs?
+### What are CBVs?
 
 * Django views defined as **classes** instead of functions.
 * Provide **reusable**, **extensible**, and **organized** ways to handle views.
@@ -10,7 +10,7 @@
 
 ---
 
-### 🔹 Basic Syntax
+### Basic Syntax
 
 ```python
 from django.views import View
@@ -23,7 +23,7 @@ class MyView(View):
 
 ---
 
-### 🔹 Routing CBVs
+### Routing CBVs
 
 ```python
 from django.urls import path
@@ -38,7 +38,7 @@ urlpatterns = [
 
 ---
 
-### 🔹 Method Handlers
+### Method Handlers
 
 | Method      | Purpose                  |
 | ----------- | ------------------------ |
@@ -52,7 +52,7 @@ urlpatterns = [
 
 ---
 
-### 🔹 Template Rendering
+### Template Rendering
 
 ```python
 from django.shortcuts import render
@@ -66,9 +66,9 @@ class HomeView(View):
 
 ---
 
-### 🔹 Class-Based View Categories
+### Class-Based View Categories
 
-#### 📂 **Base CBVs (Low-level)**
+#### **Base CBVs (Low-level)**
 
 | View Class     | Description                   |
 | -------------- | ----------------------------- |
@@ -76,14 +76,14 @@ class HomeView(View):
 | `TemplateView` | Renders template with context |
 | `RedirectView` | Redirects to another URL      |
 
-#### 📂 **Generic Display Views**
+#### **Generic Display Views**
 
 | View Class   | Description             |
 | ------------ | ----------------------- |
 | `DetailView` | Display a single object |
 | `ListView`   | Display list of objects |
 
-#### 📂 **Generic Editing Views**
+#### **Generic Editing Views**
 
 | View Class   | Description               |
 | ------------ | ------------------------- |
@@ -94,7 +94,7 @@ class HomeView(View):
 
 ---
 
-### 🔹 Mixin Classes
+### Mixin Classes
 
 Used to add modular functionality:
 
@@ -108,7 +108,7 @@ Used to add modular functionality:
 
 ---
 
-### 🔹 Example: `ListView` Usage
+### Example: `ListView` Usage
 
 ```python
 from django.views.generic import ListView
@@ -122,7 +122,7 @@ class ProductListView(ListView):
 
 ---
 
-### 🔹 Example: `CreateView` Usage
+### Example: `CreateView` Usage
 
 ```python
 from django.views.generic.edit import CreateView
@@ -138,7 +138,7 @@ class ContactCreateView(CreateView):
 
 ---
 
-### 🔹 Advantages of CBVs
+### Advantages of CBVs
 
 * Code reuse via inheritance
 * Modular via mixins
@@ -147,7 +147,7 @@ class ContactCreateView(CreateView):
 
 ---
 
-### 🔹 Disadvantages of CBVs
+### Disadvantages of CBVs
 
 * Higher learning curve
 * Overhead for very simple views

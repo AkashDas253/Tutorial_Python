@@ -1,14 +1,14 @@
-## ⚙️ Virtual Environment Setup for Django Projects 
+## Virtual Environment Setup for Django Projects 
 
 ---
 
-### 🔹 What is a Virtual Environment?
+### What is a Virtual Environment?
 
 A **virtual environment** is an isolated Python environment that allows a Django project to have its own dependencies, independent of other Python projects or system-wide packages.
 
 ---
 
-### 🔹 Tools Used for Virtual Environments
+### Tools Used for Virtual Environments
 
 | Tool         | Description                                                               |
 | ------------ | ------------------------------------------------------------------------- |
@@ -20,9 +20,9 @@ A **virtual environment** is an isolated Python environment that allows a Django
 
 ---
 
-### 🔹 Standard Setup Using `venv` (Recommended)
+### Standard Setup Using `venv` (Recommended)
 
-#### ✅ Steps:
+#### Steps:
 
 ```bash
 # Step 1: Create virtual environment
@@ -46,7 +46,7 @@ echo "venv/" >> .gitignore
 
 ---
 
-### 🔹 Alternate Setup Using `virtualenv`
+### Alternate Setup Using `virtualenv`
 
 ```bash
 # Install virtualenv if not available
@@ -62,7 +62,7 @@ venv\Scripts\activate     # Windows
 
 ---
 
-### 🔹 Using `pipenv` (Optional)
+### Using `pipenv` (Optional)
 
 ```bash
 # Install pipenv
@@ -79,7 +79,7 @@ Creates `Pipfile` and `Pipfile.lock` instead of `requirements.txt`.
 
 ---
 
-### 🔹 Using `poetry` (Advanced Users)
+### Using `poetry` (Advanced Users)
 
 ```bash
 # Install poetry
@@ -99,7 +99,7 @@ Creates `pyproject.toml` and isolates environment internally.
 
 ---
 
-### 🔹 Best Practices
+### Best Practices
 
 | Practice                               | Reason                               |
 | -------------------------------------- | ------------------------------------ |
@@ -112,7 +112,7 @@ Creates `pyproject.toml` and isolates environment internally.
 
 ---
 
-### 🔹 Directory Structure After Setup
+### Directory Structure After Setup
 
 ```
 project_root/

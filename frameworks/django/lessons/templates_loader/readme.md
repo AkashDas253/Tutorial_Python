@@ -1,14 +1,14 @@
-## 🧩 Django Template Loader
+## Django Template Loader
 
 ---
 
-### 🔹 Purpose
+### Purpose
 
 The **template loader** in Django is responsible for **searching, locating, and loading** template files (like `.html`) from configured locations based on the template name passed to functions like `render()` or `loader.get_template()`.
 
 ---
 
-### 🔹 How Template Loading Works
+### How Template Loading Works
 
 1. The view calls `render()` or `loader.get_template(template_name)`
 2. Django uses a list of **loaders** to search for the template in order.
@@ -16,7 +16,7 @@ The **template loader** in Django is responsible for **searching, locating, and 
 
 ---
 
-### 🔹 Template Discovery Sources
+### Template Discovery Sources
 
 Django looks for templates in:
 
@@ -26,7 +26,7 @@ Django looks for templates in:
 
 ---
 
-### 🔹 `TEMPLATES` Setting in `settings.py`
+### `TEMPLATES` Setting in `settings.py`
 
 ```python
 TEMPLATES = [
@@ -46,7 +46,7 @@ TEMPLATES = [
 
 ---
 
-### 🔹 Loaders – Built-in Options
+### Loaders – Built-in Options
 
 | Loader Name                                      | Description                             |
 | ------------------------------------------------ | --------------------------------------- |
@@ -56,7 +56,7 @@ TEMPLATES = [
 
 ---
 
-### 🔹 Template Directory Structure (Best Practice)
+### Template Directory Structure (Best Practice)
 
 ```
 project/
@@ -70,7 +70,7 @@ project/
 
 ---
 
-### 🔹 Using Loader Manually (Alternative to `render()`)
+### Using Loader Manually (Alternative to `render()`)
 
 ```python
 from django.template import loader
@@ -83,7 +83,7 @@ def my_view(request):
 
 ---
 
-### 🔹 Cached Loader Example
+### Cached Loader Example
 
 ```python
 'OPTIONS': {
@@ -98,7 +98,7 @@ def my_view(request):
 
 ---
 
-### 🔹 Loader Flow – Mermaid Diagram
+### Loader Flow – Mermaid Diagram
 
 ```mermaid
 flowchart TD
@@ -114,7 +114,7 @@ flowchart TD
 
 ---
 
-### 🔹 Error Handling
+### Error Handling
 
 * If no template is found: `TemplateDoesNotExist` exception.
 * If template is invalid: `TemplateSyntaxError`.

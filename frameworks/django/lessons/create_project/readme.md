@@ -1,8 +1,8 @@
-## 🚀 Django Project Creation 
+## Django Project Creation 
 
 ---
 
-### 🔹 1. **Pre-requisites**
+### 1. **Pre-requisites**
 
 | Requirement         | How to Check                              |
 | ------------------- | ----------------------------------------- |
@@ -12,9 +12,9 @@
 
 ---
 
-### 🔹 2. **Creating a New Django Project**
+### 2. **Creating a New Django Project**
 
-#### ✅ Basic Syntax
+#### Basic Syntax
 
 ```bash
 django-admin startproject projectname
@@ -33,7 +33,7 @@ projectname/
     └── wsgi.py
 ```
 
-#### ✅ With dot `.` to use current directory
+#### With dot `.` to use current directory
 
 ```bash
 django-admin startproject projectname .
@@ -43,7 +43,7 @@ Creates project in the **current directory** (no outer folder).
 
 ---
 
-### 🔹 3. **Detailed Breakdown of Commands**
+### 3. **Detailed Breakdown of Commands**
 
 | Command                            | Description                                 |
 | ---------------------------------- | ------------------------------------------- |
@@ -55,7 +55,7 @@ Creates project in the **current directory** (no outer folder).
 
 ---
 
-### 🔹 4. **Post-Project Creation Checklist**
+### 4. **Post-Project Creation Checklist**
 
 | Step                       | Command / File                                  | Purpose                                  |
 | -------------------------- | ----------------------------------------------- | ---------------------------------------- |
@@ -69,7 +69,7 @@ Creates project in the **current directory** (no outer folder).
 
 ---
 
-### 🔹 5. **Project Directory Structure (Post Creation + App)**
+### 5. **Project Directory Structure (Post Creation + App)**
 
 ```
 project_root/
@@ -91,7 +91,7 @@ project_root/
 
 ---
 
-### 🔹 6. **Best Practices for Creating Django Projects**
+### 6. **Best Practices for Creating Django Projects**
 
 | Practice                               | Benefit                         |
 | -------------------------------------- | ------------------------------- |
@@ -103,7 +103,7 @@ project_root/
 
 ---
 
-### 🔹 7. **Common Errors and Fixes**
+### 7. **Common Errors and Fixes**
 
 | Error Message                                | Solution                                                     |
 | -------------------------------------------- | ------------------------------------------------------------ |

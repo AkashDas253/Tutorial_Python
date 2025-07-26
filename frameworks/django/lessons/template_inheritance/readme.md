@@ -1,11 +1,11 @@
 
-## 🧩 Django Template Inheritance   
+## Django Template Inheritance   
 
 Template inheritance allows you to create a **base (parent) template** that defines a general structure and then **extend it in child templates** by overriding specific blocks.
 
 ---
 
-### 🔹 1. **Core Concepts**
+### 1. **Core Concepts**
 
 | Concept            | Description                                                                |
 | ------------------ | -------------------------------------------------------------------------- |
@@ -18,7 +18,7 @@ Template inheritance allows you to create a **base (parent) template** that defi
 
 ---
 
-### 🔹 2. **Base Template Example Structure**
+### 2. **Base Template Example Structure**
 
 ```html
 <!-- templates/base.html -->
@@ -37,7 +37,7 @@ Template inheritance allows you to create a **base (parent) template** that defi
 
 ---
 
-### 🔹 3. **Child Template**
+### 3. **Child Template**
 
 ```html
 <!-- templates/home.html -->
@@ -52,7 +52,7 @@ Template inheritance allows you to create a **base (parent) template** that defi
 
 ---
 
-### 🔹 4. **Block Rules**
+### 4. **Block Rules**
 
 * Blocks can be **empty or pre-filled** in the base template.
 * Child templates can **override any block** or leave them as-is.
@@ -60,7 +60,7 @@ Template inheritance allows you to create a **base (parent) template** that defi
 
 ---
 
-### 🔹 5. **Use Cases**
+### 5. **Use Cases**
 
 | Use Case           | Example Files                           | Purpose                                  |
 | ------------------ | --------------------------------------- | ---------------------------------------- |
@@ -70,7 +70,7 @@ Template inheritance allows you to create a **base (parent) template** that defi
 
 ---
 
-### 🔹 6. **Best Practices**
+### 6. **Best Practices**
 
 * Keep `base.html` minimal and clean.
 * Use separate templates for layouts (`admin_base.html`, `public_base.html`).
@@ -79,7 +79,7 @@ Template inheritance allows you to create a **base (parent) template** that defi
 
 ---
 
-### 🔹 7. **Additional Tags for Extending**
+### 7. **Additional Tags for Extending**
 
 | Tag                 | Purpose                                        |
 | ------------------- | ---------------------------------------------- |
@@ -89,7 +89,7 @@ Template inheritance allows you to create a **base (parent) template** that defi
 
 ---
 
-### 🔹 8. **Summary Table**
+### 8. **Summary Table**
 
 | Feature            | Tag                    | Scope                     |
 | ------------------ | ---------------------- | ------------------------- |

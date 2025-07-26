@@ -1,8 +1,8 @@
-## 📘 Function-Based Views (FBV) 
+## Function-Based Views (FBV) 
 
 ---
 
-### 🔹 What are FBVs?
+### What are FBVs?
 
 * Views defined as **Python functions**.
 * Take a `request` object as argument.
@@ -11,7 +11,7 @@
 
 ---
 
-### 🔹 Basic Syntax
+### Basic Syntax
 
 ```python
 from django.http import HttpResponse
@@ -22,7 +22,7 @@ def my_view(request):
 
 ---
 
-### 🔹 Structure
+### Structure
 
 ```python
 def view_name(request, *args, **kwargs):
@@ -32,7 +32,7 @@ def view_name(request, *args, **kwargs):
 
 ---
 
-### 🔹 Common Return Functions
+### Common Return Functions
 
 | Function         | Purpose                      |
 | ---------------- | ---------------------------- |
@@ -43,7 +43,7 @@ def view_name(request, *args, **kwargs):
 
 ---
 
-### 🔹 Accessing Data in FBVs
+### Accessing Data in FBVs
 
 * **GET data:** `request.GET.get('key')`
 * **POST data:** `request.POST.get('key')`
@@ -53,7 +53,7 @@ def view_name(request, *args, **kwargs):
 
 ---
 
-### 🔹 Template Rendering
+### Template Rendering
 
 ```python
 from django.shortcuts import render
@@ -65,7 +65,7 @@ def home(request):
 
 ---
 
-### 🔹 Handling Forms
+### Handling Forms
 
 ```python
 def contact(request):
@@ -81,7 +81,7 @@ def contact(request):
 
 ---
 
-### 🔹 Using Decorators
+### Using Decorators
 
 | Decorator                 | Purpose                        |
 | ------------------------- | ------------------------------ |
@@ -99,7 +99,7 @@ def dashboard(request):
 
 ---
 
-### 🔹 URL Mapping
+### URL Mapping
 
 ```python
 from django.urls import path
@@ -112,7 +112,7 @@ urlpatterns = [
 
 ---
 
-### 🔹 Advantages of FBV
+### Advantages of FBV
 
 * Simple and direct
 * More readable for small tasks
@@ -120,7 +120,7 @@ urlpatterns = [
 
 ---
 
-### 🔹 Limitations of FBV
+### Limitations of FBV
 
 * Less reusable than CBVs
 * Repetition in CRUD logic

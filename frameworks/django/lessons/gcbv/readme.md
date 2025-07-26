@@ -2,7 +2,7 @@
 
 ---
 
-### 🔹 What Are GCBVs?
+### What Are GCBVs?
 
 * GCBVs are **pre-built views** for common patterns like listing, creating, updating, or deleting objects.
 * Built on top of `View`, `TemplateResponseMixin`, `ContextMixin`, and others.
@@ -10,7 +10,7 @@
 
 ---
 
-### 🔹 Structure of a GCBV
+### Structure of a GCBV
 
 ```python
 class MyView(GenericViewClass):
@@ -22,7 +22,7 @@ class MyView(GenericViewClass):
 
 ---
 
-### 🔹 Display Views (Read)
+### Display Views (Read)
 
 | View Class   | Purpose                    | Key Attributes                                                        |
 | ------------ | -------------------------- | --------------------------------------------------------------------- |
@@ -31,7 +31,7 @@ class MyView(GenericViewClass):
 
 ---
 
-### 🔹 Editing Views (Create/Update/Delete)
+### Editing Views (Create/Update/Delete)
 
 | View Class   | Purpose                      | Key Attributes                                 |
 | ------------ | ---------------------------- | ---------------------------------------------- |
@@ -41,7 +41,7 @@ class MyView(GenericViewClass):
 
 ---
 
-### 🔹 Form Handling View
+### Form Handling View
 
 | View Class | Purpose                  | Key Attributes                                                                         |
 | ---------- | ------------------------ | -------------------------------------------------------------------------------------- |
@@ -49,7 +49,7 @@ class MyView(GenericViewClass):
 
 ---
 
-### 🔹 Required Mixins (Behind the Scenes)
+### Required Mixins (Behind the Scenes)
 
 | Mixin                   | Role                                   |
 | ----------------------- | -------------------------------------- |
@@ -62,7 +62,7 @@ class MyView(GenericViewClass):
 
 ---
 
-### 🔹 Example: `ListView`
+### Example: `ListView`
 
 ```python
 from django.views.generic import ListView
@@ -77,7 +77,7 @@ class ProductListView(ListView):
 
 ---
 
-### 🔹 Example: `CreateView`
+### Example: `CreateView`
 
 ```python
 from django.views.generic.edit import CreateView
@@ -93,7 +93,7 @@ class ContactCreateView(CreateView):
 
 ---
 
-### 🔹 Overriding Key Methods
+### Overriding Key Methods
 
 | Method               | Purpose                     |
 | -------------------- | --------------------------- |
@@ -105,7 +105,7 @@ class ContactCreateView(CreateView):
 
 ---
 
-### 🔹 Inheritance Tree (Simplified – Mermaid)
+### Inheritance Tree (Simplified – Mermaid)
 
 ```mermaid
 classDiagram;
@@ -120,7 +120,7 @@ classDiagram;
 
 ---
 
-### 🔹 Advantages
+### Advantages
 
 * Rapid development with less code.
 * Built-in form and model handling.
@@ -128,7 +128,7 @@ classDiagram;
 
 ---
 
-### 🔹 Disadvantages
+### Disadvantages
 
 * Inheritance chain can become hard to trace.
 * Overhead for small, simple views.

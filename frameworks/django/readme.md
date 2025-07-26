@@ -57,7 +57,7 @@
 - [Virtual Environment Setup](lessons/setup_virtual_environment/readme.md): [Windows PowerShell](lessons/setup_virtual_environment/powershell/readme.md)
 - [Project Structure](lessons/project_structure/readme.md) 
 - [Project Files](lessons/project_files/readme.md)
-- [Creating Project](lessons/creat_project/readme.md)
+- [Creating Project](lessons/create_project/readme.md)
 - [Creating App](lessons/create_app/readme.md) 
 - [Routing](lessons/routing/readme.md)  
 - [Adding Template](lessons/adding_templates/readme.md) 

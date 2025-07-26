@@ -1,14 +1,14 @@
-## 🌐 Routing in Django
+## Routing in Django
 
 ---
 
-### 🔹 Purpose
+### Purpose
 
 Routing connects a URL pattern to a specific view. Django uses `urls.py` to define these mappings.
 
 ---
 
-### 🔹 `urls.py` Structure
+### `urls.py` Structure
 
 ```python
 # project/urls.py or app/urls.py
@@ -23,7 +23,7 @@ urlpatterns = [
 
 ---
 
-### 🔹 `path()` Function Syntax
+### `path()` Function Syntax
 
 ```python
 path(route, view, kwargs=None, name=None)
@@ -38,7 +38,7 @@ path(route, view, kwargs=None, name=None)
 
 ---
 
-### 🔹 Dynamic URLs (Path Converters)
+### Dynamic URLs (Path Converters)
 
 ```python
 path('article/<int:id>/', views.article_detail)
@@ -54,7 +54,7 @@ path('article/<int:id>/', views.article_detail)
 
 ---
 
-### 🔹 Using Class-Based Views in `urls.py`
+### Using Class-Based Views in `urls.py`
 
 ```python
 from django.views.generic import TemplateView
@@ -66,7 +66,7 @@ urlpatterns = [
 
 ---
 
-### 🔹 Including App URLs in Project
+### Including App URLs in Project
 
 ```python
 # project/urls.py
@@ -87,7 +87,7 @@ urlpatterns = [
 
 ---
 
-### 🔹 URL Namespacing
+### URL Namespacing
 
 Used to avoid conflicts when multiple apps use the same route names.
 
@@ -104,7 +104,7 @@ reverse('blog:post-detail', kwargs={'id': 1})
 
 ---
 
-### 🔹 `re_path()` – Regex URLs (Legacy)
+### `re_path()` – Regex URLs (Legacy)
 
 ```python
 from django.urls import re_path
@@ -118,7 +118,7 @@ urlpatterns = [
 
 ---
 
-### 🔹 Reverse URL Lookup
+### Reverse URL Lookup
 
 | Method      | Usage                          |
 | ----------- | ------------------------------ |
@@ -136,13 +136,13 @@ reverse('blog:post-detail', kwargs={'id': 3})
 
 ---
 
-### 🔹 Middleware and URL Resolution
+### Middleware and URL Resolution
 
 Routing occurs **after** middleware runs. Django checks `urlpatterns` to resolve the view for an incoming request.
 
 ---
 
-### 🔹 Mermaid Diagram for Routing Flow
+### Mermaid Diagram for Routing Flow
 
 ```mermaid
 flowchart TD

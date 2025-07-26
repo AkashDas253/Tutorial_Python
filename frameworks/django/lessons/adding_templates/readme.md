@@ -1,6 +1,6 @@
 ## Ways to Add Templates in Django
 
-### 🔹 1. **App-level Template Structure (Default)**
+### 1. **App-level Template Structure (Default)**
 
 * Templates are placed in each app inside:
   `your_app/templates/your_app_name/`
@@ -9,7 +9,7 @@
 
 ---
 
-### 🔹 2. **Global Template Directory (Project-level)**
+### 2. **Global Template Directory (Project-level)**
 
 * A shared folder (e.g., `templates/`) created at the **project root** (same level as `manage.py`).
 * Add the path to `DIRS` list in `TEMPLATES` setting:
@@ -21,7 +21,7 @@
 
 ---
 
-### 🔹 3. **Multiple Global Template Directories**
+### 3. **Multiple Global Template Directories**
 
 * You can define **multiple template folders** by adding them in the `DIRS` list:
 
@@ -35,7 +35,7 @@
 
 ---
 
-### 🔹 4. **Third-Party Templates (Reusable Apps)**
+### 4. **Third-Party Templates (Reusable Apps)**
 
 * If using a third-party app with built-in templates:
 
@@ -45,7 +45,7 @@
 
 ---
 
-### 🔹 5. **Custom Template Loaders**
+### 5. **Custom Template Loaders**
 
 * Advanced usage where you define your own way of loading templates.
 * Add custom loaders in `OPTIONS['loaders']`:
@@ -62,7 +62,7 @@
 
 ---
 
-## 🗂 Summary Table
+### Summary Table
 
 | Method                         | Location                        | When to Use                       |
 | ------------------------------ | ------------------------------- | --------------------------------- |
