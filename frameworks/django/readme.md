@@ -33,6 +33,16 @@
 - [ContentTypes Framework](lessons/contenttypes_framework/readme.md)
 - [Generic Relations](lessons/generic_relations/readme.md)
 
+### Views   
+- [Views](lessons/views_overview/readme.md)
+- [Function Based View](lessons/fbv/readme.md)  
+- [Class Based View](lessons/cbv/readme.md)  
+- [Generic Class Based View](lessons/gcbv/readme.md)  
+
+### Templates
+- [Template Loader](lessons/templates_loader/readme.md)  
+- [Template Inheritance](lessons/template_inheritance/readme.md)
+
 ### Third-party Integrations
 - [Django REST Framework (DRF)](extensions/django_rest_framework/readme.md)
 - [Celery Integration](extensions/celery_integration/readme.md)
@@ -44,7 +54,14 @@
 - [Storage Backends](extensions/storage_backends/readme.md)
 
 ### Practical Aspects
-- [] 
+- [Virtual Environment Setup](lessons/setup_virtual_environment/readme.md): [Windows PowerShell](lessons/setup_virtual_environment/powershell/readme.md)
+- [Project Structure](lessons/project_structure/readme.md) 
+- [Project Files](lessons/project_files/readme.md)
+- [Creating Project](lessons/creat_project/readme.md)
+- [Creating App](lessons/create_app/readme.md) 
+- [Routing](lessons/routing/readme.md)  
+- [Adding Template](lessons/adding_templates/readme.md) 
+   
 
-
-
+### Mini Projects
+- [ToDo Project](mini_projects/todo_proj/readme.md)
