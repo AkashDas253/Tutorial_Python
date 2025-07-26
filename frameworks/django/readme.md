@@ -59,9 +59,11 @@
 - [Project Files](lessons/project_files/readme.md)
 - [Creating Project](lessons/create_project/readme.md)
 - [Creating App](lessons/create_app/readme.md) 
+- [Creating View](lessons/creating_view/readme.md)
+- [Using View](lessons/using_views/readme.md)
 - [Routing](lessons/routing/readme.md)  
 - [Adding Template](lessons/adding_templates/readme.md) 
-   
+
 
 ### Mini Projects
 - [ToDo Project](mini_projects/todo_proj/readme.md)
