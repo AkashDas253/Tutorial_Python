@@ -33,15 +33,15 @@
 - [ContentTypes Framework](lessons/contenttypes_framework/readme.md)
 - [Generic Relations](lessons/generic_relations/readme.md)
 
-- Third-party Integrations
-  - [Django REST Framework (DRF)](extensions/django_rest_framework/readme.md)
-  - [Celery Integration](extensions/celery_integration/readme.md)
-  - [Channels (WebSockets)](extensions/channels_websockets/readme.md)
-  - [Django Allauth](extensions/django_allauth/readme.md)
-  - [Django Debug Toolbar](extensions/django_debug_toolbar/readme.md)
-  - [Django Extensions](extensions/django_extensions/readme.md)
-  - [Social Authentication](extensions/social_authentication/readme.md)
-  - [Storage Backends](extensions/storage_backends/readme.md)
+### Third-party Integrations
+- [Django REST Framework (DRF)](extensions/django_rest_framework/readme.md)
+- [Celery Integration](extensions/celery_integration/readme.md)
+- [Channels (WebSockets)](extensions/channels_websockets/readme.md)
+- [Django Allauth](extensions/django_allauth/readme.md)
+- [Django Debug Toolbar](extensions/django_debug_toolbar/readme.md)
+- [Django Extensions](extensions/django_extensions/readme.md)
+- [Social Authentication](extensions/social_authentication/readme.md)
+- [Storage Backends](extensions/storage_backends/readme.md)
 
 ### Practical Aspects
 - [] 
