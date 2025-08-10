@@ -110,6 +110,7 @@
 - [Setup User Authentication](lessons/setup_authentication/readme.md)
 - [Use User Authentication](lessons/use_authentication/readme.md)
 - [Authentication View](lessons/authentication_view/readme.md): [CBV Authentication view](lessons/cbv_authentication/readme.md)
+- [Serving static file](lessons/serving_static_file/readme.md): [Using WhiteNoise](lessons/use_whitenoise/readme.md)
 
 ### Mini Projects
 - [ToDo Project](mini_projects/todo_proj/readme.md)
