@@ -10,7 +10,7 @@
 - [Project Setup](lessons/project_setup/readme.md)
 - [Settings](lessons/settings/readme.md)
 - [URL Dispatcher](lessons/url_dispatcher/readme.md)
-- [Views](lessons/views/readme.md)
+- [Views](lessons/views/readme.md) 
 - [Templates](lessons/templates/readme.md)
 - [Models](lessons/models/readme.md)
 - [Migrations](lessons/migrations/readme.md)
@@ -72,6 +72,15 @@
 - [Social Authentication](extensions/social_authentication/readme.md)
 - [Storage Backends](extensions/storage_backends/readme.md)
 
+### Topics
+- [Superuser](lessons/superuser/readme.md)
+- [Allowed Host](lessons/allowed_host/readme.md)
+- [Named Url](lessons/named_url/readme.md)
+- [Static File](lessons/static_file/readme.md)
+- [Forms](lessons/forms/readme.md)
+- [Message Framework](lessons/message_framework/readme.md)
+- [WhiteNoise](lessons/whitenoise/readme.md)
+
 ### Practical Aspects
 - [Virtual Environment Setup](lessons/setup_virtual_environment/readme.md): [Windows PowerShell](lessons/setup_virtual_environment/powershell/readme.md)
 - [Project Structure](lessons/project_structure/readme.md) 
@@ -85,8 +94,22 @@
 - [Using Template](lessons/using_templates/readme.md)
 - [Add database](lessons/adding_database/readme.md)
 - [Create Models](lessons/create_models/readme.md)
+- [Design Models](lessons/design_models/readme.md)
 - [Use database](lessons/using_database/readme.md)
 - [Use manage.py commands](lessons/using_manage_command/readme.md)
+- [Working of Migration](lessons/working_migration/readme.md)
+- [Activating model](lessons/activating_model/readme.md)
+- [Register Models in Admin](lessons/register_model/readme.md)
+- [Designing Test Cases](lessons/design_test_case/readme.md)
+- [Naming Convention](lessons/naming_convention/readme.md)
+- [Forms](lessons/overview_forms/readme.md)
+- [Form Setup](lessons/setup_form/readme.md)
+- [Using Form](lessons/using_form/readme.md)
+- [Rendering Form in Template](lessons/rendering_form/readme.md)
+- [CRUD View](lessons/crud_view/readme.md): [FBV CRUD view](lessons/fbv_crud_view/readme.md), [CBV CRUD view](lessons/cbv_crud_view/readme.md)
+- [Setup User Authentication](lessons/setup_authentication/readme.md)
+- [Use User Authentication](lessons/use_authentication/readme.md)
+- [Authentication View](lessons/authentication_view/readme.md): [CBV Authentication view](lessons/cbv_authentication/readme.md)
 
 ### Mini Projects
 - [ToDo Project](mini_projects/todo_proj/readme.md)
