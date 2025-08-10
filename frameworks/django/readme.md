@@ -3,6 +3,9 @@
 - [Cheatsheet](lessons/cheatsheet/readme.md)
 - [Concepts](lessons/concepts/readme.md)
 
+### Sources
+- [Documentation](https://docs.djangoproject.com/en/5.2/)
+
 ### Core concepts
 - [Django](lessons/django/readme.md) 
 - [Components](lessons/components/readme.md) 
