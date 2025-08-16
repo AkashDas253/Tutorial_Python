@@ -141,10 +141,11 @@
 
 ## Exception Handling
 
-- `try`, `except`, `else`, `finally`
-- Raising Exceptions (`raise`)
-- Custom Exceptions
-- Exception Hierarchy
+- [Overview](lessons/exception_handling/overview/readme.md)
+- [Syntax](lessons/exception_handling/syntax/readme.md)
+- Raising Exceptions (`raise`): [raise](lessons/exception_handling/raise/readme.md)
+- [Custom Exceptions](lessons/exception_handling/custom_exception/readme.md)
+- [Exception Hierarchy](lessons/exception_handling/exception_hierarchy/readme.md)
 
 ---
 
