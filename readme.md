@@ -149,36 +149,38 @@
 
 ---
 
-## Iterators & Generators
-
-- Iterators (`iter()`, `next()`)
-- Generators (`yield`)
-- Generator Expressions
-
+## Iteration & Execution Control
+- [Iterators](lessons/iterators/readme.md)
+- [Iterables](lessons/iterables/readme.md)
+- [Generators](lessons/generators/readme.md)
+- [Generator Expressions](lessons/generator_expressions/readme.md)
+- [Coroutines](lessons/coroutines/readme.md)
 ---
 
 ## Memory Management
 
-- Garbage Collection (`gc` module)
-- Reference Counting
-- Weak References (`weakref` module)
+- Garbage Collection: [gc](modules/gc/readme.md)
+- [Reference Counting](lessons/reference_counting/readme.md)
+- [Weak References](lessons/weak_references/readme.md): [Weak References](modules/weakref/readme.md)
+- [Strong References](lessons/strong_references/readme.md)
 
 ---
 
 ## Environment & OS Interaction
 
-- `os` module
-- `sys` module
-- Environment Variables
-- Command-line Arguments (`argparse`)
+- OS Operations: [os](modules/os/readme.md)
+- System Operations: [sys](modules/sys/readme.md)
+- [Environment Variables](lessons/environment_variables/readme.md)
+- Command-line Arguments: [argparse](modules/argparse/readme.md)
 
 ---
 
 ## Date & Time
 
-- `datetime` module
-- `time` module
-- `calendar` module
+- [Date & Time Handling in Python](modules/date_time_handling/readme.md)
+  - datetime: [datetime](modules/datetime/readme.md)
+  - time: [time](modules/time/readme.md)
+  - calendar: [calendar](modules/calendar/readme.md)
 
 ---
 
