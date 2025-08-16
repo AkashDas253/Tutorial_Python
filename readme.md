@@ -13,13 +13,7 @@
 - [Syntax](lessons/syntax/readme.md)
 - [Variables](lessons/variables/readme.md)
 - [Input/Output](lessons/input_output/readme.md)
-
-  - [Input/Output Functions](lessons/input_output_functions/readme.md)
 - [Scope and Access](lessons/scope/readme.md)
-
-  - Local Scope
-  - Global Scope
-  - Nonlocal Scope
 
 ---
 
@@ -37,9 +31,9 @@
 
 ## Control Flow
 
-- [Conditional Statements (`if`, `elif`, `else`)](lessons/conditional_statements/readme.md)
-- [Loops (`for`, `while`, `break`, `continue`, `pass`)](lessons/loops/readme.md)
-- [Comprehensions (List, Dictionary, Set, Generator Expressions)](lessons/comprehensions/readme.md)
+- [Conditional Statements](lessons/conditional_statements/readme.md)
+- [Loops](lessons/loops/readme.md)
+- [Comprehensions](lessons/comprehensions/readme.md)
 - [Pattern Matching (`match` / `case`)](lessons/pattern_matching/readme.md)
 
 ---
@@ -54,13 +48,19 @@
 - Collections: [List](lessons/list/readme.md), [Tuples](lessons/tuples/readme.md), [Set](lessons/set/readme.md), [Dictionary](lessons/dictionary/readme.md)
 - Binary: [Bytes](lessons/bytes/readme.md), [Bytearray](lessons/bytearray/readme.md), [Memoryview](lessons/memoryview/readme.md)
 
-### [Collection Module](lessons/collection_module/readme.md)
+### [Collection Module](modules/collection_module/overview/readme.md)
+- [Counter](modules/collection_module/counter/readme.md)
+- [OrderedDict](modules/collection_module/ordereddict/readme.md)
+- [defaultdict](modules/collection_module/defaultdict/readme.md)
+- [deque](modules/collection_module/deque/readme.md)
+- [ChainMap](modules/collection_module/chainmap/readme.md)
+- [namedtuple](modules/collection_module/namedtuple/readme.md)
 
 ### [String](lessons/string/readme.md)
 
-- [String Operations (Concatenation, Slicing, Formatting)](lessons/string_operations/readme.md)
-- [String Methods (`split`, `join`, `replace`, `strip`, etc.)](lessons/string_methods/readme.md)
-- [Regular Expressions (`re` module)](module/re/readme.md)
+- [String Operations](lessons/string_operations/readme.md)
+- [String Methods ](lessons/string_methods/readme.md)
+- Regular Expressions: [re](modules/re/readme.md)
 
 ### [Input/Output Functions](lessons/input_output_functions/readme.md)
 
@@ -122,11 +122,10 @@
 
 ## Concurrency & Parallelism
 
-- [Multithreading](lessons/multithreading/readme.md)
-- [Multiprocessing](lessons/multiprocessing/readme.md)
-- [Asyncio](lessons/asyncio/readme.md)
-- [Concurrent Futures](lessons/concurrent_futures/readme.md)
-- Thread Synchronization (`threading.Lock`, `RLock`, `Semaphore`)
+- Multithreading: [Multithreading](modules/threading/multithreading/readme.md)
+- Multiprocessing: [Multiprocessing](modules/multiprocessing/readme.md)
+- Asynchronous Processing: [Asyncio](modules/asyncio/readme.md), [Concurrent Futures](modules/concurrent_futures/readme.md)
+- Thread Synchronization: [Threading](modules/threading/readme.md) ([Lock](modules/threading/lock/readme.md), [RLock](modules/threading/rlock/readme.md), [Semaphore](modules/threading/semaphore/readme.md))
 
 ---
 
@@ -195,7 +194,7 @@
 
 - SQLite: [sqlite3](modules/sqlite3/readme.md) 
 - MySQL: [mysql.connector](modules/mysql_connector/readme.md), [SQLAlchemy](library/sqlalchemy/readme.md)
-- PostgreSQL: [psycopg2](module/psycopg2/readme.md)
+- PostgreSQL: [psycopg2](modules/psycopg2/readme.md)
 <!-- - ORM Basics -->
 
 ---
@@ -232,7 +231,7 @@
 - [Pyodbc](packages/pyodbc/readme.md)
 - Sqlite:[sqlite3](modules/sqlite3/readme.md) 
 - MySQL: [mysql.connector](modules/mysql_connector/readme.md), 
-- PostgreSQL: [psycopg2](module/psycopg2/readme.md)
+- PostgreSQL: [psycopg2](modules/psycopg2/readme.md)
 - ORM: [SQLAlchemy](library/sqlalchemy/readme.md)
 
 ### Machine Learning

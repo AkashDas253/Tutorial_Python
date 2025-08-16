@@ -1,4 +1,3 @@
-
 ## Scope and Access in Python
 
 ---
