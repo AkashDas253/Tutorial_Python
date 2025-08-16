@@ -132,7 +132,7 @@
 
 ## File Handling
 
-- [File Handling Overview](lessons/file_handling/overview/readme.md)
+- [Overview](lessons/file_handling/overview/readme.md)
 - [File Modes](lessons/file_handling/file_modes/readme.md)
 - Operations: [Reading](lessons/file_handling/reading/readme.md), [Writing](lessons/file_handling/writing/readme.md), [Updating](lessons/file_handling/updating/readme.md), [Append](lessons/file_handling/append/readme.md)
 - [File Iteration](lessons/file_handling/file_iteration/readme.md)
