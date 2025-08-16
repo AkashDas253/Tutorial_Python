@@ -90,7 +90,7 @@
 - [Class and Objects](lessons/class_and_object/readme.md)
 - [Encapsulation](lessons/encapsulation/readme.md)
 - [Abstraction](lessons/abstraction/readme.md)
-- [Inheritance](lessons/inheritance/readme.md): [Single](lessons/single_inheritance/readme.md), Multiple, Multilevel, Hierarchical)
+- [Inheritance](lessons/inheritance/readme.md): [Single](lessons/single_inheritance/readme.md), [Multiple](lessons/multiple_inheritance/readme.md), [Multilevel](lessons/multilevel_inheritance/readme.md), [Hierarchical](lessons/hierarchical_inheritance/readme.md)
 - [Polymorphism](lessons/polymorphism/readme.md): [Overloading](lessons/overloading/readme.md), [Overriding](lessons/overriding/readme.md)
 - [Constructors and Destructors](lessons/constructors_destructors/readme.md)
 - [self and super](lessons/self_and_super/readme.md)
