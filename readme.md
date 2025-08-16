@@ -176,6 +176,7 @@
 - System Operations: [sys](modules/sys/readme.md)
 - [Environment Variables](lessons/environment_variables/readme.md)
 - Command-line Arguments: [argparse](modules/argparse/readme.md)
+- [Context Manager (`with`)](lessons/context_manager/readme.md): [Working](lessons/working_context_manager/readme.md)
 
 ---
 
