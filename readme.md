@@ -131,11 +131,12 @@
 
 ## File Handling
 
-- File Modes (`r`, `w`, `a`, `rb`, `wb`)
-- Reading & Writing
-- File Iteration
-- Context Managers (`with` statement)
-- File System Operations (`os`, `shutil`, `pathlib`)
+- [File Handling Overview](lessons/file_handling/overview/readme.md)
+- [File Modes](lessons/file_handling/file_modes/readme.md)
+- Operations: [Reading](lessons/file_handling/reading/readme.md), [Writing](lessons/file_handling/writing/readme.md), [Updating](lessons/file_handling/updating/readme.md), [Append](lessons/file_handling/append/readme.md)
+- [File Iteration](lessons/file_handling/file_iteration/readme.md)
+- [Context Managers (`with` statement)](lessons/file_handling/context_manager_support/readme.md)
+- Support Tools: [os](lessons/file_handling/os_support/readme.md) [shutil](lessons/file_handling/shutil_support/readme.md) , [pathlib](lessons/file_handling/pathlib_support/readme.md) 
 
 ---
 
@@ -150,16 +151,18 @@
 ---
 
 ## Iteration & Execution Control
+
 - [Iterators](lessons/iterators/readme.md)
 - [Iterables](lessons/iterables/readme.md)
 - [Generators](lessons/generators/readme.md)
 - [Generator Expressions](lessons/generator_expressions/readme.md)
 - [Coroutines](lessons/coroutines/readme.md)
+
 ---
 
 ## Memory Management
 
-- Garbage Collection: [gc](modules/gc/readme.md)
+- Garbage Collection: [gc](modules/gc/readme.md), [shutil](modules/shutil/readme.md), [pathlib](modules/pathlib/readme,.md)
 - [Reference Counting](lessons/reference_counting/readme.md)
 - [Weak References](lessons/weak_references/readme.md): [Weak References](modules/weakref/readme.md)
 - [Strong References](lessons/strong_references/readme.md)
@@ -168,7 +171,7 @@
 
 ## Environment & OS Interaction
 
-- OS Operations: [os](modules/os/readme.md)
+- OS Operations: [os](modules/os/readme.md),[shutils](modules/shutils/readme.md), [pathlib](modules/pathlib/readme.md)
 - System Operations: [sys](modules/sys/readme.md)
 - [Environment Variables](lessons/environment_variables/readme.md)
 - Command-line Arguments: [argparse](modules/argparse/readme.md)
