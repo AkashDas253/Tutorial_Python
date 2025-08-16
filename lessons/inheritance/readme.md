@@ -42,6 +42,52 @@ class Child(Parent):
 
 ---
 
+### **Types of Inheritance with Syntax**
+
+#### **Single Inheritance**
+
+```python
+class A:
+    def show(self):
+        print("A")
+
+class B(A):
+    def display(self):
+        print("B")
+```
+
+#### **Multilevel Inheritance**
+
+```python
+class A:
+    def show(self):
+        print("A")
+
+class B(A):
+    def display(self):
+        print("B")
+
+class C(B):
+    def greet(self):
+        print("C")
+```
+
+#### **Multiple Inheritance**
+
+```python
+class A:
+    def show(self):
+        print("A")
+
+class B:
+    def display(self):
+        print("B")
+
+class C(A, B):
+```
+
+---
+
 ### **Using `super()`**
 
 * Used to call a method from the parent class inside the child class.
@@ -118,75 +164,3 @@ d.speak()  # Output: Dog barks
 * Supports polymorphism and runtime method resolution
 
 ---
-
-Here is the **updated comprehensive note** for `inheritance/readme.md` with **syntax examples included for all types** of inheritance:
-
----
-
-## **Types of Inheritance in Python (Examples)**
-
----
-
-### **Definition**
-
-**Inheritance** allows a class (**child**) to inherit attributes and methods from another class (**parent**), enabling **code reuse** and **hierarchical class design**.
-
----
-
-### **Syntax (Basic Inheritance)**
-
-```python
-class Parent:
-    def greet(self):
-        print("Hello from Parent")
-
-class Child(Parent):
-    def greet(self):  # Overriding method
-        print("Hello from Child")
-```
-
----
-
-### **Types of Inheritance with Syntax**
-
-#### **Single Inheritance**
-
-```python
-class A:
-    def show(self):
-        print("A")
-
-class B(A):
-    def display(self):
-        print("B")
-```
-
-#### **Multilevel Inheritance**
-
-```python
-class A:
-    def show(self):
-        print("A")
-
-class B(A):
-    def display(self):
-        print("B")
-
-class C(B):
-    def greet(self):
-        print("C")
-```
-
-#### **Multiple Inheritance**
-
-```python
-class A:
-    def show(self):
-        print("A")
-
-class B:
-    def display(self):
-        print("B")
-
-class C(A, B):
-```
