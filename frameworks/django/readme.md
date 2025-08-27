@@ -16,7 +16,7 @@
 - [Views](lessons/views/readme.md) 
 - [Templates](lessons/templates/readme.md)
 - [Models](lessons/models/readme.md)
-- [Migrations](lessons/migrations/readme.md)
+- [Migrations](lessons/migrations/overview.md)
 - [Admin Interface](lessons/admin_interface/readme.md)
 - [Forms](lessons/forms/readme.md)
 - [ORM](lessons/orm/readme.md)
@@ -45,9 +45,10 @@
 ### Models and Database
 - [Django Models](lessons/django_models_overview/readme.md)
 
-### Migration
-- [Django Migration](lessons/migrations_overview/readme.md)
-- [Migration Tools](lessons/migrations_tools/readme.md)
+#### Migration
+- [Django Migration](lessons/migrations/overview.md)
+- [Migration Tools](lessons/migrations/tools.md)
+- [Setup and Usage](lessons/migrations/setup_usage.md)
 
 ### Templates
 - [Template Loader](lessons/templates_loader/readme.md)  
@@ -81,7 +82,7 @@
 - [Named Url](lessons/named_url/readme.md)
 - [Static File](lessons/static_file/readme.md)
 - [Forms](lessons/forms/readme.md)
-- [Message Framework](lessons/message_framework/readme.md)
+- [Message Framework](lessons/message_framework/overview.md): [Working](lessons/message_framework/working.md), [Setup and Usage](lessons/message_framework/setup_usage.md)
 - [WhiteNoise](lessons/whitenoise/readme.md)
 
 ### Practical Aspects
