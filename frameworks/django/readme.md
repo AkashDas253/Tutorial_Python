@@ -9,11 +9,32 @@
 
 ### Core
 
-
-
+- [Django](lessons/django/overview.md) 
+<!-- - [Project Setup](lessons/project/project_setup.md) -->
+<!-- - [Settings](lessons/settings/readme.md) -->
+<!-- - [URL Dispatcher](lessons/url_dispatcher/readme.md) -->
+- [Views](lessons/views/reference.md)
+- [Templates](lessons/templates/readme.md)
+- [Model](lessons/data_model/reference.md)
+- [Migrations](lessons/migrations/overview.md)
+<!-- - [Admin Interface](lessons/admin_interface/readme.md) -->
+- [Form](lessons/forms/reference.md)
+<!-- - [ORM](lessons/orm/readme.md) -->
+<!-- - [Authentication and Authorization](lessons/authentication_and_authorization/readme.md) -->
+<!-- - [Sessions and Cookies](lessons/sessions_and_cookies/readme.md) -->
+<!-- - [Middleware](lessons/middleware/readme.md) -->
+- [Signals](lessons/signals/readme.md)
+- [Testing](lessons/testing/reference.md)
+<!-- - [Static and Media Files](lessons/static_and_media_files/readme.md) -->
+- [Deployment](lessons/deployment/reference.md)
+- [Security](lessons/security/readme.md)
+- [Internationalization (i18n) and Localization (l10n)](lessons/internationalization_and_localization/readme.md)
 
 ### Cores in Detail
 
+#### Django
+- [Django](lessons/django/overview.md) 
+- [Components](lessons/django/components.md) 
 
 #### Project
 - [Allowed Host](lessons/project/allowed_host.md)
