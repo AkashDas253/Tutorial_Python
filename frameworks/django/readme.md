@@ -6,6 +6,90 @@
 ### Sources
 - [Documentation](https://docs.djangoproject.com/en/5.2/)
 
+
+### Core
+
+
+
+
+### Cores in Detail
+
+
+#### Project
+- [Allowed Host](lessons/project/allowed_host.md)
+- [Custom Management Commands](lessons/project/custom_management_commands.md)
+- [Middleware](lessons/project/middleware.md)
+- [Project Files](lessons/project/project_files.md)
+- [Project Setup](lessons/project/project_setup.md)
+- [Project Structure](lessons/project/project_structure.md)
+- [Settings](lessons/project/settings.md)
+- [Using Manage Command](lessons/project/using_manage_command.md)
+
+#### Forms
+- [Overview Forms](lessons/forms/overview_forms.md)
+- [Reference](lessons/forms/reference.md)
+- [Rendering Form](lessons/forms/rendering_form.md)
+- [Setup Form](lessons/forms/setup_form.md)
+- [Using Form](lessons/forms/using_form.md)
+
+#### Data Model
+- [Activating Model](lessons/data_model/activating_model.md)
+- [Adding Database](lessons/data_model/adding_database.md)
+- [Create Models](lessons/data_model/create_models.md)
+- [Design Models](lessons/data_model/design_models.md)
+- [Generic Relations](lessons/data_model/generic_relations.md)
+- [ORM](lessons/data_model/orm.md)
+- [Overview](lessons/data_model/overview.md)
+- [Reference](lessons/data_model/reference.md)
+- [Register Model](lessons/data_model/register_model.md)
+- [Using Database](lessons/data_model/using_database.md)
+
+#### Deployment
+- [Overview](lessons/deployment/overview.md)
+- [Reference](lessons/deployment/reference.md)
+- [Using Gunicorn](lessons/deployment/using_gunicorn.md)
+- [Using Heroku](lessons/deployment/using_heroku.md)
+- [Using PythonAnywhere](lessons/deployment/using_pythonanywhere.md)
+- [Using uWSGI](lessons/deployment/using_uwsgi.md)
+
+#### Views
+- [Authentication View](lessons/views/authentication_view.md)
+- [CBV](lessons/views/cbv.md)
+- [CBV Authentication](lessons/views/cbv_authentication.md)
+- [CBV CRUD View](lessons/views/cbv_crud_view.md)
+- [Creating View](lessons/views/creating_view.md)
+- [CRUD View](lessons/views/crud_view.md)
+- [FBV](lessons/views/fbv.md)
+- [FBV CRUD View](lessons/views/fbv_crud_view.md)
+- [GCBV](lessons/views/gcbv.md)
+- [Overview](lessons/views/overview.md)
+- [Reference](lessons/views/reference.md)
+- [Set Up Usage](lessons/views/set_up_usage.md)
+- [Using Views](lessons/views/using_views.md)
+
+#### Templates
+
+- [Adding Templates](lessons/templates/adding_templates.md)
+- [Serving Static File](lessons/templates/serving_static_file.md)
+- [Static and Media Files](lessons/templates/static_and_media_files.md)
+- [Static File](lessons/templates/static_file.md)
+- [Template Inheritance](lessons/templates/template_inheritance.md)
+- [Template Loader](lessons/templates/template_loader.md)
+- [Using WhiteNoise](lessons/templates/use_whitenoise.md)
+- [Using Templates](lessons/templates/using_templates.md)
+- [WhiteNoise](lessons/templates/whitenoise.md)
+- [Overview](lessons/templates/readme.md)
+
+#### Message Framework
+- [Message Framework](lessons/message_framework/overview.md)
+- [Working](lessons/message_framework/working.md)
+- [Setup and Usage](lessons/message_framework/setup_usage.md)
+
+### Testing
+
+- []
+
+<!--  
 ### Core concepts
 - [Django](lessons/django/readme.md) 
 - [Components](lessons/components/readme.md) 
