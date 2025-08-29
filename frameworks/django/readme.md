@@ -29,12 +29,18 @@
 - [Deployment](lessons/deployment/reference.md)
 - [Security](lessons/security/readme.md)
 - [Internationalization (i18n) and Localization (l10n)](lessons/internationalization_and_localization/readme.md)
+- [Caching](lessons/caching/overview.md)
+- [Routing](lessons/routing/readme.md)
+-[Session and Cookies](lessons/sessions_and_cookies/readme.md)
+- [Security](lessons/security/readme.md)
+- [Contenttypes Framework](lessons/contenttypes_framework/readme.md)
 
 ### Cores in Detail
 
 #### Django
 - [Django](lessons/django/overview.md) 
 - [Components](lessons/django/components.md) 
+- [Basics](lessons/django/basics.md)
 
 #### Project
 - [Allowed Host](lessons/project/allowed_host.md)
@@ -45,6 +51,10 @@
 - [Project Structure](lessons/project/project_structure.md)
 - [Settings](lessons/project/settings.md)
 - [Using Manage Command](lessons/project/using_manage_command.md)
+- [Create App](lessons/project/create_app.md)
+- [Create Project](lessons/project/create_project.md)
+- [Setup virtual environment](lessons/project/setup_virtual_environment/setup_virtual_environment.md)
+- [Setup virtual environment powershell](lessons/project/setup_virtual_environment/setup_virtual_environment_powershell.md)
 
 #### Forms
 - [Overview Forms](lessons/forms/overview_forms.md)
@@ -101,14 +111,40 @@
 - [WhiteNoise](lessons/templates/whitenoise.md)
 - [Overview](lessons/templates/readme.md)
 
+#### Routing
+- [Routing Overview](lessons/routing/readme.md)
+- [Named URL](lessons/routing/named_url.md)
+- [URL Dispatcher](lessons/routing/url_dispatcher.md)
+
 #### Message Framework
 - [Message Framework](lessons/message_framework/overview.md)
 - [Working](lessons/message_framework/working.md)
 - [Setup and Usage](lessons/message_framework/setup_usage.md)
 
-### Testing
+#### Testing
 
-- []
+- [Testing overview](lessons/testing/overview.md)
+- [Testing reference](lessons/testing/reference.md)
+- [Test Case Design](lessons/testing/design_test_case.md)
+- [Selenium Testing](lessons/testing/selenium_test.md)
+
+#### Administration
+- [Admin Interface](lessons/administration/admin_interface.md)
+- [Django Admin](lessons/administration/django_admin_overview.md)
+- [Super User](lessons/administration/superuser.md)
+
+#### Authorization and Authentication
+- [Reference](lessons/authentication_and_authorization/readme.md)
+- [Setup Authentication](lessons/authentication_and_authorization/setup_authentication.md)
+- [Use Authentication](lessons/authentication_and_authorization/use_authentication.md)
+
+#### Migration
+- [Migration Overview](lessons/migrations/overview.md)
+- [Setup and Usage of Migration](lessons/migrations/setup_usage.md)
+- [Migration Tools](lessons/migrations/tools.md)
+- [Working of Migration](lessons/migrations/working_migration.md)
+
+
 
 <!--  
 ### Core concepts
