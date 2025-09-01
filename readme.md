@@ -216,6 +216,14 @@
 
 ---
 
+## Python Ecosystem
+
+- [Domains](lessons/python_ecosystem/domains.md)
+- [Web Domain](lessons/python_ecosystem/web_domain.md) 
+- [Data Science and Analysis](lessons/python_ecosystem/data_science_analysis)
+
+---
+
 ## [Packages and Frameworks](lessons/packages_framework/readme.md)
 
 ###  Web Development
