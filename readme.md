@@ -261,7 +261,7 @@
 - Sqlite:[sqlite3](modules/sqlite3/readme.md) 
 - MySQL: [mysql.connector](modules/mysql_connector/readme.md), 
 - PostgreSQL: [psycopg2](modules/psycopg2/readme.md)
-- ORM: [SQLAlchemy](library/sqlalchemy/readme.md)
+- ORM: [SQLAlchemy](libraries/sqlalchemy/readme.md)
 
 ### Machine Learning
 - [Scikit Learn](packages/sklearn/readme.md)
