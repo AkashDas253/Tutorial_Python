@@ -219,8 +219,21 @@
 ## Python Ecosystem
 
 - [Domains](lessons/python_ecosystem/domains.md)
-- [Web Domain](lessons/python_ecosystem/web_domain.md) 
-- [Data Science and Analysis](lessons/python_ecosystem/data_science_analysis)
+- [Web Development](lessons/python_ecosystem/web_development.md)
+- [Data Science & Analytics](lessons/python_ecosystem/data_science_analytics.md)
+- [Machine Learning & AI](lessons/python_ecosystem/machine_learning_ai.md)
+- [Scientific Computing & Research](lessons/python_ecosystem/scientific_computing.md)
+- [Automation & Scripting](lessons/python_ecosystem/automation_scripting.md)
+- [DevOps & Cloud](lessons/python_ecosystem/devops_cloud.md)
+- [Cybersecurity & Networking](lessons/python_ecosystem/cybersecurity_networking.md)
+- [Game Development](lessons/python_ecosystem/game_development.md)
+- [GUI/Desktop Applications](lessons/python_ecosystem/gui_desktop.md)
+- [Mobile Development](lessons/python_ecosystem/mobile_development.md)
+- [Blockchain & Web3](lessons/python_ecosystem/blockchain_web3.md)
+- [Embedded Systems & IoT](lessons/python_ecosystem/embedded_iot.md)
+- [Big Data & Distributed Computing](lessons/python_ecosystem/big_data_distributed.md)
+- [Media Processing](lessons/python_ecosystem/media_processing.md)
+- [Education & Learning](lessons/python_ecosystem/education_learning.md)
 
 ---
 
