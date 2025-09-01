@@ -7,7 +7,9 @@
 
 ---
 
-## Core Concepts
+## Python Core
+
+### Core Concepts
 
 - [Overview](lessons/overview/readme.md)
 - [Syntax](lessons/syntax/readme.md)
@@ -15,9 +17,7 @@
 - [Input/Output](lessons/input_output/readme.md)
 - [Scope and Access](lessons/scope/readme.md)
 
----
-
-## Operators
+### Operators
 
 - [Arithmetic Operators](lessons/arithmetic_operators/readme.md)
 - [Assignment Operators](lessons/assignment_operators/readme.md)
@@ -27,20 +27,18 @@
 - [Membership Operators](lessons/membership_operators/readme.md)
 - [Identity Operators](lessons/identity_operators/readme.md)
 
----
 
-## Control Flow
+### Control Flow
 
 - [Conditional Statements](lessons/conditional_statements/readme.md)
 - [Loops](lessons/loops/readme.md)
 - [Comprehensions](lessons/comprehensions/readme.md)
 - [Pattern Matching (`match` / `case`)](lessons/pattern_matching/readme.md)
 
----
 
-## [Data](lessons/data/readme.md)
+### [Data](lessons/data/readme.md)
 
-### [Datatypes](lessons/datatypes/readme.md)
+#### [Datatypes](lessons/datatypes/readme.md)
 
 - Numeric: [Integer](lessons/integer/readme.md), [Float](lessons/float/readme.md), [Complex](lessons/complex/readme.md)
 - String: [String](lessons/string/readme.md)
@@ -48,7 +46,7 @@
 - Collections: [List](lessons/list/readme.md), [Tuples](lessons/tuples/readme.md), [Set](lessons/set/readme.md), [Dictionary](lessons/dictionary/readme.md)
 - Binary: [Bytes](lessons/bytes/readme.md), [Bytearray](lessons/bytearray/readme.md), [Memoryview](lessons/memoryview/readme.md)
 
-### [Collection Module](modules/collection_module/overview/readme.md)
+#### [Collection Module](modules/collection_module/overview/readme.md)
 - [Counter](modules/collection_module/counter/readme.md)
 - [OrderedDict](modules/collection_module/ordereddict/readme.md)
 - [defaultdict](modules/collection_module/defaultdict/readme.md)
@@ -56,21 +54,20 @@
 - [ChainMap](modules/collection_module/chainmap/readme.md)
 - [namedtuple](modules/collection_module/namedtuple/readme.md)
 
-### [String](lessons/string/readme.md)
+#### [String](lessons/string/readme.md)
 
 - [String Operations](lessons/string_operations/readme.md)
 - [String Methods ](lessons/string_methods/readme.md)
 - Regular Expressions: [re](modules/re/readme.md)
 
-### [Input/Output Functions](lessons/input_output_functions/readme.md)
+#### [Input/Output Functions](lessons/input_output_functions/readme.md)
 
 - [High Level Input/Output](lessons/high_level_input_output/readme.md)
 - [Low level Input/Output](lessons/low_level_input_output/readme.md)
 - [Data Serialization](lessons/data_serialization/readme.md): `pickle`, `json`
 
----
 
-## [Functions](lessons/functions/readme.md)
+### [Functions](lessons/functions/readme.md)
 
 - [Function Definition & Call](lessons/function_definition_call/readme.md)
 - [Arguments (Positional, Keyword, Default, `-args`, `--kwargs`)](lessons/arguments/readme.md)
@@ -83,9 +80,7 @@
 - [Anonymous Functions](lessons/anonymous_functions/readme.md)
 - [Type Hinting (`typing` module)](lessons/type_hinting/readme.md)
 
----
-
-## [OOPS](lessons/oop/readme.md)
+### [OOPS](lessons/oop/readme.md)
 
 - [Class and Objects](lessons/class_and_object/readme.md)
 - [Encapsulation](lessons/encapsulation/readme.md)
@@ -119,18 +114,14 @@
   - [ABC Class](lessons/abc_class/readme.md)
 - [OOP Cheatsheet](lessons/oops_cheatsheet/readme.md)
 
----
-
-## Concurrency & Parallelism
+### Concurrency & Parallelism
 
 - Multithreading: [Multithreading](modules/threading/multithreading/readme.md)
 - Multiprocessing: [Multiprocessing](modules/multiprocessing/readme.md)
 - Asynchronous Processing: [Asyncio](modules/asyncio/readme.md), [Concurrent Futures](modules/concurrent_futures/readme.md)
 - Thread Synchronization: [Threading](modules/threading/readme.md) ([Lock](modules/threading/lock/readme.md), [RLock](modules/threading/rlock/readme.md), [Semaphore](modules/threading/semaphore/readme.md))
 
----
-
-## File Handling
+### File Handling
 
 - [Overview](lessons/file_handling/overview/readme.md)
 - [File Modes](lessons/file_handling/file_modes/readme.md)
@@ -139,9 +130,7 @@
 - [Context Managers (`with` statement)](lessons/file_handling/context_manager_support/readme.md)
 - Support Tools: [os](lessons/file_handling/os_support/readme.md) [shutil](lessons/file_handling/shutil_support/readme.md) , [pathlib](lessons/file_handling/pathlib_support/readme.md) 
 
----
-
-## Exception Handling
+### Exception Handling
 
 - [Overview](lessons/exception_handling/overview/readme.md)
 - [Syntax](lessons/exception_handling/syntax/readme.md)
@@ -149,9 +138,7 @@
 - [Custom Exceptions](lessons/exception_handling/custom_exception/readme.md)
 - [Exception Hierarchy](lessons/exception_handling/exception_hierarchy/readme.md)
 
----
-
-## Iteration & Execution Control
+### Iteration & Execution Control
 
 - [Iterators](lessons/iterators/readme.md)
 - [Iterables](lessons/iterables/readme.md)
@@ -161,16 +148,16 @@
 
 ---
 
-## Memory Management
+## Python Useful Aspects
+
+### Memory Management
 
 - Garbage Collection: [gc](modules/gc/readme.md), [shutil](modules/shutil/readme.md), [pathlib](modules/pathlib/readme,.md)
 - [Reference Counting](lessons/reference_counting/readme.md)
 - [Weak References](lessons/weak_references/readme.md): [Weak References](modules/weakref/readme.md)
 - [Strong References](lessons/strong_references/readme.md)
 
----
-
-## Environment & OS Interaction
+### Environment & OS Interaction
 
 - OS Operations: [os](modules/os/readme.md),[shutils](modules/shutils/readme.md), [pathlib](modules/pathlib/readme.md)
 - System Operations: [sys](modules/sys/readme.md)
@@ -178,36 +165,28 @@
 - Command-line Arguments: [argparse](modules/argparse/readme.md)
 - [Context Manager (`with`)](lessons/context_manager/readme.md): [Working](lessons/working_context_manager/readme.md)
 
----
-
-## Date & Time
+### Date & Time
 
 - [Date & Time Handling in Python](modules/date_time_handling/readme.md)
   - datetime: [datetime](modules/datetime/readme.md)
   - time: [time](modules/time/readme.md)
   - calendar: [calendar](modules/calendar/readme.md)
 
----
-
-## Networking
+### Networking
 
 - [Sockets](modules/sockets/readme.md)
 - HTTP Requests: [requests](modules/requests/readme.md)
 - FTP: [FTP](modules/ftp/readme.md)
 - SMTP: [SMTP](modules/smtp/readme.md)
 
----
-
-## Database Handling
+### Database Handling
 
 - SQLite: [sqlite3](modules/sqlite3/readme.md) 
 - MySQL: [mysql.connector](modules/mysql_connector/readme.md), [SQLAlchemy](library/sqlalchemy/readme.md)
 - PostgreSQL: [psycopg2](modules/psycopg2/readme.md)
 <!-- - ORM Basics -->
 
----
-
-## Testing & Debugging
+### Testing & Debugging
 
 - [unittest](frameworks/unittest/readme.md)
 - [pytest](packages/pytest/readme.md)
